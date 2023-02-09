@@ -12,7 +12,7 @@ import (
 	ibchost "github.com/cosmos/ibc-go/v4/modules/core/24-host"
 	ibckeeper "github.com/cosmos/ibc-go/v4/modules/core/keeper"
 
-	ibchookstypes "github.com/merlinslair/merlin/x/ibc-hooks/types"
+	ibchookstypes "github.com/osmosis-labs/osmosis/x/ibc-hooks/types"
 
 	ica "github.com/cosmos/ibc-go/v4/modules/apps/27-interchain-accounts"
 	icatypes "github.com/cosmos/ibc-go/v4/modules/apps/27-interchain-accounts/types"
@@ -22,7 +22,7 @@ import (
 	downtimemodule "github.com/merlinslair/merlin/x/downtime-detector/module"
 	downtimetypes "github.com/merlinslair/merlin/x/downtime-detector/types"
 
-	ibc_hooks "github.com/merlinslair/merlin/x/ibc-hooks"
+	ibc_hooks "github.com/osmosis-labs/osmosis/x/ibc-hooks"
 
 	"github.com/cosmos/cosmos-sdk/types/module"
 	"github.com/cosmos/cosmos-sdk/x/auth"

@@ -15,7 +15,7 @@ import (
 
 	packetforwardingtypes "github.com/strangelove-ventures/packet-forward-middleware/v4/router/types"
 
-	ibchookskeeper "github.com/merlinslair/merlin/x/ibc-hooks/keeper"
+	ibchookskeeper "github.com/osmosis-labs/osmosis/x/ibc-hooks/keeper"
 
 	paramsutils "github.com/cosmos/cosmos-sdk/x/params/client/utils"
 

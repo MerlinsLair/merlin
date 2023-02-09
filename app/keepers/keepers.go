@@ -41,9 +41,9 @@ import (
 	"github.com/merlinslair/merlin/x/poolmanager"
 	poolmanagertypes "github.com/merlinslair/merlin/x/poolmanager/types"
 	"github.com/merlinslair/merlin/x/protorev"
-	ibchooks "github.com/merlinslair/merlin/x/ibc-hooks"
-	ibchookskeeper "github.com/merlinslair/merlin/x/ibc-hooks/keeper"
-	ibchookstypes "github.com/merlinslair/merlin/x/ibc-hooks/types"
+	ibchooks "github.com/osmosis-labs/osmosis/x/ibc-hooks"
+	ibchookskeeper "github.com/osmosis-labs/osmosis/x/ibc-hooks/keeper"
+	ibchookstypes "github.com/osmosis-labs/osmosis/x/ibc-hooks/types"
 	icq "github.com/strangelove-ventures/async-icq"
 	icqtypes "github.com/strangelove-ventures/async-icq/types"
 

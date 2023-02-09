@@ -2,7 +2,7 @@ package v13_test
 
 import (
 	"fmt"
-	ibchookstypes "github.com/merlinslair/merlin/x/ibc-hooks/types"
+	ibchookstypes "github.com/osmosis-labs/osmosis/x/ibc-hooks/types"
 	"testing"
 
 	ibcratelimittypes "github.com/merlinslair/merlin/x/ibc-rate-limit/types"

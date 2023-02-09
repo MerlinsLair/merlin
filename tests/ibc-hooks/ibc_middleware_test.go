@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	ibchookskeeper "github.com/merlinslair/merlin/x/ibc-hooks/keeper"
+	ibchookskeeper "github.com/osmosis-labs/osmosis/x/ibc-hooks/keeper"
 
 	wasmkeeper "github.com/CosmWasm/wasmd/x/wasm/keeper"
 

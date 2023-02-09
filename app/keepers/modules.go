@@ -48,7 +48,7 @@ import (
 	"github.com/merlinslair/merlin/x/twap/twapmodule"
 	"github.com/merlinslair/merlin/x/txfees"
 	valsetprefmodule "github.com/merlinslair/merlin/x/valset-pref/valpref-module"
-	ibc_hooks "github.com/merlinslair/merlin/x/ibc-hooks"
+	ibc_hooks "github.com/osmosis-labs/osmosis/x/ibc-hooks"
 )
 
 // AppModuleBasics returns ModuleBasics for the module BasicManager.
