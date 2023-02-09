@@ -1,4 +1,4 @@
-package merlinibctesting
+package osmosisibctesting
 
 import (
 	"encoding/json"

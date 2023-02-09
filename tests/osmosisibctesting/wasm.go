@@ -1,4 +1,4 @@
-package merlinibctesting
+package osmosisibctesting
 
 import (
 	"crypto/sha256"

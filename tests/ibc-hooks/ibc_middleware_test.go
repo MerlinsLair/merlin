@@ -26,7 +26,7 @@ import (
 	channeltypes "github.com/cosmos/ibc-go/v4/modules/core/04-channel/types"
 	ibctesting "github.com/cosmos/ibc-go/v4/testing"
 
-	"github.com/merlinslair/merlin/tests/merlinibctesting"
+	"github.com/merlinslair/merlin/tests/osmosisibctesting"
 
 	"github.com/merlinslair/merlin/tests/ibc-hooks/testutils"
 )
@@ -36,20 +36,20 @@ type HooksTestSuite struct {
 
 	coordinator *ibctesting.Coordinator
 
-	chainA *merlinibctesting.TestChain
-	chainB *merlinibctesting.TestChain
+	chainA *osmosisibctesting.TestChain
+	chainB *osmosisibctesting.TestChain
 
 	path *ibctesting.Path
 }
 
 func (suite *HooksTestSuite) SetupTest() {
 	suite.Setup()
-	ibctesting.DefaultTestingAppInit = merlinibctesting.SetupTestingApp
+	ibctesting.DefaultTestingAppInit = osmosisibctesting.SetupTestingApp
 	suite.coordinator = ibctesting.NewCoordinator(suite.T(), 2)
-	suite.chainA = &merlinibctesting.TestChain{
+	suite.chainA = &osmosisibctesting.TestChain{
 		TestChain: suite.coordinator.GetChain(ibctesting.GetChainID(1)),
 	}
-	suite.chainB = &merlinibctesting.TestChain{
+	suite.chainB = &osmosisibctesting.TestChain{
 		TestChain: suite.coordinator.GetChain(ibctesting.GetChainID(2)),
 	}
 	err := suite.chainA.MoveEpochsToTheFuture()
@@ -65,7 +65,7 @@ func TestIBCHooksTestSuite(t *testing.T) {
 }
 
 // ToDo: Move this to merlintesting to avoid repetition
-func NewTransferPath(chainA, chainB *merlinibctesting.TestChain) *ibctesting.Path {
+func NewTransferPath(chainA, chainB *osmosisibctesting.TestChain) *ibctesting.Path {
 	path := ibctesting.NewPath(chainA.TestChain, chainB.TestChain)
 	path.EndpointA.ChannelConfig.PortID = ibctesting.TransferPort
 	path.EndpointB.ChannelConfig.PortID = ibctesting.TransferPort
@@ -422,7 +422,7 @@ func (suite *HooksTestSuite) RelayPacket(packet channeltypes.Packet, direction D
 }
 
 func (suite *HooksTestSuite) FullSend(msg sdk.Msg, direction Direction) (*sdk.Result, *sdk.Result, string, error) {
-	var sender *merlinibctesting.TestChain
+	var sender *osmosisibctesting.TestChain
 	switch direction {
 	case AtoB:
 		sender = suite.chainA
@@ -512,7 +512,7 @@ const (
 	ChainB
 )
 
-func (suite *HooksTestSuite) GetChain(name Chain) *merlinibctesting.TestChain {
+func (suite *HooksTestSuite) GetChain(name Chain) *osmosisibctesting.TestChain {
 	if name == ChainA {
 		return suite.chainA
 	} else {

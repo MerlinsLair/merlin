@@ -16,7 +16,7 @@ import (
 	"github.com/stretchr/testify/suite"
 
 	"github.com/merlinslair/merlin/app/apptesting"
-	"github.com/merlinslair/merlin/tests/merlinibctesting"
+	"github.com/merlinslair/merlin/tests/osmosisibctesting"
 	"github.com/merlinslair/merlin/x/ibc-rate-limit/types"
 )
 
@@ -26,8 +26,8 @@ type MiddlewareTestSuite struct {
 	coordinator *ibctesting.Coordinator
 
 	// testing chains used for convenience and readability
-	chainA *merlinibctesting.TestChain
-	chainB *merlinibctesting.TestChain
+	chainA *osmosisibctesting.TestChain
+	chainB *osmosisibctesting.TestChain
 	path   *ibctesting.Path
 }
 
@@ -36,7 +36,7 @@ func TestMiddlewareTestSuite(t *testing.T) {
 	suite.Run(t, new(MiddlewareTestSuite))
 }
 
-func NewTransferPath(chainA, chainB *merlinibctesting.TestChain) *ibctesting.Path {
+func NewTransferPath(chainA, chainB *osmosisibctesting.TestChain) *ibctesting.Path {
 	path := ibctesting.NewPath(chainA.TestChain, chainB.TestChain)
 	path.EndpointA.ChannelConfig.PortID = ibctesting.TransferPort
 	path.EndpointB.ChannelConfig.PortID = ibctesting.TransferPort
@@ -47,15 +47,15 @@ func NewTransferPath(chainA, chainB *merlinibctesting.TestChain) *ibctesting.Pat
 
 func (suite *MiddlewareTestSuite) SetupTest() {
 	suite.Setup()
-	ibctesting.DefaultTestingAppInit = merlinibctesting.SetupTestingApp
+	ibctesting.DefaultTestingAppInit = osmosisibctesting.SetupTestingApp
 	suite.coordinator = ibctesting.NewCoordinator(suite.T(), 2)
-	suite.chainA = &merlinibctesting.TestChain{
+	suite.chainA = &osmosisibctesting.TestChain{
 		TestChain: suite.coordinator.GetChain(ibctesting.GetChainID(1)),
 	}
 	// Remove epochs to prevent  minting
 	err := suite.chainA.MoveEpochsToTheFuture()
 	suite.Require().NoError(err)
-	suite.chainB = &merlinibctesting.TestChain{
+	suite.chainB = &osmosisibctesting.TestChain{
 		TestChain: suite.coordinator.GetChain(ibctesting.GetChainID(2)),
 	}
 	suite.path = NewTransferPath(suite.chainA, suite.chainB)
