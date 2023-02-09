@@ -32,7 +32,7 @@ MUTATION_SOURCES=$(echo "$MUTATION_SOURCES" | grep "$MODULE_FORMAT")
 MUTATION_SOURCES=$(echo $MUTATION_SOURCES | tr '\n' ' ')
 
 echo "running mutation tests for the following module(s): $MODULE_NAMES"
-OUTPUT=$(go run github.com/merlin-labs/go-mutesting/cmd/go-mutesting --disable=$DISABLED_MUTATORS $MUTATION_SOURCES)
+OUTPUT=$(go run github.com/osmosis-labs/go-mutesting/cmd/go-mutesting --disable=$DISABLED_MUTATORS $MUTATION_SOURCES)
 
 # Fetch the final result output and the overall mutation testing score
 RESULT=$(echo "$OUTPUT" | grep 'The mutation score')

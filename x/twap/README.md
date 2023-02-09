@@ -225,7 +225,7 @@ The pre-release testing methodology planned for the twap module is:
   - The merlin simulator, simulates building up complex state machine states, in random ways not seen before. We plan on, in a property check, maintaining expected TWAPs for short time ranges, and seeing that the keeper query will return the same value as what we get off of the raw price history for short history intervals.
   - Not currently deemed release blocking, but planned: Integration for gas tracking, to ensure gas of reads/writes does not grow with time.
 - [ ] Mutation testing usage
-  - integration of the TWAP module into [go mutation testing](https://github.com/merlin-labs/go-mutesting): 
+  - integration of the TWAP module into [go mutation testing](https://github.com/osmosis-labs/go-mutesting): 
     - We've seen with the `tokenfactory` module that it succeeds at surfacing behavior for untested logic.
         e.g. if you delete a line, or change the direction of a conditional, mutation tests show if regular Go tests catch it.
     - We expect to get this to a state, where after mutation testing is ran, the only items it mutates, that is not caught in a test, is: Deleting `return err`, or `panic` lines, in the situation where that error return or panic isn't reachable.
