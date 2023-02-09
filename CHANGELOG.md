@@ -558,7 +558,7 @@ The v7 release introduces Superfluid Staking! This allows governance-approved LP
 
 ### Wasmd fork updates
 
-* [wasmd-v.022.0-mer-v7.2](https://github.com/merlin-labs/wasmd/releases/tag/v0.22.0-mer-v7.2) Upgrade SDK and IAVL dependencies to use fast storage
+* [wasmd-v.022.0-mer-v7.2](https://github.com/osmosis-labs/wasmd/releases/tag/v0.22.0-mer-v7.2) Upgrade SDK and IAVL dependencies to use fast storage
 
 ## [v6.4.0](https://github.com/merlinslair/merlin/releases/tag/v6.4.0)
 

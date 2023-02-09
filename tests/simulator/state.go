@@ -29,7 +29,7 @@ func InitChainFn() mersim.InitChainFn {
 	return func(simManager mersimtypes.ModuleGenesisGenerator, r *rand.Rand, accs []simtypes.Account, config mersim.InitializationConfig,
 	) (simAccs []simtypes.Account, req abci.RequestInitChain) {
 		// N.B.: wasmd has the following check in its simulator:
-		// https://github.com/merlin-labs/wasmd/blob/c2ec9092d086b5ac6dd367f33ce8b5cce8e4c5f5/x/wasm/types/types.go#L261-L264
+		// https://github.com/osmosis-labs/wasmd/blob/c2ec9092d086b5ac6dd367f33ce8b5cce8e4c5f5/x/wasm/types/types.go#L261-L264
 		// As a result, it is easy to overflow and become negative if seconds are set too large.
 		genesisTime := time.Unix(0, r.Int63())
 
