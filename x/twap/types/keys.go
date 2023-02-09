@@ -8,7 +8,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/gogo/protobuf/proto"
 
-	"github.com/merlinslair/merlin/osmoutils"
+	"github.com/osmosis-labs/osmosis/osmoutils"
 )
 
 const (

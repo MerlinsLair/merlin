@@ -4,7 +4,7 @@ package merlin.accum.v1beta1;
 import "gogoproto/gogo.proto";
 import "cosmos/base/v1beta1/coin.proto";
 
-option go_package = "github.com/merlinslair/merlin/osmoutils/accum";
+option go_package = "github.com/osmosis-labs/osmosis/osmoutils/accum";
 
 message AccumulatorContent {
   repeated cosmos.base.v1beta1.DecCoin accum_value = 1 [

@@ -12,7 +12,7 @@ import (
 	tmtypes "github.com/tendermint/tendermint/proto/tendermint/types"
 	dbm "github.com/tendermint/tm-db"
 
-	"github.com/merlinslair/merlin/osmomath"
+	"github.com/osmosis-labs/osmosis/osmomath"
 	"github.com/merlinslair/merlin/x/gamm/pool-models/balancer"
 )
 

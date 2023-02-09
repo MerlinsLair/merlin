@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/merlinslair/merlin/osmoutils/osmocli"
+	"github.com/osmosis-labs/osmosis/osmoutils/osmocli"
 	"github.com/merlinslair/merlin/x/downtime-detector/client/cli"
 	"github.com/merlinslair/merlin/x/downtime-detector/client/queryproto"
 	"github.com/merlinslair/merlin/x/downtime-detector/types"

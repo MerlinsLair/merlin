@@ -4,7 +4,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 
-	"github.com/merlinslair/merlin/osmoutils/osmoassert"
+	"github.com/osmosis-labs/osmosis/osmoutils/osmoassert"
 	"github.com/merlinslair/merlin/x/mint/keeper"
 	"github.com/merlinslair/merlin/x/mint/types"
 )

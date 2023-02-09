@@ -10,8 +10,8 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
 
-	"github.com/merlinslair/merlin/osmomath"
-	"github.com/merlinslair/merlin/osmoutils/osmoassert"
+	"github.com/osmosis-labs/osmosis/osmomath"
+	"github.com/osmosis-labs/osmosis/osmoutils/osmoassert"
 	sdkrand "github.com/merlinslair/merlin/simulation/simtypes/random"
 	"github.com/merlinslair/merlin/x/gamm/pool-models/internal/cfmm_common"
 	"github.com/merlinslair/merlin/x/gamm/pool-models/internal/test_helpers"

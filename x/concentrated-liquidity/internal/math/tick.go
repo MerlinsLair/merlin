@@ -5,7 +5,7 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/merlinslair/merlin/osmomath"
+	"github.com/osmosis-labs/osmosis/osmomath"
 	"github.com/merlinslair/merlin/x/concentrated-liquidity/types"
 )
 

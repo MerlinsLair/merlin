@@ -16,7 +16,7 @@ import (
 
 	cdctypes "github.com/cosmos/cosmos-sdk/codec/types"
 
-	"github.com/merlinslair/merlin/osmoutils"
+	"github.com/osmosis-labs/osmosis/osmoutils"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	abci "github.com/tendermint/tendermint/abci/types"

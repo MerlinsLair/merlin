@@ -1,4 +1,4 @@
-module github.com/merlinslair/merlin/osmomath
+module github.com/osmosis-labs/osmosis/osmomath
 
 go 1.19
 

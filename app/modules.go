@@ -54,7 +54,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/upgrade"
 	upgradetypes "github.com/cosmos/cosmos-sdk/x/upgrade/types"
 
-	"github.com/merlinslair/merlin/osmoutils/partialord"
+	"github.com/osmosis-labs/osmosis/osmoutils/partialord"
 	appparams "github.com/merlinslair/merlin/app/params"
 	_ "github.com/merlinslair/merlin/client/docs/statik"
 	"github.com/merlinslair/merlin/simulation/simtypes"

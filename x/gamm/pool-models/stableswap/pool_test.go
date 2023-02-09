@@ -9,8 +9,8 @@ import (
 
 	"github.com/tendermint/tendermint/crypto/ed25519"
 
-	"github.com/merlinslair/merlin/osmomath"
-	"github.com/merlinslair/merlin/osmoutils/osmoassert"
+	"github.com/osmosis-labs/osmosis/osmomath"
+	"github.com/osmosis-labs/osmosis/osmoutils/osmoassert"
 	"github.com/merlinslair/merlin/x/gamm/pool-models/internal/cfmm_common"
 	"github.com/merlinslair/merlin/x/gamm/types"
 )

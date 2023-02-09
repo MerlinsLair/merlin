@@ -12,7 +12,7 @@ import (
 	"github.com/stretchr/testify/suite"
 	"gopkg.in/yaml.v2"
 
-	"github.com/merlinslair/merlin/osmomath"
+	"github.com/osmosis-labs/osmosis/osmomath"
 )
 
 type decimalTestSuite struct {

@@ -8,7 +8,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/stretchr/testify/suite"
 
-	"github.com/merlinslair/merlin/osmoutils/osmoassert"
+	"github.com/osmosis-labs/osmosis/osmoutils/osmoassert"
 	"github.com/merlinslair/merlin/app/apptesting"
 	"github.com/merlinslair/merlin/x/twap"
 	"github.com/merlinslair/merlin/x/twap/types"

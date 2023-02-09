@@ -7,8 +7,8 @@ import (
 	"github.com/spf13/cobra"
 	flag "github.com/spf13/pflag"
 
-	"github.com/merlinslair/merlin/osmoutils"
-	"github.com/merlinslair/merlin/osmoutils/osmocli"
+	"github.com/osmosis-labs/osmosis/osmoutils"
+	"github.com/osmosis-labs/osmosis/osmoutils/osmocli"
 	"github.com/merlinslair/merlin/x/superfluid/types"
 
 	"github.com/cosmos/cosmos-sdk/client"

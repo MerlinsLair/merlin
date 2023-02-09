@@ -5,8 +5,8 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/merlinslair/merlin/osmomath"
-	"github.com/merlinslair/merlin/osmoutils/osmoassert"
+	"github.com/osmosis-labs/osmosis/osmomath"
+	"github.com/osmosis-labs/osmosis/osmoutils/osmoassert"
 	gammtypes "github.com/merlinslair/merlin/x/gamm/types"
 	"github.com/merlinslair/merlin/x/twap"
 	"github.com/merlinslair/merlin/x/twap/types"

@@ -10,7 +10,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	"github.com/spf13/cobra"
 
-	"github.com/merlinslair/merlin/osmoutils/osmocli"
+	"github.com/osmosis-labs/osmosis/osmoutils/osmocli"
 	gammtypes "github.com/merlinslair/merlin/x/gamm/types"
 	"github.com/merlinslair/merlin/x/twap/client/queryproto"
 	"github.com/merlinslair/merlin/x/twap/types"

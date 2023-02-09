@@ -11,7 +11,7 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
 
-	"github.com/merlinslair/merlin/osmoutils/osmoassert"
+	"github.com/osmosis-labs/osmosis/osmoutils/osmoassert"
 	"github.com/merlinslair/merlin/app/apptesting"
 	v10 "github.com/merlinslair/merlin/app/upgrades/v10"
 	"github.com/merlinslair/merlin/x/gamm/pool-models/balancer"

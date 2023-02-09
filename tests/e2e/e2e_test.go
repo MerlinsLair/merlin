@@ -25,7 +25,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	coretypes "github.com/tendermint/tendermint/rpc/core/types"
 
-	"github.com/merlinslair/merlin/osmoutils/osmoassert"
+	"github.com/osmosis-labs/osmosis/osmoutils/osmoassert"
 	appparams "github.com/merlinslair/merlin/app/params"
 	"github.com/merlinslair/merlin/tests/e2e/configurer/config"
 	"github.com/merlinslair/merlin/tests/e2e/initialization"

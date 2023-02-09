@@ -6,7 +6,7 @@ import (
 
 	legacysimulationtype "github.com/cosmos/cosmos-sdk/types/simulation"
 
-	"github.com/merlinslair/merlin/osmoutils"
+	"github.com/osmosis-labs/osmosis/osmoutils"
 	"github.com/merlinslair/merlin/simulation/simtypes"
 	"github.com/merlinslair/merlin/x/lockup/keeper"
 	"github.com/merlinslair/merlin/x/lockup/types"

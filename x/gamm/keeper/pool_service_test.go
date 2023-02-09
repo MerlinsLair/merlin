@@ -8,8 +8,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/stretchr/testify/require"
 
-	_ "github.com/merlinslair/merlin/osmoutils"
-	"github.com/merlinslair/merlin/osmoutils/osmoassert"
+	_ "github.com/osmosis-labs/osmosis/osmoutils"
+	"github.com/osmosis-labs/osmosis/osmoutils/osmoassert"
 	"github.com/merlinslair/merlin/x/gamm/pool-models/balancer"
 	balancertypes "github.com/merlinslair/merlin/x/gamm/pool-models/balancer"
 	"github.com/merlinslair/merlin/x/gamm/pool-models/stableswap"

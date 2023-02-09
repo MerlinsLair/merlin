@@ -1,7 +1,7 @@
 package keeper
 
 import (
-	"github.com/merlinslair/merlin/osmoutils"
+	"github.com/osmosis-labs/osmosis/osmoutils"
 	"github.com/merlinslair/merlin/x/superfluid/types"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"

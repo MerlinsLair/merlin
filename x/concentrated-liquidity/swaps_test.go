@@ -6,7 +6,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/stretchr/testify/suite"
 
-	"github.com/merlinslair/merlin/osmomath"
+	"github.com/osmosis-labs/osmosis/osmomath"
 	cl "github.com/merlinslair/merlin/x/concentrated-liquidity"
 	"github.com/merlinslair/merlin/x/concentrated-liquidity/internal/math"
 	"github.com/merlinslair/merlin/x/concentrated-liquidity/types"

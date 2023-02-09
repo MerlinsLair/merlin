@@ -18,8 +18,8 @@ import (
 	iavlstore "github.com/cosmos/cosmos-sdk/store/iavl"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/merlinslair/merlin/osmoutils/sumtree"
-	v101 "github.com/merlinslair/merlin/osmoutils/sumtree/legacy/v101"
+	"github.com/osmosis-labs/osmosis/osmoutils/sumtree"
+	v101 "github.com/osmosis-labs/osmosis/osmoutils/sumtree/legacy/v101"
 )
 
 func setupStore() sdk.KVStore {

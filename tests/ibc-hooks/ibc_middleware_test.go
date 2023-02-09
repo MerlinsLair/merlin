@@ -10,7 +10,7 @@ import (
 
 	wasmkeeper "github.com/CosmWasm/wasmd/x/wasm/keeper"
 
-	"github.com/merlinslair/merlin/osmoutils"
+	"github.com/osmosis-labs/osmosis/osmoutils"
 	"github.com/merlinslair/merlin/x/gamm/pool-models/balancer"
 	gammtypes "github.com/merlinslair/merlin/x/gamm/types"
 	minttypes "github.com/merlinslair/merlin/x/mint/types"

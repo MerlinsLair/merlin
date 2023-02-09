@@ -7,7 +7,7 @@ import (
 
 	distributiontypes "github.com/cosmos/cosmos-sdk/x/distribution/types"
 
-	"github.com/merlinslair/merlin/osmoutils"
+	"github.com/osmosis-labs/osmosis/osmoutils"
 	gammtypes "github.com/merlinslair/merlin/x/gamm/types"
 	incentivestypes "github.com/merlinslair/merlin/x/incentives/types"
 	lockuptypes "github.com/merlinslair/merlin/x/lockup/types"

@@ -6,7 +6,7 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/merlinslair/merlin/osmoutils"
+	"github.com/osmosis-labs/osmosis/osmoutils"
 	"github.com/merlinslair/merlin/x/concentrated-liquidity/model"
 	types "github.com/merlinslair/merlin/x/concentrated-liquidity/types"
 	poolmanagertypes "github.com/merlinslair/merlin/x/poolmanager/types"

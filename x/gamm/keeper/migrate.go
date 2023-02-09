@@ -5,7 +5,7 @@ import (
 	"sort"
 	"time"
 
-	"github.com/merlinslair/merlin/osmoutils"
+	"github.com/osmosis-labs/osmosis/osmoutils"
 	cl "github.com/merlinslair/merlin/x/concentrated-liquidity"
 	cltypes "github.com/merlinslair/merlin/x/concentrated-liquidity/types"
 	"github.com/merlinslair/merlin/x/gamm/types"

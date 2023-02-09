@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/merlinslair/merlin/osmoutils/partialord/internal/dag"
+	"github.com/osmosis-labs/osmosis/osmoutils/partialord/internal/dag"
 )
 
 type edge struct {

@@ -3,7 +3,7 @@ package valsetprefcli
 import (
 	"github.com/spf13/cobra"
 
-	"github.com/merlinslair/merlin/osmoutils/osmocli"
+	"github.com/osmosis-labs/osmosis/osmoutils/osmocli"
 	"github.com/merlinslair/merlin/x/valset-pref/client/queryproto"
 	"github.com/merlinslair/merlin/x/valset-pref/types"
 )
