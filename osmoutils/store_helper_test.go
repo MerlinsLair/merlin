@@ -87,7 +87,7 @@ var (
 	mockError            = errors.New("mock error")
 )
 
-func TestosmocliTestSuite(t *testing.T) {
+func TestOsmoCliTestSuite(t *testing.T) {
 	suite.Run(t, new(TestSuite))
 }
 
