@@ -2,7 +2,7 @@ version: "3"
 
 services:
 
-  merlind:
+  merlin:
     image: local:merlin
     build:
       context: ../../../
@@ -14,7 +14,7 @@ services:
       - ./scripts/start.sh:/merlin/start.sh
       - ./scripts/testnetify.py:/merlin/testnetify.py
       - ./state_export.json:/merlin/state_export.json
-      - $HOME/.merlind-local/:/merlin/.merlind/
+      - $HOME/.merlin-local/:/merlin/.merlin/
     entrypoint:
       - /merlin/start.sh
     environment:

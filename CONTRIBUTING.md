@@ -327,7 +327,7 @@ You can also feel free to do `make format` if you're getting errors related to `
 
 There are several steps that go into a major release
 
-- The GitHub release is created via this [GitHub workflow](https://github.com/merlinslair/merlin/blob/main/.github/workflows/release.yml). The workflow is manually triggered from the [merlin-ci repository](https://github.com/merlinslair/merlin-ci). The workflow uses the `make build-reproducible` command to create the `merlind` binaries using the default [Makefile](https://github.com/merlinslair/merlin/blob/main/Makefile#L99).
+- The GitHub release is created via this [GitHub workflow](https://github.com/merlinslair/merlin/blob/main/.github/workflows/release.yml). The workflow is manually triggered from the [merlin-ci repository](https://github.com/merlinslair/merlin-ci). The workflow uses the `make build-reproducible` command to create the `merlin` binaries using the default [Makefile](https://github.com/merlinslair/merlin/blob/main/Makefile#L99).
 
 - Make a PR to main, with a cmervisor config, generated in tandem with the binaries from tool.
   - Should be its own PR, as it may get denied for Fork upgrades.

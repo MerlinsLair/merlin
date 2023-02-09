@@ -153,7 +153,7 @@ func ExportDeriveBalancesCmd() *cobra.Command {
 		Short: "Export a derive balances from a provided genesis export",
 		Long: `Export a derive balances from a provided genesis export
 Example:
-	merlind export-derive-balances ../genesis.json ../snapshot.json
+	merlin export-derive-balances ../genesis.json ../snapshot.json
 `,
 		Args: cobra.ExactArgs(2),
 		RunE: func(cmd *cobra.Command, args []string) error {
@@ -323,7 +323,7 @@ func StakedToCSVCmd() *cobra.Command {
 		Short: "Export a airdrop csv from a provided balances export",
 		Long: `Export a airdrop csv from a provided balances export (from export-derive-balances)
 Example:
-	merlind staked-to-csv ../balances.json ../airdrop.csv
+	merlin staked-to-csv ../balances.json ../airdrop.csv
 `,
 		Args: cobra.ExactArgs(2),
 		RunE: func(cmd *cobra.Command, args []string) error {

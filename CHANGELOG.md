@@ -130,7 +130,7 @@ Additionally, the swagger files for v13 have been updated to improve compatibili
 * [#3634](https://github.com/merlinslair/merlin/pull/3634) (Makefile) Ensure correct golang version in make build and make install. (Thank you @jhernandezb )
 * [#3712](https://github.com/merlinslair/merlin/pull/3712) replace `osmomath.BigDec` `Power` with `PowerInteger` 
 * [#3711](https://github.com/merlinslair/merlin/pull/3711) Use Dec instead of Int for additive `ErrTolerace` in `osmoutils`.
-* [3647](https://github.com/merlinslair/merlin/pull/3647), [3942](https://github.com/merlinslair/merlin/pull/3942) (CLI) re-order the command line arguments for `merlind tx gamm join-swap-share-amount-out`
+* [3647](https://github.com/merlinslair/merlin/pull/3647), [3942](https://github.com/merlinslair/merlin/pull/3942) (CLI) re-order the command line arguments for `merlin tx gamm join-swap-share-amount-out`
 
 ## v13.0.0
 
@@ -630,7 +630,7 @@ The v7 release introduces Superfluid Staking! This allows governance-approved LP
 
 * [#722](https://github.com/merlinslair/merlin/issues/722) reuse code for parsing integer slices from string
 * [#704](https://github.com/merlinslair/merlin/pull/704) fix rocksdb
-* [#666](https://github.com/merlinslair/merlin/pull/666) Fix the `--log-level` and `--log-format` commands on `merlind start`
+* [#666](https://github.com/merlinslair/merlin/pull/666) Fix the `--log-level` and `--log-format` commands on `merlin start`
 * [#655](https://github.com/merlinslair/merlin/pull/655) Make the default genesis for pool-incentives work by default
 * [97ac2a8](https://github.com/merlinslair/merlin/commit/97ac2a86303fc8966a4c169107e0945775107e67) Fix InitGenesis bug for gauges
 
@@ -726,7 +726,7 @@ This release improves the CLI UX of creating and querying gauges.
 
 ## [v1.0.1](https://github.com/merlin/merlin-labs/releases/tag/v1.0.1) - 2021-06-17
 
-This release fixes a bug in `merlind version` always displaying 0.0.1.
+This release fixes a bug in `merlin version` always displaying 0.0.1.
 
 ## [v1.0.0](https://github.com/merlin/merlin-labs/releases/tag/v1.0.0) - 2021-06-16
 

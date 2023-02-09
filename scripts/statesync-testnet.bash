@@ -14,8 +14,8 @@ set -ux
 
 
 # MAKE HOME FOLDER AND GET GENESIS
-merlind init test --chain-id mer-test-4 
-# wget -O ~/.merlind/config/genesis.json https://cloudflare-ipfs.com/ipfs/QmXRvBT3hgoXwwPqbK6a2sXUuArGM8wPyo1ybskyyUwUxs
+merlin init test --chain-id mer-test-4 
+# wget -O ~/.merlin/config/genesis.json https://cloudflare-ipfs.com/ipfs/QmXRvBT3hgoXwwPqbK6a2sXUuArGM8wPyo1ybskyyUwUxs
 
 INTERVAL=1500
 
@@ -43,4 +43,4 @@ export MERLIND_STATESYNC_TRUST_HASH=$TRUST_HASH
 
 
 # THERE, NOW IT'S SYNCED AND YOU CAN PLAY
-merlind start 
+merlin start 

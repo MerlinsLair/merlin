@@ -45,9 +45,9 @@ Examples include:
 	- Setting module initial params
 	- Setting denom metadata
 Example:
-	merlind prepare-genesis mainnet merlin-1
+	merlin prepare-genesis mainnet merlin-1
 	- Check input genesis:
-		file is at ~/.merlind/config/genesis.json
+		file is at ~/.merlin/config/genesis.json
 `,
 		Args: cobra.ExactArgs(2),
 		RunE: func(cmd *cobra.Command, args []string) error {

@@ -7,7 +7,7 @@ import (
 
 	merlin "github.com/merlinslair/merlin/app"
 	"github.com/merlinslair/merlin/app/params"
-	"github.com/merlinslair/merlin/cmd/merlind/cmd"
+	"github.com/merlinslair/merlin/cmd/merlin/cmd"
 )
 
 func main() {

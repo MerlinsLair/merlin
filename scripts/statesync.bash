@@ -17,8 +17,8 @@ go install -ldflags '-w -s -X github.com/cosmos/cosmos-sdk/types.DBBackend=pebbl
 
 
 # MAKE HOME FOLDER AND GET GENESIS
-merlind init test
-wget -O ~/.merlind/config/genesis.json https://github.com/merlinslair/merlin/raw/main/networks/merlin-1/genesis.json
+merlin init test
+wget -O ~/.merlin/config/genesis.json https://github.com/merlinslair/merlin/raw/main/networks/merlin-1/genesis.json
 
 
 INTERVAL=1500
@@ -45,4 +45,4 @@ export MERLIND_STATESYNC_TRUST_HASH=$TRUST_HASH
 
 
 # THERE, NOW IT'S SYNCED AND YOU CAN PLAY
-merlind start
+merlin start

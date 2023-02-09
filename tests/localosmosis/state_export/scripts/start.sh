@@ -2,7 +2,7 @@
 set -e 
 set -o pipefail
 
-MERLIN_HOME=$HOME/.merlind
+MERLIN_HOME=$HOME/.merlin
 CONFIG_FOLDER=$MERLIN_HOME/config
 
 DEFAULT_MNEMONIC="bottom loan skill merry east cradle onion journey palm apology verb edit desert impose absurd oil bubble sweet glove shallow size build burst effort"
@@ -41,18 +41,18 @@ then
     echo "Chain ID: $CHAIN_ID"
     echo "Moniker:  $MONIKER"
 
-    echo $MNEMONIC | merlind init -o --chain-id=$CHAIN_ID --home $MERLIN_HOME --recover $MONIKER 2> /dev/null
-    echo $MNEMONIC | merlind keys add my-key --recover --keyring-backend test > /dev/null 2>&1
+    echo $MNEMONIC | merlin init -o --chain-id=$CHAIN_ID --home $MERLIN_HOME --recover $MONIKER 2> /dev/null
+    echo $MNEMONIC | merlin keys add my-key --recover --keyring-backend test > /dev/null 2>&1
 
-    ACCOUNT_PUBKEY=$(merlind keys show --keyring-backend test my-key --pubkey | dasel -r json '.key' --plain)
-    ACCOUNT_ADDRESS=$(merlind keys show -a --keyring-backend test my-key --bech acc)
+    ACCOUNT_PUBKEY=$(merlin keys show --keyring-backend test my-key --pubkey | dasel -r json '.key' --plain)
+    ACCOUNT_ADDRESS=$(merlin keys show -a --keyring-backend test my-key --bech acc)
 
-    VALIDATOR_PUBKEY_JSON=$(merlind tendermint show-validator --home $MERLIN_HOME)
+    VALIDATOR_PUBKEY_JSON=$(merlin tendermint show-validator --home $MERLIN_HOME)
     VALIDATOR_PUBKEY=$(echo $VALIDATOR_PUBKEY_JSON | dasel -r json '.key' --plain)
-    VALIDATOR_HEX_ADDRESS=$(merlind debug pubkey $VALIDATOR_PUBKEY_JSON 2>&1 --home $MERLIN_HOME | grep Address | cut -d " " -f 2)
-    VALIDATOR_ACCOUNT_ADDRESS=$(merlind debug addr $VALIDATOR_HEX_ADDRESS 2>&1  --home $MERLIN_HOME | grep Acc | cut -d " " -f 3)
-    VALIDATOR_OPERATOR_ADDRESS=$(merlind debug addr $VALIDATOR_HEX_ADDRESS 2>&1  --home $MERLIN_HOME | grep Val | cut -d " " -f 3)
-    VALIDATOR_CONSENSUS_ADDRESS=$(merlind debug bech32-convert $VALIDATOR_OPERATOR_ADDRESS -p mervalcons  --home $MERLIN_HOME 2>&1)
+    VALIDATOR_HEX_ADDRESS=$(merlin debug pubkey $VALIDATOR_PUBKEY_JSON 2>&1 --home $MERLIN_HOME | grep Address | cut -d " " -f 2)
+    VALIDATOR_ACCOUNT_ADDRESS=$(merlin debug addr $VALIDATOR_HEX_ADDRESS 2>&1  --home $MERLIN_HOME | grep Acc | cut -d " " -f 3)
+    VALIDATOR_OPERATOR_ADDRESS=$(merlin debug addr $VALIDATOR_HEX_ADDRESS 2>&1  --home $MERLIN_HOME | grep Val | cut -d " " -f 3)
+    VALIDATOR_CONSENSUS_ADDRESS=$(merlin debug bech32-convert $VALIDATOR_OPERATOR_ADDRESS -p mervalcons  --home $MERLIN_HOME 2>&1)
 
     python3 -u testnetify.py \
     -i /merlin/state_export.json \
@@ -69,4 +69,4 @@ then
     edit_config
 fi
 
-merlind start --home $MERLIN_HOME --x-crisis-skip-assert-invariants
+merlin start --home $MERLIN_HOME --x-crisis-skip-assert-invariants

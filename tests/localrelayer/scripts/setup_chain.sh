@@ -14,7 +14,7 @@ VALIDATOR_MNEMONIC=${VALIDATOR_MNEMONIC:-$DEFAULT_VALIDATOR_MNEMONIC}
 FAUCET_MNEMONIC=${FAUCET_MNEMONIC:-$DEFAULT_FAUCET_MNEMONIC}
 RELAYER_MNEMONIC=${RELAYER_MNEMONIC:-$DEFAULT_RELAYER_MNEMONIC}
 
-MERLIN_HOME=$HOME/.merlind
+MERLIN_HOME=$HOME/.merlin
 CONFIG_FOLDER=$MERLIN_HOME/config
 
 install_prerequisites () {
@@ -70,24 +70,24 @@ add_genesis_accounts () {
     
     # Validator
     echo "⚖️ Add validator account"
-    echo $VALIDATOR_MNEMONIC | merlind keys add $VALIDATOR_MONIKER --recover --keyring-backend=test --home $MERLIN_HOME
-    VALIDATOR_ACCOUNT=$(merlind keys show -a $VALIDATOR_MONIKER --keyring-backend test --home $MERLIN_HOME)
-    merlind add-genesis-account $VALIDATOR_ACCOUNT 100000000000umer,100000000000uion,100000000000stake --home $MERLIN_HOME
+    echo $VALIDATOR_MNEMONIC | merlin keys add $VALIDATOR_MONIKER --recover --keyring-backend=test --home $MERLIN_HOME
+    VALIDATOR_ACCOUNT=$(merlin keys show -a $VALIDATOR_MONIKER --keyring-backend test --home $MERLIN_HOME)
+    merlin add-genesis-account $VALIDATOR_ACCOUNT 100000000000umer,100000000000uion,100000000000stake --home $MERLIN_HOME
     
     # Faucet
     echo "🚰 Add faucet account"
-    echo $FAUCET_MNEMONIC | merlind keys add faucet --recover --keyring-backend=test --home $MERLIN_HOME
-    FAUCET_ACCOUNT=$(merlind keys show -a faucet --keyring-backend test --home $MERLIN_HOME)
-    merlind add-genesis-account $FAUCET_ACCOUNT 100000000000umer,100000000000uion,100000000000stake --home $MERLIN_HOME
+    echo $FAUCET_MNEMONIC | merlin keys add faucet --recover --keyring-backend=test --home $MERLIN_HOME
+    FAUCET_ACCOUNT=$(merlin keys show -a faucet --keyring-backend test --home $MERLIN_HOME)
+    merlin add-genesis-account $FAUCET_ACCOUNT 100000000000umer,100000000000uion,100000000000stake --home $MERLIN_HOME
 
     # Relayer
     echo "🔗 Add relayer account"
-    echo $RELAYER_MNEMONIC | merlind keys add relayer --recover --keyring-backend=test --home $MERLIN_HOME
-    RELAYER_ACCOUNT=$(merlind keys show -a relayer --keyring-backend test --home $MERLIN_HOME)
-    merlind add-genesis-account $RELAYER_ACCOUNT 1000000000umer,1000000000uion,1000000000stake --home $MERLIN_HOME
+    echo $RELAYER_MNEMONIC | merlin keys add relayer --recover --keyring-backend=test --home $MERLIN_HOME
+    RELAYER_ACCOUNT=$(merlin keys show -a relayer --keyring-backend test --home $MERLIN_HOME)
+    merlin add-genesis-account $RELAYER_ACCOUNT 1000000000umer,1000000000uion,1000000000stake --home $MERLIN_HOME
     
-    merlind gentx $VALIDATOR_MONIKER 500000000umer --keyring-backend=test --chain-id=$CHAIN_ID --home $MERLIN_HOME
-    merlind collect-gentxs --home $MERLIN_HOME
+    merlin gentx $VALIDATOR_MONIKER 500000000umer --keyring-backend=test --chain-id=$CHAIN_ID --home $MERLIN_HOME
+    merlin collect-gentxs --home $MERLIN_HOME
 }
 
 edit_config () {
@@ -102,11 +102,11 @@ if [[ ! -d $CONFIG_FOLDER ]]
 then
     install_prerequisites
     echo "🧪 Creating Merlin home for $VALIDATOR_MONIKER"
-    echo $VALIDATOR_MNEMONIC | merlind init -o --chain-id=$CHAIN_ID --home $MERLIN_HOME --recover $VALIDATOR_MONIKER
+    echo $VALIDATOR_MNEMONIC | merlin init -o --chain-id=$CHAIN_ID --home $MERLIN_HOME --recover $VALIDATOR_MONIKER
     edit_genesis
     add_genesis_accounts
     edit_config
 fi
 
 echo "🏁 Starting $CHAIN_ID..."
-merlind start --home $MERLIN_HOME
+merlin start --home $MERLIN_HOME

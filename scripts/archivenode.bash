@@ -30,9 +30,9 @@ git checkout v3.x
 go mod edit -replace github.com/tendermint/tm-db=github.com/notional-labs/tm-db@136c7b6
 go mod tidy
 go install -ldflags '-w -s -X github.com/cosmos/cosmos-sdk/types.DBBackend=pebbledb' -tags pebbledb ./...
-merlind init speedrun
-wget -O ~/.merlind/config/genesis.json https://github.com/merlin-labs/networks/raw/main/merlin-1/genesis.json
-merlind start --db_backend pebbledb
+merlin init speedrun
+wget -O ~/.merlin/config/genesis.json https://github.com/merlin-labs/networks/raw/main/merlin-1/genesis.json
+merlin start --db_backend pebbledb
 git reset --hard
 
 # VERSION FOUR
@@ -41,7 +41,7 @@ git checkout v4.x
 go mod edit -replace github.com/tendermint/tm-db=github.com/notional-labs/tm-db@136c7b6
 go mod tidy
 go install -ldflags '-w -s -X github.com/cosmos/cosmos-sdk/types.DBBackend=pebbledb' -tags pebbledb ./...
-merlind start --db_backend pebbledb
+merlin start --db_backend pebbledb
 git reset --hard
 
 
@@ -51,7 +51,7 @@ git checkout v6.x
 go mod edit -replace github.com/tendermint/tm-db=github.com/notional-labs/tm-db@136c7b6
 go mod tidy
 go install -ldflags '-w -s -X github.com/cosmos/cosmos-sdk/types.DBBackend=pebbledb' -tags pebbledb ./...
-merlind start --db_backend pebbledb
+merlin start --db_backend pebbledb
 git reset --hard
 
 
@@ -62,7 +62,7 @@ git checkout v7.x
 go mod edit -replace github.com/tendermint/tm-db=github.com/notional-labs/tm-db@136c7b6
 go mod tidy
 go install -ldflags '-w -s -X github.com/cosmos/cosmos-sdk/types.DBBackend=pebbledb' -tags pebbledb ./...
-merlind start --db_backend pebbledb
+merlin start --db_backend pebbledb
 git reset --hard
 
 
@@ -73,7 +73,7 @@ git checkout v8.x
 go mod edit -replace github.com/tendermint/tm-db=github.com/notional-labs/tm-db@136c7b6
 go mod tidy
 go install -ldflags '-w -s -X github.com/cosmos/cosmos-sdk/types.DBBackend=pebbledb' -tags pebbledb ./...
-merlind start --db_backend pebbledb
+merlin start --db_backend pebbledb
 git reset --hard
 
 
@@ -82,8 +82,8 @@ echo "v9 took" >> howlong
 git checkout v9.x
 go mod edit -replace github.com/tendermint/tm-db=github.com/notional-labs/tm-db@136c7b6
 go mod tidy
-go install -ldflags '-w -s -X github.com/cosmos/cosmos-sdk/types.DBBackend=pebbledb' -tags pebbledb ./...time merlind start --db_backend pebbledb
-merlind start --db_backend pebbledb
+go install -ldflags '-w -s -X github.com/cosmos/cosmos-sdk/types.DBBackend=pebbledb' -tags pebbledb ./...time merlin start --db_backend pebbledb
+merlin start --db_backend pebbledb
 git reset --hard
 
 
@@ -93,5 +93,5 @@ git checkout v10.x
 go mod edit -replace github.com/tendermint/tm-db=github.com/notional-labs/tm-db@136c7b6
 go mod tidy
 go install -ldflags '-w -s -X github.com/cosmos/cosmos-sdk/types.DBBackend=pebbledb' -tags pebbledb ./...
-merlind start --db_backend pebbledb
+merlin start --db_backend pebbledb
 

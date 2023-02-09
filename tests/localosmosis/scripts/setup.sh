@@ -1,7 +1,7 @@
 #!/bin/sh
 
 CHAIN_ID=localmerlin
-MERLIN_HOME=$HOME/.merlind
+MERLIN_HOME=$HOME/.merlin
 CONFIG_FOLDER=$MERLIN_HOME/config
 MONIKER=val
 STATE='false'
@@ -67,24 +67,24 @@ edit_genesis () {
 
 add_genesis_accounts () {
 
-    merlind add-genesis-account mer12smx2wdlyttvyzvzg54y2vnqwq2qjateuf7thj 100000000000umer,100000000000uion,100000000000stake --home $MERLIN_HOME
-    merlind add-genesis-account mer1cyyzpxplxdzkeea7kwsydadg87357qnahakaks 100000000000umer,100000000000uion,100000000000stake --home $MERLIN_HOME
-    merlind add-genesis-account mer18s5lynnmx37hq4wlrw9gdn68sg2uxp5rgk26vv 100000000000umer,100000000000uion,100000000000stake --home $MERLIN_HOME
-    merlind add-genesis-account mer1qwexv7c6sm95lwhzn9027vyu2ccneaqad4w8ka 100000000000umer,100000000000uion,100000000000stake --home $MERLIN_HOME
-    merlind add-genesis-account mer14hcxlnwlqtq75ttaxf674vk6mafspg8xwgnn53 100000000000umer,100000000000uion,100000000000stake --home $MERLIN_HOME
-    merlind add-genesis-account mer12rr534cer5c0vj53eq4y32lcwguyy7nndt0u2t 100000000000umer,100000000000uion,100000000000stake --home $MERLIN_HOME
-    merlind add-genesis-account mer1nt33cjd5auzh36syym6azgc8tve0jlvklnq7jq 100000000000umer,100000000000uion,100000000000stake --home $MERLIN_HOME
-    merlind add-genesis-account mer10qfrpash5g2vk3hppvu45x0g860czur8ff5yx0 100000000000umer,100000000000uion,100000000000stake --home $MERLIN_HOME
-    merlind add-genesis-account mer1f4tvsdukfwh6s9swrc24gkuz23tp8pd3e9r5fa 100000000000umer,100000000000uion,100000000000stake --home $MERLIN_HOME
-    merlind add-genesis-account mer1myv43sqgnj5sm4zl98ftl45af9cfzk7nhjxjqh 100000000000umer,100000000000uion,100000000000stake --home $MERLIN_HOME
-    merlind add-genesis-account mer14gs9zqh8m49yy9kscjqu9h72exyf295afg6kgk 100000000000umer,100000000000uion,100000000000stake --home $MERLIN_HOME
-    merlind add-genesis-account mer1jllfytsz4dryxhz5tl7u73v29exsf80vz52ucc 1000000000000umer,1000000000000uion,1000000000000stake --home $MERLIN_HOME
+    merlin add-genesis-account mer12smx2wdlyttvyzvzg54y2vnqwq2qjateuf7thj 100000000000umer,100000000000uion,100000000000stake --home $MERLIN_HOME
+    merlin add-genesis-account mer1cyyzpxplxdzkeea7kwsydadg87357qnahakaks 100000000000umer,100000000000uion,100000000000stake --home $MERLIN_HOME
+    merlin add-genesis-account mer18s5lynnmx37hq4wlrw9gdn68sg2uxp5rgk26vv 100000000000umer,100000000000uion,100000000000stake --home $MERLIN_HOME
+    merlin add-genesis-account mer1qwexv7c6sm95lwhzn9027vyu2ccneaqad4w8ka 100000000000umer,100000000000uion,100000000000stake --home $MERLIN_HOME
+    merlin add-genesis-account mer14hcxlnwlqtq75ttaxf674vk6mafspg8xwgnn53 100000000000umer,100000000000uion,100000000000stake --home $MERLIN_HOME
+    merlin add-genesis-account mer12rr534cer5c0vj53eq4y32lcwguyy7nndt0u2t 100000000000umer,100000000000uion,100000000000stake --home $MERLIN_HOME
+    merlin add-genesis-account mer1nt33cjd5auzh36syym6azgc8tve0jlvklnq7jq 100000000000umer,100000000000uion,100000000000stake --home $MERLIN_HOME
+    merlin add-genesis-account mer10qfrpash5g2vk3hppvu45x0g860czur8ff5yx0 100000000000umer,100000000000uion,100000000000stake --home $MERLIN_HOME
+    merlin add-genesis-account mer1f4tvsdukfwh6s9swrc24gkuz23tp8pd3e9r5fa 100000000000umer,100000000000uion,100000000000stake --home $MERLIN_HOME
+    merlin add-genesis-account mer1myv43sqgnj5sm4zl98ftl45af9cfzk7nhjxjqh 100000000000umer,100000000000uion,100000000000stake --home $MERLIN_HOME
+    merlin add-genesis-account mer14gs9zqh8m49yy9kscjqu9h72exyf295afg6kgk 100000000000umer,100000000000uion,100000000000stake --home $MERLIN_HOME
+    merlin add-genesis-account mer1jllfytsz4dryxhz5tl7u73v29exsf80vz52ucc 1000000000000umer,1000000000000uion,1000000000000stake --home $MERLIN_HOME
 
-    echo $MNEMONIC | merlind keys add $MONIKER --recover --keyring-backend=test --home $MERLIN_HOME
-    echo $POOLSMNEMONIC | merlind keys add pools --recover --keyring-backend=test --home $MERLIN_HOME
-    merlind gentx $MONIKER 500000000umer --keyring-backend=test --chain-id=$CHAIN_ID --home $MERLIN_HOME
+    echo $MNEMONIC | merlin keys add $MONIKER --recover --keyring-backend=test --home $MERLIN_HOME
+    echo $POOLSMNEMONIC | merlin keys add pools --recover --keyring-backend=test --home $MERLIN_HOME
+    merlin gentx $MONIKER 500000000umer --keyring-backend=test --chain-id=$CHAIN_ID --home $MERLIN_HOME
 
-    merlind collect-gentxs --home $MERLIN_HOME
+    merlin collect-gentxs --home $MERLIN_HOME
 }
 
 edit_config () {
@@ -100,7 +100,7 @@ create_two_asset_pool () {
     substring='code: 0'
     COUNTER=0
     while [ $COUNTER -lt 15 ]; do
-        string=$(merlind tx gamm create-pool --pool-file=$1 --from pools --chain-id=$CHAIN_ID --home $MERLIN_HOME --keyring-backend=test -b block --yes  2>&1)
+        string=$(merlin tx gamm create-pool --pool-file=$1 --from pools --chain-id=$CHAIN_ID --home $MERLIN_HOME --keyring-backend=test -b block --yes  2>&1)
         if [ "$string" != "${string%"$substring"*}" ]; then
             echo "create two asset pool: successful"
             break
@@ -116,7 +116,7 @@ create_three_asset_pool () {
     substring='code: 0'
     COUNTER=0
     while [ $COUNTER -lt 15 ]; do
-        string=$(merlind tx gamm create-pool --pool-file=nativeDenomThreeAssetPool.json --from pools --chain-id=$CHAIN_ID --home $MERLIN_HOME --keyring-backend=test -b block --yes 2>&1)
+        string=$(merlin tx gamm create-pool --pool-file=nativeDenomThreeAssetPool.json --from pools --chain-id=$CHAIN_ID --home $MERLIN_HOME --keyring-backend=test -b block --yes 2>&1)
         if [ "$string" != "${string%"$substring"*}" ]; then
             echo "create three asset pool: successful"
             break
@@ -129,14 +129,14 @@ create_three_asset_pool () {
 
 if [[ ! -d $CONFIG_FOLDER ]]
 then
-    echo $MNEMONIC | merlind init -o --chain-id=$CHAIN_ID --home $MERLIN_HOME --recover $MONIKER
+    echo $MNEMONIC | merlin init -o --chain-id=$CHAIN_ID --home $MERLIN_HOME --recover $MONIKER
     install_prerequisites
     edit_genesis
     add_genesis_accounts
     edit_config
 fi
 
-merlind start --home $MERLIN_HOME &
+merlin start --home $MERLIN_HOME &
 
 if [[ $STATE == 'true' ]]
 then

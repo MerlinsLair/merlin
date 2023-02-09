@@ -137,7 +137,7 @@ service Query {
 Query the currently running epochInfos
 
 ```sh
-merlind query epochs epoch-infos
+merlin query epochs epoch-infos
 ```
 
 ::: details Example
@@ -169,7 +169,7 @@ epochs:
 Query the current epoch by the specified identifier
 
 ```sh
-merlind query epochs current-epoch [identifier]
+merlin query epochs current-epoch [identifier]
 ```
 
 ::: details Example
@@ -177,7 +177,7 @@ merlind query epochs current-epoch [identifier]
 Query the current `day` epoch:
 
 ```sh
-merlind query epochs current-epoch day
+merlin query epochs current-epoch day
 ```
 
 Which in this example outputs:

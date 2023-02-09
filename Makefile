@@ -57,7 +57,7 @@ build_tags_comma_sep := $(subst $(whitespace),$(comma),$(build_tags))
 # process linker flags
 
 ldflags = -X github.com/cosmos/cosmos-sdk/version.Name=merlin \
-		  -X github.com/cosmos/cosmos-sdk/version.AppName=merlind \
+		  -X github.com/cosmos/cosmos-sdk/version.AppName=merlin \
 		  -X github.com/cosmos/cosmos-sdk/version.Version=$(VERSION) \
 		  -X github.com/cosmos/cosmos-sdk/version.Commit=$(COMMIT) \
 		  -X "github.com/cosmos/cosmos-sdk/version.BuildTags=$(build_tags_comma_sep)"
@@ -124,7 +124,7 @@ build-reproducible-amd64: go.sum $(BUILDDIR)/
 		-f Dockerfile .
 	$(DOCKER) rm -f merbinary || true
 	$(DOCKER) create -ti --name merbinary merlin:local-amd64
-	$(DOCKER) cp merbinary:/bin/merlind $(BUILDDIR)/merlind-linux-amd64
+	$(DOCKER) cp merbinary:/bin/merlin $(BUILDDIR)/merlin-linux-amd64
 	$(DOCKER) rm -f merbinary
 
 build-reproducible-arm64: go.sum $(BUILDDIR)/
@@ -141,7 +141,7 @@ build-reproducible-arm64: go.sum $(BUILDDIR)/
 		-f Dockerfile .
 	$(DOCKER) rm -f merbinary || true
 	$(DOCKER) create -ti --name merbinary merlin:local-arm64
-	$(DOCKER) cp merbinary:/bin/merlind $(BUILDDIR)/merlind-linux-arm64
+	$(DOCKER) cp merbinary:/bin/merlin $(BUILDDIR)/merlin-linux-arm64
 	$(DOCKER) rm -f merbinary
 
 build-linux: go.sum
@@ -162,7 +162,7 @@ go.sum: go.mod
 draw-deps:
 	@# requires brew install graphviz or apt-get install graphviz
 	go get github.com/RobotsAndPencils/goviz
-	@goviz -i ./cmd/merlind -d 2 | dot -Tpng -o dependency-graph.png
+	@goviz -i ./cmd/merlin -d 2 | dot -Tpng -o dependency-graph.png
 
 clean:
 	rm -rf $(CURDIR)/artifacts/
@@ -411,7 +411,7 @@ localnet-stop:
 	@STATE="" docker-compose -f tests/localmerlin/docker-compose.yml down
 
 localnet-clean:
-	@rm -rfI $(HOME)/.merlind-local/
+	@rm -rfI $(HOME)/.merlin-local/
 
 localnet-state-export-init: localnet-state-export-clean localnet-state-export-build 
 

@@ -109,7 +109,7 @@ The faucet used is `confio/faucet:0.28.11`. The source code and additional docum
 Create a new account:
 
 ```bash
-❯ merlind keys add my-account --keyring-backend test
+❯ merlin keys add my-account --keyring-backend test
 
 - name: my-account
   type: local

@@ -236,7 +236,7 @@ contain valid denominations. Accounts may optionally be supplied with vesting pa
 // Both OSMO and ION recipients. If erroring, ensure to 'git lfs pull'
 
 // Example:
-// 	merlind import-genesis-accounts-from-snapshot networks/cosmoshub-3/snapshot.json networks/merlin-1/ions.json output_address.json
+// 	merlin import-genesis-accounts-from-snapshot networks/cosmoshub-3/snapshot.json networks/merlin-1/ions.json output_address.json
 // `,
 // 		Args: cobra.ExactArgs(3),
 // 		RunE: func(cmd *cobra.Command, args []string) error {
@@ -298,9 +298,9 @@ contain valid denominations. Accounts may optionally be supplied with vesting pa
 
 // Must also pass in an ions.json file to airdrop genesis ions
 // Example:
-// 	merlind import-genesis-accounts-from-snapshot ../snapshot.json ../ions.json
+// 	merlin import-genesis-accounts-from-snapshot ../snapshot.json ../ions.json
 // 	- Check input genesis:
-// 		file is at ~/.merlind/config/genesis.json
+// 		file is at ~/.merlin/config/genesis.json
 // `,
 // 		Args: cobra.ExactArgs(2),
 // 		RunE: func(cmd *cobra.Command, args []string) error {

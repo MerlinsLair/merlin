@@ -8,7 +8,7 @@ import (
 )
 
 // Executes prop214, https://www.mintscan.io/merlin/proposals/214
-// Run `merlind q gov proposal 214` to see the text.
+// Run `merlin q gov proposal 214` to see the text.
 // It was voted in, and it has update instructions:
 // Voting YES for this proposal would reduce the Pool 1 (OSMO/ATOM) swap fee from 0.3% to 0.2%
 func ExecuteProp214(ctx sdk.Context, gamm *gammkeeper.Keeper) {

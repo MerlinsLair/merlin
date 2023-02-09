@@ -140,14 +140,14 @@ type MerlinApp struct {
 	configurator module.Configurator
 }
 
-// init sets DefaultNodeHome to default merlind install location.
+// init sets DefaultNodeHome to default merlin install location.
 func init() {
 	userHomeDir, err := os.UserHomeDir()
 	if err != nil {
 		panic(err)
 	}
 
-	DefaultNodeHome = filepath.Join(userHomeDir, ".merlind")
+	DefaultNodeHome = filepath.Join(userHomeDir, ".merlin")
 }
 
 // initReusablePackageInjections injects data available within merlin into the reusable packages.

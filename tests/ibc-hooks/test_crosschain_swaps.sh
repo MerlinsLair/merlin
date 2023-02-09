@@ -8,14 +8,14 @@
 set -o errexit -o nounset -o pipefail -o xtrace
 shopt -s expand_aliases
 
-alias chainA="merlind --node http://localhost:26657 --chain-id localmerlin-a"
-alias chainB="merlind --node http://localhost:36657 --chain-id localmerlin-b"
+alias chainA="merlin --node http://localhost:26657 --chain-id localmerlin-a"
+alias chainB="merlin --node http://localhost:36657 --chain-id localmerlin-b"
 
 # setup the keys
-echo "bottom loan skill merry east cradle onion journey palm apology verb edit desert impose absurd oil bubble sweet glove shallow size build burst effort" | merlind --keyring-backend test keys add validator --recover || echo "key exists"
-echo "increase bread alpha rigid glide amused approve oblige print asset idea enact lawn proof unfold jeans rabbit audit return chuckle valve rather cactus great" | merlind --keyring-backend test keys add faucet --recover || echo "key exists"
+echo "bottom loan skill merry east cradle onion journey palm apology verb edit desert impose absurd oil bubble sweet glove shallow size build burst effort" | merlin --keyring-backend test keys add validator --recover || echo "key exists"
+echo "increase bread alpha rigid glide amused approve oblige print asset idea enact lawn proof unfold jeans rabbit audit return chuckle valve rather cactus great" | merlin --keyring-backend test keys add faucet --recover || echo "key exists"
 
-export VALIDATOR=$(merlind keys show validator -a)
+export VALIDATOR=$(merlin keys show validator -a)
 export CHANNEL_ID="channel-0"
 args="--keyring-backend test --gas auto --gas-prices 0.1umer --gas-adjustment 1.3 --broadcast-mode block --yes"
 TX_FLAGS=($args)

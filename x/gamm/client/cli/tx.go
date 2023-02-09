@@ -167,7 +167,7 @@ func NewStableSwapAdjustScalingFactorsCmd() *cobra.Command {
 	cmd := osmocli.TxCliDesc{
 		Use:              "adjust-scaling-factors --pool-id=[pool-id] --scaling-factors=[scaling-factors]",
 		Short:            "adjust scaling factors",
-		Example:          "merlind adjust-scaling-factors --pool-id=1 --scaling-factors=\"100, 100\"",
+		Example:          "merlin adjust-scaling-factors --pool-id=1 --scaling-factors=\"100, 100\"",
 		NumArgs:          0,
 		ParseAndBuildMsg: NewStableSwapAdjustScalingFactorsMsg,
 	}.BuildCommandCustomFn()

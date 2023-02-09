@@ -105,10 +105,10 @@ cd merlin
 git checkout gentx-launch
 ```
 
-## Install merlind
+## Install merlin
 
 You can now build Merlin node software. Running the following command
-will install the executable merlind (Merlin node daemon) to your
+will install the executable merlin (Merlin node daemon) to your
 GOPATH.
 
 ``` {.sh}
@@ -121,10 +121,10 @@ Verify that everything is OK. If you get something *like* the following,
 you've successfully installed Merlin on your system.
 
 ``` {.sh}
-merlind version --long
+merlin version --long
 
 name: merlin
-server_name: merlind
+server_name: merlin
 version: '"0.0.1"'
 commit: 197171b8fcb364bd2c5c2fbb2532eab3f5e8517c
 build_tags: netgo,ledger
@@ -132,28 +132,28 @@ go: go version go1.16.3 darwin/amd64
 ```
 
 If the software version does not match, then please check your `$PATH`
-to ensure the correct `merlind` is running.
+to ensure the correct `merlin` is running.
 
-### Save your Chain ID in merlind config
+### Save your Chain ID in merlin config
 
-We recommend saving the mainnet `chain-id` into your `merlind`'s
+We recommend saving the mainnet `chain-id` into your `merlin`'s
 client.toml. This will make it so you do not have to manually pass in
 the chain-id flag for every CLI command.
 
 ``` {.sh}
-merlind config chain-id merlin-1
+merlin config chain-id merlin-1
 ```
 
 ### Initialize your Node
 
 Now that your software is installed, you can initialize the directory
-for merlind.
+for merlin.
 
 ``` {.sh}
-merlind init --chain-id=merlin-1 <your_moniker>
+merlin init --chain-id=merlin-1 <your_moniker>
 ```
 
-This will create a new `.merlind` folder in your HOME directory.
+This will create a new `.merlin` folder in your HOME directory.
 
 ### Download Pregenesis File
 
@@ -161,8 +161,8 @@ You can now download the "pregenesis" file for the chain. This is a
 genesis file with the chain-id and airdrop balances.
 
 ``` {.sh}
-cd $HOME/.merlind/config/
-curl https://raw.githubusercontent.com/merlin-labs/networks/main/merlin-1/pregenesis.json > $HOME/.merlind/config/genesis.json
+cd $HOME/.merlin/config/
+curl https://raw.githubusercontent.com/merlin-labs/networks/main/merlin-1/pregenesis.json > $HOME/.merlin/config/genesis.json
 ```
 
 ### Import Validator Key
@@ -170,9 +170,9 @@ curl https://raw.githubusercontent.com/merlin-labs/networks/main/merlin-1/pregen
 The create a gentx, you will need the private key to an address that
 received an allocation in the airdrop.
 
-There are a couple options for how to import a key into `merlind`.
+There are a couple options for how to import a key into `merlin`.
 
-You can import such a key into `merlind` via a mnemonic or exporting
+You can import such a key into `merlin` via a mnemonic or exporting
 and importing a keyfile from an existing CLI.
 
 #### Import Via Mnemonic
@@ -181,13 +181,13 @@ To import via mnemonic, you can do so using the following command and
 then input your mnemonic when prompted.
 
 ``` {.sh}
-merlind keys add <key_name> --recover
+merlin keys add <key_name> --recover
 ```
 
 #### Import From Another CLI
 
 If you have the private key saved in the keystore of another CLI (such
-as gaiad), you can easily import it into `merlind` using the following
+as gaiad), you can easily import it into `merlin` using the following
 steps.
 
 1. Export the key from an existing keystore. In this example we will
@@ -202,12 +202,12 @@ gaiad keys export <original_key_name>
     `BEGIN TENDERMINT PRIVATE KEY` and ending with the line that says
     `END TENDERMINT PRIVATE KEY` into a txt file somewhere on your
     machine.
-3. Import the key into `merlind` using the following command. When
+3. Import the key into `merlin` using the following command. When
     prompted for a password, use the same password used in step 1 to
     encrypt the keyfile.
 
 ``` {.sh}
-merlind keys import <new_key_name> ./path/to/key.txt 
+merlin keys import <new_key_name> ./path/to/key.txt 
 ```
 
 4. Delete the keyfile from your machine.
@@ -219,7 +219,7 @@ as adding a ledger key to the CLI normally. You can connect a Ledger
 device with the Cmers app open and then run:
 
 ``` {.sh}
-merlind keys add <key_name> --ledger
+merlin keys add <key_name> --ledger
 ```
 
 and follow any prompts.
@@ -233,7 +233,7 @@ If you are using Tendermint's native `priv_validator.json` as your
 consensus key, you display your validator public key using the following
 command
 
-    merlind tendermint show-validator
+    merlin tendermint show-validator
 
 The pubkey should be formatted with the bech32 prefix `mervalconspub1`.
 
@@ -270,7 +270,7 @@ If you would like to override the memo field, use the `--ip` and
 An example genesis command would thus look like:
 
 ``` {.sh}
-merlind gentx <key_name> 1000000umer \
+merlin gentx <key_name> 1000000umer \
   --chain-id="merlin-1" \
   --moniker=merlinwhale \
   --website="https://merlin.zone" \
@@ -286,11 +286,11 @@ merlind gentx <key_name> 1000000umer \
 It will show an output something similar to:
 
 ``` {.sh}
-Genesis transaction written to "/Users/ubuntu/.merlind/config/gentx/gentx-eb3b1768d00e66ef83acb1eee59e1d3a35cf76fc.json"
+Genesis transaction written to "/Users/ubuntu/.merlin/config/gentx/gentx-eb3b1768d00e66ef83acb1eee59e1d3a35cf76fc.json"
 ```
 
 The result should look something like this [sample gentx
-file](%22/Users/sunnya97/.merlind/config/gentx/gentx-eb3b1768d00e66ef83acb1eee59e1d3a35cf76fc.json).
+file](%22/Users/sunnya97/.merlin/config/gentx/gentx-eb3b1768d00e66ef83acb1eee59e1d3a35cf76fc.json).
 
 ### Submit Your GenTx
 
@@ -316,7 +316,7 @@ git clone https://github.com/<your_github_username>/networks
     correct folder)
 
 ``` {.sh}
-cp ~/.merlind/config/gentx/gentx-<your-moniker>.json networks/merlin-1/gentxs/
+cp ~/.merlin/config/gentx/gentx-<your-moniker>.json networks/merlin-1/gentxs/
 ```
 
 5. Commit and push to your repo.
@@ -360,7 +360,7 @@ This guide assumes that you have completed the tasks involved in [Part
 1](#setting-up-a-genesis-merlin-validator). You should be running on a
 machine that meets the [hardware requirements specified in Part
 1](#hardware) with [Go installed](#install-go). We are assuming you
-already have a daemon home (\$HOME/.merlind) setup.
+already have a daemon home (\$HOME/.merlin) setup.
 
 These instructions are for creating a basic setup on a single node.
 Validators should modify these instructions for their own custom setups
@@ -370,7 +370,7 @@ These examples are written targeting an Ubuntu 20.04 system. Relevant
 changes to commands should be made depending on the OS/architecture you
 are running on.
 
-### Update merlind to v1.0.0
+### Update merlin to v1.0.0
 
 For the gentx creation, we used the `gentx-launch` branch of the
 [Merlin codebase](https://github.com/merlinslair/merlin).
@@ -394,10 +394,10 @@ you've successfully installed Merlin on your system. (scroll up to see
 above the list of dependencies)
 
 ``` {.sh}
-merlind version --long
+merlin version --long
 
 name: merlin
-server_name: merlind
+server_name: merlin
 version: '"1.0.1"'
 commit: a20dab6d638da0883f9fbb9f5bd222affb8700ad
 build_tags: netgo,ledger
@@ -405,9 +405,9 @@ go: go version go1.16.3 darwin/amd64
 ```
 
 If the software version does not match, then please check your `$PATH`
-to ensure the correct `merlind` is running.
+to ensure the correct `merlin` is running.
 
-### Save your Chain ID in merlind config
+### Save your Chain ID in merlin config
 
 Merlin reintroduces the client-side config that was removed in earlier
 Stargate versions of the Cmers SDK.
@@ -417,7 +417,7 @@ client.toml. This will make it so you do not have to manually pass in
 the chain-id flag for every CLI command.
 
 ``` {.sh}
-merlind config chain-id merlin-1
+merlin config chain-id merlin-1
 ```
 
 ### Install and setup Cmervisor
@@ -447,14 +447,14 @@ cd $HOME
 ```
 
 After this, you must make the necessary folders for cosmosvisor in your
-daemon home directory (\~/.merlind).
+daemon home directory (\~/.merlin).
 
 ``` {.sh}
-mkdir -p ~/.merlind
-mkdir -p ~/.merlind/cmervisor
-mkdir -p ~/.merlind/cmervisor/genesis
-mkdir -p ~/.merlind/cmervisor/genesis/bin
-mkdir -p ~/.merlind/cmervisor/upgrades
+mkdir -p ~/.merlin
+mkdir -p ~/.merlin/cmervisor
+mkdir -p ~/.merlin/cmervisor/genesis
+mkdir -p ~/.merlin/cmervisor/genesis/bin
+mkdir -p ~/.merlin/cmervisor/upgrades
 ```
 
 Cmervisor requires some ENVIRONMENT VARIABLES be set in order to
@@ -462,15 +462,15 @@ function properly. We recommend setting these in your `.profile` so it
 is automatically set in every session.
 
     echo "# Setup Cmervisor" >> ~/.profile
-    echo "export DAEMON_NAME=merlind" >> ~/.profile
-    echo "export DAEMON_HOME=$HOME/.merlind" >> ~/.profile
+    echo "export DAEMON_NAME=merlin" >> ~/.profile
+    echo "export DAEMON_HOME=$HOME/.merlin" >> ~/.profile
     echo 'export PATH="$DAEMON_HOME/cmervisor/current/bin:$PATH"' >> ~/.profile
     source ~/.profile
 
-Finally, you should move the merlind binary into the cmervisor/genesis
+Finally, you should move the merlin binary into the cmervisor/genesis
 folder.
 
-    mv $GOPATH/bin/merlind ~/.merlind/cmervisor/genesis/bin
+    mv $GOPATH/bin/merlin ~/.merlin/cmervisor/genesis/bin
 
 ### Download Genesis File
 
@@ -478,13 +478,13 @@ You can now download the "genesis" file for the chain. It is pre-filled
 with the entire genesis state and gentxs.
 
 ``` {.sh}
-curl https://media.githubusercontent.com/media/merlin-labs/networks/main/merlin-1/genesis.json > ~/.merlind/config/genesis.json
+curl https://media.githubusercontent.com/media/merlin-labs/networks/main/merlin-1/genesis.json > ~/.merlin/config/genesis.json
 ```
 
 ### Updates to config files
 
 You should review the config.toml and app.toml that was generated when
-you ran `merlind init` last time.
+you ran `merlin init` last time.
 
 A couple things to highlight especially:
 
@@ -515,7 +515,7 @@ There shouldn't be any chain database yet, but in case there is for some
 reason, you should reset it.
 
 ``` {.sh}
-merlind unsafe-reset-all
+merlin unsafe-reset-all
 ```
 
 ### Start your node
@@ -530,7 +530,7 @@ You will need some way to keep the process always running. If you're on
 linux, you can do this by creating a service.
 
 ``` {.sh}
-sudo tee /etc/systemd/system/merlind.service > /dev/null <<EOF  
+sudo tee /etc/systemd/system/merlin.service > /dev/null <<EOF  
 [Unit]
 Description=Merlin Daemon
 After=network-online.target
@@ -542,8 +542,8 @@ Restart=always
 RestartSec=3
 LimitNOFILE=infinity
 
-Environment="DAEMON_HOME=$HOME/.merlind"
-Environment="DAEMON_NAME=merlind"
+Environment="DAEMON_HOME=$HOME/.merlin"
+Environment="DAEMON_NAME=merlin"
 Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=false"
 Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
 
@@ -556,14 +556,14 @@ Then update and start the node
 
 ``` {.sh}
 sudo -S systemctl daemon-reload
-sudo -S systemctl enable merlind
-sudo -S systemctl start merlind
+sudo -S systemctl enable merlin
+sudo -S systemctl start merlin
 ```
 
 You can check the status with:
 
 ``` {.sh}
-systemctl status merlind
+systemctl status merlin
 ```
 
 ## Conclusion

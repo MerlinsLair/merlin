@@ -4,9 +4,9 @@
 CODE=1
 CHAIN_ID=wasm-2
 
-merlind keys add demo --keyring-backend test
-VAL=$(merlind keys show -a validator --keyring-backend test)
-DEMO=$(merlind keys show -a demo --keyring-backend test)
+merlin keys add demo --keyring-backend test
+VAL=$(merlin keys show -a validator --keyring-backend test)
+DEMO=$(merlin keys show -a demo --keyring-backend test)
 
 # string interpolation in JSON blobs in bash just sucks... I usually use cosmjs for this, but that takes more setup to run.
 INIT=$(cat <<EOF
@@ -22,7 +22,7 @@ INIT=$(cat <<EOF
 EOF
 )
 
-merlind tx wasm instantiate $CODE "$INIT" --label "First Coin" --no-admin --from validator \
+merlin tx wasm instantiate $CODE "$INIT" --label "First Coin" --no-admin --from validator \
     --keyring-backend test --chain-id $CHAIN_ID -y -b block --gas 500000 --gas-prices 0.025stake
 
 # Ideally we could parse the results of above, this will always be the address of the first contract with code id 1
@@ -39,9 +39,9 @@ EOF
 
 # check initial balance
 echo "Validator Balance:"
-merlind query wasm contract-state smart $CONTRACT "$QUERY"
+merlin query wasm contract-state smart $CONTRACT "$QUERY"
 echo "Demo Balance:"
-merlind query wasm contract-state smart $CONTRACT "$QUERY_DEMO"
+merlin query wasm contract-state smart $CONTRACT "$QUERY_DEMO"
 
 # send some tokens
 TRANSFER=$(cat <<EOF
@@ -53,11 +53,11 @@ TRANSFER=$(cat <<EOF
 }
 EOF
 )
-merlind tx wasm execute $CONTRACT "$TRANSFER" --from validator --keyring-backend test \
+merlin tx wasm execute $CONTRACT "$TRANSFER" --from validator --keyring-backend test \
     --chain-id $CHAIN_ID -y -b block --gas 500000 --gas-prices 0.025stake
 
 # check final balance
 echo "Validator Balance:"
-merlind query wasm contract-state smart $CONTRACT "$QUERY"
+merlin query wasm contract-state smart $CONTRACT "$QUERY"
 echo "Demo Balance:"
-merlind query wasm contract-state smart $CONTRACT "$QUERY_DEMO"
+merlin query wasm contract-state smart $CONTRACT "$QUERY_DEMO"

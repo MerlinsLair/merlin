@@ -1,17 +1,17 @@
 #!/bin/bash
 
-rm -rf $HOME/.merlind/
+rm -rf $HOME/.merlin/
 
 cd $HOME
 
-merlind init --chain-id=testing testing --home=$HOME/.merlind
-merlind keys add validator --keyring-backend=test --home=$HOME/.merlind
-merlind add-genesis-account $(merlind keys show validator -a --keyring-backend=test --home=$HOME/.merlind) 100000000000stake,100000000000valtoken --home=$HOME/.merlind
-merlind gentx validator 500000000stake --keyring-backend=test --home=$HOME/.merlind --chain-id=testing
-merlind collect-gentxs --home=$HOME/.merlind
+merlin init --chain-id=testing testing --home=$HOME/.merlin
+merlin keys add validator --keyring-backend=test --home=$HOME/.merlin
+merlin add-genesis-account $(merlin keys show validator -a --keyring-backend=test --home=$HOME/.merlin) 100000000000stake,100000000000valtoken --home=$HOME/.merlin
+merlin gentx validator 500000000stake --keyring-backend=test --home=$HOME/.merlin --chain-id=testing
+merlin collect-gentxs --home=$HOME/.merlin
 
 update_genesis () {    
-    cat $HOME/.merlind/validator1/config/genesis.json | jq "$1" > $HOME/.merlind/validator1/config/tmp_genesis.json && mv $HOME/.merlind/validator1/config/tmp_genesis.json $HOME/.merlind/validator1/config/genesis.json
+    cat $HOME/.merlin/validator1/config/genesis.json | jq "$1" > $HOME/.merlin/validator1/config/tmp_genesis.json && mv $HOME/.merlin/validator1/config/tmp_genesis.json $HOME/.merlin/validator1/config/genesis.json
 }
 
 # update staking genesis
@@ -45,4 +45,4 @@ update_genesis '.app_state["gamm"]["params"]["pool_creation_fee"][0]["denom"]="s
 # update superfluid genesis
 update_genesis '.app_state["superfluid"]["params"]["minimum_risk_factor"]="0.500000000000000000"'
 
-merlind start --home=$HOME/.merlind
+merlin start --home=$HOME/.merlin

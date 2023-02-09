@@ -36,7 +36,7 @@ make localnet-init
 The command:
 
 - Builds a local docker image with the latest changes
-- Cleans the `$HOME/.merlind-local` folder
+- Cleans the `$HOME/.merlin-local` folder
 
 3. Start LocalMerlin:
 
@@ -59,7 +59,7 @@ make localnet-keys
 - These keys are added to your `--keyring-backend test`
 - If the keys are already on your keyring, you will get an `"Error: aborted"`
 - Ensure you use the name of the account as listed in the table below, as well as ensure you append the `--keyring-backend test` to your txs
-- Example: `merlind tx bank send lo-test2 mer1cyyzpxplxdzkeea7kwsydadg87357qnahakaks --keyring-backend test --chain-id LocalMerlin`
+- Example: `merlin tx bank send lo-test2 mer1cyyzpxplxdzkeea7kwsydadg87357qnahakaks --keyring-backend test --chain-id LocalMerlin`
 
 5. You can stop chain, keeping the state with
 
@@ -96,20 +96,20 @@ curl -sL https://get.merlin.zone/install > i.py && python3 i.py
 
 ```sh
 source ~/.profile
-journalctl -u merlind.service -f
+journalctl -u merlin.service -f
 ```
 
 3. Stop your Merlin daemon
 
 ```sh
-systemctl stop merlind.service
+systemctl stop merlin.service
 ```
 
 4. Take a state export snapshot with the following command:
 
 ```sh
 cd $HOME
-merlind export 2> state_export.json
+merlin export 2> state_export.json
 ```
 
 After a while (~15 minutes), this will create a file called `state_export.json` which is a snapshot of the current mainnet state.
@@ -143,7 +143,7 @@ make localnet-state-export-init
 The command:
 
 - Builds a local docker image with the latest changes
-- Cleans the `$HOME/.merlind` folder
+- Cleans the `$HOME/.merlin` folder
 
 3. Start LocalMerlin:
 
@@ -170,7 +170,7 @@ You will then hit the first block (not block 1, but the block number after your 
 
 ```sh
 MNEMONIC="bottom loan skill merry east cradle onion journey palm apology verb edit desert impose absurd oil bubble sweet glove shallow size build burst effort"
-echo $MNEMONIC | merlind keys add wallet --recover --keyring-backend test
+echo $MNEMONIC | merlin keys add wallet --recover --keyring-backend test
 ```
 
 You now are running a validator with a majority of the voting power with the same state as mainnet state (at the time you took the snapshot)
@@ -178,13 +178,13 @@ You now are running a validator with a majority of the voting power with the sam
 10. On your host machine, you can now query the state-exported testnet:
 
 ```sh
-merlind status
+merlin status
 ```
 
 11. Here is an example command to ensure complete understanding:
 
 ```sh
-merlind tx bank send wallet mer1nyphwl8p5yx6fxzevjwqunsfqpcxukmtk8t60m 10000000umer --chain-id testing1 --keyring-backend test
+merlin tx bank send wallet mer1nyphwl8p5yx6fxzevjwqunsfqpcxukmtk8t60m 10000000umer --chain-id testing1 --keyring-backend test
 ```
 
 12. You can stop chain, keeping the state with

@@ -1,5 +1,5 @@
 #!/bin/sh
-MERLIN_HOME="/tmp/merlind$(date +%s)"
+MERLIN_HOME="/tmp/merlin$(date +%s)"
 RANDOM_KEY="randommerlinvalidatorkey"
 CHAIN_ID=merlin-1
 DENOM=umer
@@ -52,11 +52,11 @@ else
     cd merlin
     git checkout gentx-launch
     make build
-    chmod +x ./build/merlind
+    chmod +x ./build/merlin
 
-    ./build/merlind keys add $RANDOM_KEY --keyring-backend test --home $MERLIN_HOME
+    ./build/merlin keys add $RANDOM_KEY --keyring-backend test --home $MERLIN_HOME
 
-    ./build/merlind init --chain-id $CHAIN_ID validator --home $MERLIN_HOME
+    ./build/merlin init --chain-id $CHAIN_ID validator --home $MERLIN_HOME
 
     echo "..........Fetching genesis......."
     rm -rf $MERLIN_HOME/config/genesis.json
@@ -86,30 +86,30 @@ else
         exit 1
     fi
 
-    ./build/merlind add-genesis-account $RANDOM_KEY 100000000000000$DENOM --home $MERLIN_HOME \
+    ./build/merlin add-genesis-account $RANDOM_KEY 100000000000000$DENOM --home $MERLIN_HOME \
         --keyring-backend test
 
-    ./build/merlind gentx $RANDOM_KEY 90000000000000$DENOM --home $MERLIN_HOME \
+    ./build/merlin gentx $RANDOM_KEY 90000000000000$DENOM --home $MERLIN_HOME \
         --keyring-backend test --chain-id $CHAIN_ID
 
     cp ../$GENTX_FILE $MERLIN_HOME/config/gentx/
 
     echo "..........Collecting gentxs......."
-    ./build/merlind collect-gentxs --home $MERLIN_HOME
+    ./build/merlin collect-gentxs --home $MERLIN_HOME
     sed -i '/persistent_peers =/c\persistent_peers = ""' $MERLIN_HOME/config/config.toml
 
-    ./build/merlind validate-genesis --home $MERLIN_HOME
+    ./build/merlin validate-genesis --home $MERLIN_HOME
 
     echo "..........Starting node......."
-    ./build/merlind start --home $MERLIN_HOME &
+    ./build/merlin start --home $MERLIN_HOME &
 
     sleep 1800s
 
     echo "...checking network status.."
 
-    ./build/merlind status --node http://localhost:26657
+    ./build/merlin status --node http://localhost:26657
 
     echo "...Cleaning the stuff..."
-    killall merlind >/dev/null 2>&1
+    killall merlin >/dev/null 2>&1
     rm -rf $MERLIN_HOME >/dev/null 2>&1
 fi

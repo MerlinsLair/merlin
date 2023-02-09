@@ -65,7 +65,7 @@ Start time included
 
 ## Example CLI tx
 
-`merlind tx gamm create-pool --pool-file="path/to/lbp-pool.json" --from myKey`
+`merlin tx gamm create-pool --pool-file="path/to/lbp-pool.json" --from myKey`
 
 NOTE: The command to create a liquidity bootstrapping pool is the same
 as creating a normal pool. However, if the pool has valid `lbp-params`

@@ -93,7 +93,7 @@ merlin testnets and a relayer between them.
 
 
 #### Prerequisites
-* merlind command line tool installed and configured.
+* merlin command line tool installed and configured.
 * [jenv](https://github.com/nicolaslara/jenv) command line tool installed, if you don't have it you can generate the json manually or modify the commands accordingly.
 * jq command line tool installed.
 * localrelayer tool installed, configured and running.
@@ -103,14 +103,14 @@ merlin testnets and a relayer between them.
 Create an alias for chainA and chainB commands that will be used throughout the guide:
 
 ```bash
-alias chainA="merlind --node http://localhost:26657 --chain-id localmerlin-a"
-alias chainB="merlind --node http://localhost:36657 --chain-id localmerlin-b"
+alias chainA="merlin --node http://localhost:26657 --chain-id localmerlin-a"
+alias chainB="merlin --node http://localhost:36657 --chain-id localmerlin-b"
 ```
 
 Prepare other variables that we will use across the test:
 
 ```bash
-VALIDATOR=$(merlind keys show validator -a)
+VALIDATOR=$(merlin keys show validator -a)
 CHANNEL_ID="channel-0"
 args="--keyring-backend test --gas auto --gas-prices 0.1umer --gas-adjustment 1.3 --broadcast-mode block --yes"
 TX_FLAGS=($args)
@@ -120,8 +120,8 @@ TX_FLAGS=($args)
 First, you need to generate the keys that will be used in the test:
 
 ```bash
-echo "bottom loan skill merry east cradle onion journey palm apology verb edit desert impose absurd oil bubble sweet glove shallow size build burst effort" | merlind --keyring-backend test keys add validator --recover
-echo "increase bread alpha rigid glide amused approve oblige print asset idea enact lawn proof unfold jeans rabbit audit return chuckle valve rather cactus great" | merlind --keyring-backend test  keys add faucet --recover
+echo "bottom loan skill merry east cradle onion journey palm apology verb edit desert impose absurd oil bubble sweet glove shallow size build burst effort" | merlin --keyring-backend test keys add validator --recover
+echo "increase bread alpha rigid glide amused approve oblige print asset idea enact lawn proof unfold jeans rabbit audit return chuckle valve rather cactus great" | merlin --keyring-backend test  keys add faucet --recover
 ```
 This will generate two keys, validator and faucet and will be used to send money to the validator on both chains.
 

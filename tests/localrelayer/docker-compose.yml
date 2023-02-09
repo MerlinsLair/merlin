@@ -12,7 +12,7 @@ services:
         GO_VERSION: 1.19
     volumes:
       - ./scripts/setup_chain.sh:/merlin/setup.sh
-      - $HOME/.merlind-local-a/:/merlin/.merlind/
+      - $HOME/.merlin-local-a/:/merlin/.merlin/
     entrypoint:
       - /merlin/setup.sh
     environment:
@@ -63,7 +63,7 @@ services:
         GO_VERSION: 1.19
     volumes:
       - ./scripts/setup_chain.sh:/merlin/setup.sh
-      - $HOME/.merlind-local-b/:/merlin/.merlind/
+      - $HOME/.merlin-local-b/:/merlin/.merlin/
     entrypoint:
       - /merlin/setup.sh
     environment:

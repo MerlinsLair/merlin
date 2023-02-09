@@ -53,23 +53,23 @@ go install github.com/cosmos/cosmos-sdk/cmervisor/cmd/cmervisor@v1.0.0
 ```
 
 After this, you must make the necessary folders for cosmosvisor in your
-daemon home directory (\~/.merlind).
+daemon home directory (\~/.merlin).
 
 ``` {.sh}
-mkdir -p ~/.merlind
-mkdir -p ~/.merlind/cmervisor
-mkdir -p ~/.merlind/cmervisor/genesis
-mkdir -p ~/.merlind/cmervisor/genesis/bin
-mkdir -p ~/.merlind/cmervisor/upgrades
+mkdir -p ~/.merlin
+mkdir -p ~/.merlin/cmervisor
+mkdir -p ~/.merlin/cmervisor/genesis
+mkdir -p ~/.merlin/cmervisor/genesis/bin
+mkdir -p ~/.merlin/cmervisor/upgrades
 ```
 
-Copy the current v11 merlind binary into the
+Copy the current v11 merlin binary into the
 cmervisor/genesis folder and v11 folder.
 
 ```{.sh}
-cp $GOPATH/bin/merlind ~/.merlind/cmervisor/genesis/bin
-mkdir -p ~/.merlind/cmervisor/upgrades/v11/bin
-cp $GOPATH/bin/merlind ~/.merlind/cmervisor/upgrades/v11/bin
+cp $GOPATH/bin/merlin ~/.merlin/cmervisor/genesis/bin
+mkdir -p ~/.merlin/cmervisor/upgrades/v11/bin
+cp $GOPATH/bin/merlin ~/.merlin/cmervisor/upgrades/v11/bin
 ```
 
 Cmervisor is now ready to be set up for v12.
@@ -78,8 +78,8 @@ Set these environment variables:
 
 ```{.sh}
 echo "# Setup Cmervisor" >> ~/.profile
-echo "export DAEMON_NAME=merlind" >> ~/.profile
-echo "export DAEMON_HOME=$HOME/.merlind" >> ~/.profile
+echo "export DAEMON_NAME=merlin" >> ~/.profile
+echo "export DAEMON_HOME=$HOME/.merlin" >> ~/.profile
 echo "export DAEMON_ALLOW_DOWNLOAD_BINARIES=false" >> ~/.profile
 echo "export DAEMON_LOG_BUFFER_SIZE=512" >> ~/.profile
 echo "export DAEMON_RESTART_AFTER_UPGRADE=true" >> ~/.profile
@@ -92,12 +92,12 @@ source ~/.profile
 Create the v12 folder, make the build, and copy the daemon over to that folder
 
 ```{.sh}
-mkdir -p ~/.merlind/cmervisor/upgrades/v12/bin
+mkdir -p ~/.merlin/cmervisor/upgrades/v12/bin
 cd $HOME/merlin
 git pull
 git checkout v12.0.0-rc5
 make build
-cp build/merlind ~/.merlind/cmervisor/upgrades/v12/bin
+cp build/merlin ~/.merlin/cmervisor/upgrades/v12/bin
 ```
 
 Now, at the upgrade height, Cmervisor will upgrade to the v12 binary

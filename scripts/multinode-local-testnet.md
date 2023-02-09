@@ -31,11 +31,11 @@ Validator3: `tmux a -t validator3`
 Directories
 -----------
 
-Validator1: `$HOME/.merlind/validator1`
+Validator1: `$HOME/.merlin/validator1`
 
-Validator2: `$HOME/.merlind/validator2`
+Validator2: `$HOME/.merlin/validator2`
 
-Validator3: `$HOME/.merlind/validator3`
+Validator3: `$HOME/.merlin/validator3`
 
 Ports
 -----
@@ -52,14 +52,14 @@ particular node.
 Examples
 --------
 
-Validator2: `merlind status --node "tcp://localhost:26654"`
+Validator2: `merlin status --node "tcp://localhost:26654"`
 
-Validator3: `merlind status --node "tcp://localhost:26651"`
+Validator3: `merlin status --node "tcp://localhost:26651"`
 
 or
 
 Validator1:
-`merlind keys list --keyring-backend test --home $HOME/.merlind/validator1`
+`merlin keys list --keyring-backend test --home $HOME/.merlin/validator1`
 
 Validator2:
-`merlind keys list --keyring-backend test --home $HOME/.merlind/validator2`
+`merlin keys list --keyring-backend test --home $HOME/.merlin/validator2`

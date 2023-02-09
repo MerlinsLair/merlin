@@ -28,7 +28,7 @@ func NewSetValSetCmd() (*osmocli.TxCliDesc, *types.MsgSetValidatorSetPreference)
 	return &osmocli.TxCliDesc{
 		Use:              "set-valset [delegator_addr] [validators] [weights]",
 		Short:            "Creates a new validator set for the delegator with valOperAddress and weight",
-		Example:          "merlind tx valset-pref set-valset mer1... mervaloper1abc...,mervaloper1def...  0.56,0.44",
+		Example:          "merlin tx valset-pref set-valset mer1... mervaloper1abc...,mervaloper1def...  0.56,0.44",
 		NumArgs:          3,
 		ParseAndBuildMsg: NewMsgSetValidatorSetPreference,
 	}, &types.MsgSetValidatorSetPreference{}
@@ -38,7 +38,7 @@ func NewDelValSetCmd() (*osmocli.TxCliDesc, *types.MsgDelegateToValidatorSet) {
 	return &osmocli.TxCliDesc{
 		Use:     "delegate-valset [delegator_addr] [amount]",
 		Short:   "Delegate tokens to existing valset using delegatorAddress and tokenAmount.",
-		Example: "merlind tx valset-pref delegate-valset mer1... 100stake",
+		Example: "merlin tx valset-pref delegate-valset mer1... 100stake",
 		NumArgs: 2,
 	}, &types.MsgDelegateToValidatorSet{}
 }
@@ -47,7 +47,7 @@ func NewUnDelValSetCmd() (*osmocli.TxCliDesc, *types.MsgUndelegateFromValidatorS
 	return &osmocli.TxCliDesc{
 		Use:     "undelegate-valset [delegator_addr] [amount]",
 		Short:   "UnDelegate tokens from existing valset using delegatorAddress and tokenAmount.",
-		Example: "merlind tx valset-pref undelegate-valset mer1... 100stake",
+		Example: "merlin tx valset-pref undelegate-valset mer1... 100stake",
 		NumArgs: 2,
 	}, &types.MsgUndelegateFromValidatorSet{}
 }
@@ -56,7 +56,7 @@ func NewReDelValSetCmd() (*osmocli.TxCliDesc, *types.MsgRedelegateValidatorSet) 
 	return &osmocli.TxCliDesc{
 		Use:              "redelegate-valset [delegator_addr] [validators] [weights]",
 		Short:            "Redelegate tokens from existing validators to new sets of validators",
-		Example:          "merlind tx valset-pref redelegate-valset  mer1... mervaloper1efg...,mervaloper1hij...  0.56,0.44",
+		Example:          "merlin tx valset-pref redelegate-valset  mer1... mervaloper1efg...,mervaloper1hij...  0.56,0.44",
 		NumArgs:          3,
 		ParseAndBuildMsg: NewMsgReDelValidatorSetPreference,
 	}, &types.MsgRedelegateValidatorSet{}
@@ -66,7 +66,7 @@ func NewWithRewValSetCmd() (*osmocli.TxCliDesc, *types.MsgWithdrawDelegationRewa
 	return &osmocli.TxCliDesc{
 		Use:     "withdraw-reward-valset [delegator_addr]",
 		Short:   "Withdraw delegation reward form the new validator set.",
-		Example: "merlind tx valset-pref withdraw-valset mer1...",
+		Example: "merlin tx valset-pref withdraw-valset mer1...",
 		NumArgs: 1,
 	}, &types.MsgWithdrawDelegationRewards{}
 }

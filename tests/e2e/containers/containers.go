@@ -215,7 +215,7 @@ func (m *Manager) RunNodeResource(chainId string, containerName, valCondifDir st
 		User:       "root:root",
 		Cmd:        []string{"start"},
 		Mounts: []string{
-			fmt.Sprintf("%s/:/merlin/.merlind", valCondifDir),
+			fmt.Sprintf("%s/:/merlin/.merlin", valCondifDir),
 			fmt.Sprintf("%s/scripts:/merlin", pwd),
 		},
 	}

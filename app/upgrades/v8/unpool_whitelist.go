@@ -13,7 +13,7 @@ const ustDenom = "ibc/BE1BB42D4BE3C30D50B68D7C41DB4DFCE9678E8EF8C539F6E6A9345048
 
 // RegisterWhitelistedDirectUnbondPools registers pools that are allowed to unpool
 // https://www.mintscan.io/merlin/proposals/226
-// merlind q gov proposal 226
+// merlin q gov proposal 226
 func RegisterWhitelistedDirectUnbondPools(ctx sdk.Context, superfluid *superfluidkeeper.Keeper, gamm *gammkeeper.Keeper) {
 	// These are the pools listed in the proposal. Proposal raw text for the listing of UST pools:
 	// 	The list of pools affected are defined below:

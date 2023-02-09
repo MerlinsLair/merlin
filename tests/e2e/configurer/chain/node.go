@@ -117,7 +117,7 @@ func (n *NodeConfig) extractOperatorAddressIfValidator() error {
 		return nil
 	}
 
-	cmd := []string{"merlind", "debug", "addr", n.PublicKey}
+	cmd := []string{"merlin", "debug", "addr", n.PublicKey}
 	n.t.Logf("extracting validator operator addresses for validator: %s", n.Name)
 	_, errBuf, err := n.containerManager.ExecCmd(n.t, n.Name, cmd, "")
 	if err != nil {

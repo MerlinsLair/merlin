@@ -19,7 +19,7 @@ func ConvertBech32Cmd() *cobra.Command {
 Especially useful for converting cosmos addresses to mer addresses
 
 Example:
-	merlind bech32-convert cosmos1ey69r37gfxvxg62sh4r0ktpuc46pzjrmz29g45
+	merlin bech32-convert cosmos1ey69r37gfxvxg62sh4r0ktpuc46pzjrmz29g45
 	`,
 		Args: cobra.ExactArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) error {

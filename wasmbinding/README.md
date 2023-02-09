@@ -17,13 +17,13 @@ This package provides first class support for:
 - Commands
 
 ```sh
-  merlind tx wasm -h
+  merlin tx wasm -h
 ```
 
 - Query
 
 ```sh
-  merlind query wasm -h
+  merlin query wasm -h
 ```
 
 ## Tests

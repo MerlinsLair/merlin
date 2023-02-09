@@ -2,8 +2,8 @@
 
 export REPO=https://github.com/merlinslair/merlin.git
 export BRANCH=main
-export NODE=merlind
-export CLI=merlind
+export NODE=merlin
+export CLI=merlin
 export MONIKER=testnet_node_moniker
 # export GENESIS=https://raw.githubusercontent.com/cosmos/launch/master/genesis.json
 # Thanatos - first ransomware to accept payment in bitcoin cash!
@@ -31,7 +31,7 @@ git clone $REPO
 echo $(basename $REPO .git)
 
 make LEDGER_ENABLED=false build
-cp ./build/merlind /root/go/bin/
+cp ./build/merlin /root/go/bin/
 
 # install docker (https://docs.docker.com/engine/install/ubuntu/)
 

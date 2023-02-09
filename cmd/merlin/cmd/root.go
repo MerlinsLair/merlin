@@ -59,7 +59,7 @@ func NewRootCmd() (*cobra.Command, params.EncodingConfig) {
 		WithViper("MERLIN")
 
 	rootCmd := &cobra.Command{
-		Use:   "merlind",
+		Use:   "merlin",
 		Short: "Start merlin app",
 		PersistentPreRunE: func(cmd *cobra.Command, _ []string) error {
 			initClientCtx, err := client.ReadPersistentCommandFlags(initClientCtx, cmd.Flags())

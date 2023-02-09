@@ -2,21 +2,21 @@
 go clean --modcache
 git stash
 git checkout v1.0.1
-go install ./cmd/merlind/
+go install ./cmd/merlin/
 Run the below commands
 ```
     #!/bin/bash
-    rm -rf $HOME/.merlind/
+    rm -rf $HOME/.merlin/
     cd $HOME
-    merlind init --chain-id=testing testing --home=$HOME/.merlind
-    merlind keys add validator --keyring-backend=test --home=$HOME/.merlind
-    merlind add-genesis-account $(merlind keys show validator -a --keyring-backend=test --home=$HOME/.merlind) 1000000000stake,1000000000valtoken --home=$HOME/.merlind
-    merlind gentx validator 500000000stake --keyring-backend=test --home=$HOME/.merlind --chain-id=testing
-    merlind gentx validator 500000000stake --commission-rate="0.0" --keyring-backend=test --home=$HOME/.merlind --chain-id=testing
-    merlind collect-gentxs --home=$HOME/.merlind
+    merlin init --chain-id=testing testing --home=$HOME/.merlin
+    merlin keys add validator --keyring-backend=test --home=$HOME/.merlin
+    merlin add-genesis-account $(merlin keys show validator -a --keyring-backend=test --home=$HOME/.merlin) 1000000000stake,1000000000valtoken --home=$HOME/.merlin
+    merlin gentx validator 500000000stake --keyring-backend=test --home=$HOME/.merlin --chain-id=testing
+    merlin gentx validator 500000000stake --commission-rate="0.0" --keyring-backend=test --home=$HOME/.merlin --chain-id=testing
+    merlin collect-gentxs --home=$HOME/.merlin
     
-    cat $HOME/.merlind/config/genesis.json | jq '.app_state["gov"]["voting_params"]["voting_period"]="120s"' > $HOME/.merlind/config/tmp_genesis.json && mv $HOME/.merlind/config/tmp_genesis.json $HOME/.merlind/config/genesis.json
-    cat $HOME/.merlind/config/genesis.json | jq '.app_state["staking"]["params"]["min_commission_rate"]="0.050000000000000000"' > $HOME/.merlind/config/tmp_genesis.json && mv $HOME/.merlind/config/tmp_genesis.json $HOME/.merlind/config/genesis.json
+    cat $HOME/.merlin/config/genesis.json | jq '.app_state["gov"]["voting_params"]["voting_period"]="120s"' > $HOME/.merlin/config/tmp_genesis.json && mv $HOME/.merlin/config/tmp_genesis.json $HOME/.merlin/config/genesis.json
+    cat $HOME/.merlin/config/genesis.json | jq '.app_state["staking"]["params"]["min_commission_rate"]="0.050000000000000000"' > $HOME/.merlin/config/tmp_genesis.json && mv $HOME/.merlin/config/tmp_genesis.json $HOME/.merlin/config/genesis.json
 
 ```
 
@@ -31,37 +31,37 @@ Create pool.json
 }
 ```
 
-rm $HOME/.merlind/cmervisor/current -rf
+rm $HOME/.merlin/cmervisor/current -rf
 cmervisor start
 
 # operations on terminal2
-merlind tx lockup lock-tokens 100stake --duration="5s" --from=validator --chain-id=testing --keyring-backend=test --yes
+merlin tx lockup lock-tokens 100stake --duration="5s" --from=validator --chain-id=testing --keyring-backend=test --yes
 sleep 7
-merlind tx gov submit-proposal software-upgrade upgrade-lockup-module-store-management --title="lockup module upgrade" --description="lockup module upgrade for gas efficiency"  --from=validator --upgrade-height=10 --deposit=10000000stake --chain-id=testing --keyring-backend=test -y
+merlin tx gov submit-proposal software-upgrade upgrade-lockup-module-store-management --title="lockup module upgrade" --description="lockup module upgrade for gas efficiency"  --from=validator --upgrade-height=10 --deposit=10000000stake --chain-id=testing --keyring-backend=test -y
 sleep 7
-merlind tx gov vote 1 yes --from=validator --keyring-backend=test --chain-id=testing --yes
+merlin tx gov vote 1 yes --from=validator --keyring-backend=test --chain-id=testing --yes
 sleep 7
-merlind tx gamm create-pool --pool-file="./pool.json"  --gas=3000000 --from=validator --chain-id=testing --keyring-backend=test --yes --broadcast-mode=block
+merlin tx gamm create-pool --pool-file="./pool.json"  --gas=3000000 --from=validator --chain-id=testing --keyring-backend=test --yes --broadcast-mode=block
 sleep 7
-merlind tx lockup lock-tokens 1000stake --duration="100s" --from=validator --chain-id=testing --keyring-backend=test --yes --broadcast-mode=block
+merlin tx lockup lock-tokens 1000stake --duration="100s" --from=validator --chain-id=testing --keyring-backend=test --yes --broadcast-mode=block
 sleep 7
-merlind tx lockup lock-tokens 2000stake --duration="200s" --from=validator --chain-id=testing --keyring-backend=test --yes --broadcast-mode=block
+merlin tx lockup lock-tokens 2000stake --duration="200s" --from=validator --chain-id=testing --keyring-backend=test --yes --broadcast-mode=block
 sleep 7
-merlind tx lockup lock-tokens 3000stake --duration="1s" --from=validator --chain-id=testing --keyring-backend=test --yes --broadcast-mode=block
+merlin tx lockup lock-tokens 3000stake --duration="1s" --from=validator --chain-id=testing --keyring-backend=test --yes --broadcast-mode=block
 sleep 7
-merlind tx lockup begin-unlock-by-id 1 --from=validator --chain-id=testing --keyring-backend=test --yes --broadcast-mode=block
+merlin tx lockup begin-unlock-by-id 1 --from=validator --chain-id=testing --keyring-backend=test --yes --broadcast-mode=block
 sleep 7
-merlind tx lockup begin-unlock-by-id 3 --from=validator --chain-id=testing --keyring-backend=test --yes --broadcast-mode=block
+merlin tx lockup begin-unlock-by-id 3 --from=validator --chain-id=testing --keyring-backend=test --yes --broadcast-mode=block
 sleep 7
-merlind tx gov submit-proposal software-upgrade "v2" --title="lockup module upgrade" --description="lockup module upgrade for gas efficiency"  --from=validator --upgrade-height=20 --deposit=10000000stake --chain-id=testing --keyring-backend=test --yes  --broadcast-mode=block
+merlin tx gov submit-proposal software-upgrade "v2" --title="lockup module upgrade" --description="lockup module upgrade for gas efficiency"  --from=validator --upgrade-height=20 --deposit=10000000stake --chain-id=testing --keyring-backend=test --yes  --broadcast-mode=block
 sleep 7
-merlind tx gov vote 1 yes --from=validator --keyring-backend=test --chain-id=testing --yes --broadcast-mode=block
-merlind query gov proposal 1
-merlind query upgrade plan
-merlind query lockup account-locked-longer-duration $(merlind keys show -a --keyring-backend=test validator) 1s
-merlind query gamm pools
-merlind query staking validators
-merlind query staking params
+merlin tx gov vote 1 yes --from=validator --keyring-backend=test --chain-id=testing --yes --broadcast-mode=block
+merlin query gov proposal 1
+merlin query upgrade plan
+merlin query lockup account-locked-longer-duration $(merlin keys show -a --keyring-backend=test validator) 1s
+merlin query gamm pools
+merlin query staking validators
+merlin query staking params
 
 # on terminal1
 Wait until consensus failure happen and stop binary using Ctrl + C
@@ -75,19 +75,19 @@ Upgrade Merlin Cmers SDK version to `v0.42.5-0.20210630100106-ea1ec79c739b`
 go mod download github.com/cosmos/cosmos-sdk
 git stash
 git checkout min_commission_change_validation_change_ignore
-go install ./cmd/merlind/
-merlind start --home=$HOME/.merlind
+go install ./cmd/merlin/
+merlin start --home=$HOME/.merlin
 
 # check on terminal2
-merlind query lockup account-locked-longer-duration $(merlind keys show -a --keyring-backend=test validator) 1s
-merlind query lockup account-locked-longer-duration $(merlind keys show -a --keyring-backend=test validator) 1s
-merlind query lockup module-locked-amount
-merlind query gamm pools
-merlind query staking validators
-merlind query staking params
-merlind query bank balances $(merlind keys show -a --keyring-backend=test validator)
-merlind tx staking edit-validator --commission-rate="0.1"  --from=validator --chain-id=testing --keyring-backend=test --yes --broadcast-mode=block
-merlind tx staking edit-validator --commission-rate="0.08"  --from=validator --chain-id=testing --keyring-backend=test --yes --broadcast-mode=block
+merlin query lockup account-locked-longer-duration $(merlin keys show -a --keyring-backend=test validator) 1s
+merlin query lockup account-locked-longer-duration $(merlin keys show -a --keyring-backend=test validator) 1s
+merlin query lockup module-locked-amount
+merlin query gamm pools
+merlin query staking validators
+merlin query staking params
+merlin query bank balances $(merlin keys show -a --keyring-backend=test validator)
+merlin tx staking edit-validator --commission-rate="0.1"  --from=validator --chain-id=testing --keyring-backend=test --yes --broadcast-mode=block
+merlin tx staking edit-validator --commission-rate="0.08"  --from=validator --chain-id=testing --keyring-backend=test --yes --broadcast-mode=block
 
 Result:
 - pool exists

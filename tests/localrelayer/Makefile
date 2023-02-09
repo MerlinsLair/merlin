@@ -20,5 +20,5 @@ restartd: stop
 	@docker-compose -f docker-compose.yml up --force-recreate -d
 
 clean:
-	@rm -rfI $(HOME)/.merlind-local-a/
-	@rm -rfI $(HOME)/.merlind-local-b/
+	@rm -rfI $(HOME)/.merlin-local-a/
+	@rm -rfI $(HOME)/.merlin-local-b/

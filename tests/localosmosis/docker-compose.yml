@@ -2,7 +2,7 @@ version: "3"
 
 services:
 
-  merlind:
+  merlin:
     image: local:merlin
     build:
       context: ../../
@@ -16,7 +16,7 @@ services:
       - ./scripts/nativeDenomThreeAssetPool.json:/merlin/nativeDenomThreeAssetPool.json
       - ./scripts/stableswapPool.json:/merlin/stableswapPool.json
       - ./scripts/setup.sh:/merlin/setup.sh
-      - $HOME/.merlind-local/:/merlin/.merlind/
+      - $HOME/.merlin-local/:/merlin/.merlin/
     entrypoint:
       - /merlin/setup.sh
     command:

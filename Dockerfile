@@ -35,7 +35,7 @@ RUN WASMVM_VERSION=$(go list -m github.com/CosmWasm/wasmvm | cut -d ' ' -f 2) &&
 # Copy the remaining files
 COPY . .
 
-# Build merlind binary
+# Build merlin binary
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/root/go/pkg/mod \
     GOWORK=off go build \
@@ -43,14 +43,14 @@ RUN --mount=type=cache,target=/root/.cache/go-build \
         -tags "netgo,ledger,muslc" \
         -ldflags \
             "-X github.com/cosmos/cosmos-sdk/version.Name="merlin" \
-            -X github.com/cosmos/cosmos-sdk/version.AppName="merlind" \
+            -X github.com/cosmos/cosmos-sdk/version.AppName="merlin" \
             -X github.com/cosmos/cosmos-sdk/version.Version=${GIT_VERSION} \
             -X github.com/cosmos/cosmos-sdk/version.Commit=${GIT_COMMIT} \
             -X github.com/cosmos/cosmos-sdk/version.BuildTags='netgo,ledger,muslc' \
             -w -s -linkmode=external -extldflags '-Wl,-z,muldefs -static'" \
         -trimpath \
-        -o /merlin/build/merlind \
-        /merlin/cmd/merlind/main.go
+        -o /merlin/build/merlin \
+        /merlin/cmd/merlin/main.go
 
 # --------------------------------------------------------
 # Runner
@@ -58,7 +58,7 @@ RUN --mount=type=cache,target=/root/.cache/go-build \
 
 FROM ${RUNNER_IMAGE}
 
-COPY --from=builder /merlin/build/merlind /bin/merlind
+COPY --from=builder /merlin/build/merlin /bin/merlin
 
 ENV HOME /merlin
 WORKDIR $HOME
@@ -67,4 +67,4 @@ EXPOSE 26656
 EXPOSE 26657
 EXPOSE 1317
 
-ENTRYPOINT ["merlind"]
+ENTRYPOINT ["merlin"]

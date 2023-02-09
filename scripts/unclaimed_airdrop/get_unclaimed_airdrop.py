@@ -5,7 +5,7 @@
 import json
 
 # path to file output by 
-# merlind export-derive-balances [state export] [output-filepath]
+# merlin export-derive-balances [state export] [output-filepath]
 filepath = "balances_breakdown.json"
 # read file
 with open(filepath, 'r') as myfile:

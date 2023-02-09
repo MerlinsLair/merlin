@@ -125,7 +125,7 @@ This package directly depends on the Merlin codebase.
 In addition, there is a Dockerfile `init-e2e.Dockerfile`.
 When executed, its container produces all files necessary for starting up a new chain. These
 resulting files can be mounted on a volume and propagated to our
-production merlin container to start the `merlind` service.
+production merlin container to start the `merlin` service.
 
 ## `containers` Package
 
@@ -252,7 +252,7 @@ This section contains information about debugging merlin's `e2e` tests.
     ```
 
     This will execute the specified command and print the response to standard output. 
-    Example: `docker exec mer-test-a-node-prune-nothing-snapshot merlind status` will print a node status of `mer-test-a-node-prune-nothing-snapshot` container. 
+    Example: `docker exec mer-test-a-node-prune-nothing-snapshot merlin status` will print a node status of `mer-test-a-node-prune-nothing-snapshot` container. 
 
 2. Viewing docker container logs
 

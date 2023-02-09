@@ -55,23 +55,23 @@ go install github.com/cosmos/cosmos-sdk/cmervisor/cmd/cmervisor@v1.0.0
 ```
 
 After this, you must make the necessary folders for cosmosvisor in your
-daemon home directory (\~/.merlind).
+daemon home directory (\~/.merlin).
 
 ``` {.sh}
-mkdir -p ~/.merlind
-mkdir -p ~/.merlind/cmervisor
-mkdir -p ~/.merlind/cmervisor/genesis
-mkdir -p ~/.merlind/cmervisor/genesis/bin
-mkdir -p ~/.merlind/cmervisor/upgrades
+mkdir -p ~/.merlin
+mkdir -p ~/.merlin/cmervisor
+mkdir -p ~/.merlin/cmervisor/genesis
+mkdir -p ~/.merlin/cmervisor/genesis/bin
+mkdir -p ~/.merlin/cmervisor/upgrades
 ```
 
-Copy the current v12 merlind binary into the
+Copy the current v12 merlin binary into the
 cmervisor/genesis folder and v13 folder.
 
 ```{.sh}
-cp $GOPATH/bin/merlind ~/.merlind/cmervisor/genesis/bin
-mkdir -p ~/.merlind/cmervisor/upgrades/v13/bin
-cp $GOPATH/bin/merlind ~/.merlind/cmervisor/upgrades/v13/bin
+cp $GOPATH/bin/merlin ~/.merlin/cmervisor/genesis/bin
+mkdir -p ~/.merlin/cmervisor/upgrades/v13/bin
+cp $GOPATH/bin/merlin ~/.merlin/cmervisor/upgrades/v13/bin
 ```
 
 Cmervisor is now ready to be set up for v14.
@@ -80,8 +80,8 @@ Set these environment variables:
 
 ```{.sh}
 echo "# Setup Cmervisor" >> ~/.profile
-echo "export DAEMON_NAME=merlind" >> ~/.profile
-echo "export DAEMON_HOME=$HOME/.merlind" >> ~/.profile
+echo "export DAEMON_NAME=merlin" >> ~/.profile
+echo "export DAEMON_HOME=$HOME/.merlin" >> ~/.profile
 echo "export DAEMON_ALLOW_DOWNLOAD_BINARIES=false" >> ~/.profile
 echo "export DAEMON_LOG_BUFFER_SIZE=512" >> ~/.profile
 echo "export DAEMON_RESTART_AFTER_UPGRADE=true" >> ~/.profile
@@ -94,12 +94,12 @@ source ~/.profile
 Create the v14 folder, make the build, and copy the daemon over to that folder
 
 ```{.sh}
-mkdir -p ~/.merlind/cmervisor/upgrades/v14/bin
+mkdir -p ~/.merlin/cmervisor/upgrades/v14/bin
 cd $HOME/merlin
 git pull
 git checkout v14.0.0
 make build
-cp build/merlind ~/.merlind/cmervisor/upgrades/v14/bin
+cp build/merlin ~/.merlin/cmervisor/upgrades/v14/bin
 ```
 
 Now, at the upgrade height, Cmervisor will upgrade to the v14 binary
