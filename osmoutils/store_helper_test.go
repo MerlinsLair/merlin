@@ -37,7 +37,7 @@ type TestSuite struct {
 func (suite *TestSuite) SetupTest() {
 	// For the test suite, we manually wire a custom store "customStoreKey"
 	// Auth module (for module_account_test.go) which requires params module as well.
-	customStoreKey := sdk.NewKVStoreKey("merutil_store_test")
+	customStoreKey := sdk.NewKVStoreKey("osmoutil_store_test")
 	suite.authStoreKey = sdk.NewKVStoreKey(authtypes.StoreKey)
 	// setup ctx + stores
 	paramsKey := sdk.NewKVStoreKey(paramstypes.StoreKey)
