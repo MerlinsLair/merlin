@@ -71,7 +71,7 @@ git checkout main
 Update go mod file to use latest SDK changes: /Users/admin/go/pkg/mod/github.com/merlin-labs/cosmos-sdk@v0.42.5-0.20210622202917-f4f6a08ac64b
 go get github.com/merlin-labs/cosmos-sdk@ea1ec79c739ba39639b9a24f824127ecc6650887
 go: downloading github.com/merlin-labs/cosmos-sdk v0.42.5-0.20210630100106-ea1ec79c739b
-Upgrade Merlin Cmers SDK version to `v0.42.5-0.20210630100106-ea1ec79c739b`
+Upgrade Merlin Cosmos SDK version to `v0.42.5-0.20210630100106-ea1ec79c739b`
 go mod download github.com/cosmos/cosmos-sdk
 git stash
 git checkout min_commission_change_validation_change_ignore

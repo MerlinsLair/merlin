@@ -53,8 +53,8 @@ type SnapshotAccount struct {
 	MerPercent      sdk.Dec `json:"mer_ownership_percent"` // MerPercent = MerNormalizedBalance / TotalMerSupply
 }
 
-// setCmersBech32Prefixes set config for cosmos address system
-func setCmersBech32Prefixes() {
+// setCosmosBech32Prefixes set config for cosmos address system
+func setCosmosBech32Prefixes() {
 	defaultConfig := sdk.NewConfig()
 	config := sdk.GetConfig()
 	config.SetBech32PrefixForAccount(defaultConfig.GetBech32AccountAddrPrefix(), defaultConfig.GetBech32AccountPubPrefix())
@@ -102,7 +102,7 @@ Example:
 
 			var genStateV036 GenesisStateV036
 
-			setCmersBech32Prefixes()
+			setCosmosBech32Prefixes()
 			err = aminoCodec.UnmarshalJSON(byteValue, &genStateV036)
 			if err != nil {
 				return err

@@ -64,7 +64,7 @@ To contribute a change proposal, use the following workflow:
 
 We use table-driven tests because they allow us to test similar logic on many different cases in a way that is easy to both implement and understand. [This article](https://dave.cheney.net/2019/05/07/prefer-table-driven-tests) does a fantastic job explaining the motivation and structure of table-driven testing.
 
-Making table-driven tests in an environment built on the Cmers SDK has some quirks to it, but overall the structure should be quite similar to what is laid out in the article linked above.
+Making table-driven tests in an environment built on the Cosmos SDK has some quirks to it, but overall the structure should be quite similar to what is laid out in the article linked above.
 
 We'll lay out three examples below (one that uses our format for messages, one that applies to keeper methods, and one that applies to our GAMM module), each of which will hopefully be simple enough to copy-paste into a test file and use as a starting point for your test-writing in the Merlin Core repo.
 
@@ -276,7 +276,7 @@ Additionally, Docker networks do not get auto-removed. Therefore, you can manual
 
 Vendor is a folder that go automatically makes if you run go mod vendor, which contains the source code for all of your dependencies. Its often helpful for local debugging. In order to update it...
 
-Commit & push to the Cmers-SDK fork in a new branch (see above steps for more details), and then you can grab the commit hash to do:
+Commit & push to the Cosmos-SDK fork in a new branch (see above steps for more details), and then you can grab the commit hash to do:
 
 ```sh
 go get github.com/merlin-labs/cosmos-sdk@{my commit hash}
@@ -406,9 +406,9 @@ To avoid these problems, let's now examine how these hashes work.
 ##### App Hash
 
 An app hash is a hash of hashes of every store's Merkle root that is returned by
-ABCI's `Commit()` from Cmers-SDK to Tendermint.
+ABCI's `Commit()` from Cosmos-SDK to Tendermint.
 
-Cmers-SDK [takes an app hash of the application state][4], and propagates
+Cosmos-SDK [takes an app hash of the application state][4], and propagates
 it to Tendermint which, in turn, compares it to the app hash of the
 rest of the network.
 

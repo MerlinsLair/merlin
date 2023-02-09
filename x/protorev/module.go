@@ -31,7 +31,7 @@ var (
 // AppModuleBasic
 // ----------------------------------------------------------------------------
 
-// AppModuleBasic implements the AppModuleBasic interface that defines the independent methods a Cmers SDK module needs to implement.
+// AppModuleBasic implements the AppModuleBasic interface that defines the independent methods a Cosmos SDK module needs to implement.
 type AppModuleBasic struct {
 	cdc codec.BinaryCodec
 }

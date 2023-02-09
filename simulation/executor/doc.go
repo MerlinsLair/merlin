@@ -1,5 +1,5 @@
 /*
-Package simulation implements a full fledged Cmers SDK application used for executing
+Package simulation implements a full fledged Cosmos SDK application used for executing
 simulation test suites.
 
 # Simulation App

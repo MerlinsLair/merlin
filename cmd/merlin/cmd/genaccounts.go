@@ -214,7 +214,7 @@ contain valid denominations. Accounts may optionally be supplied with vesting pa
 // 	return ionAmts, nil
 // }
 
-// func CmersToMerAddress(cosmosAddr string) (string, error) {
+// func CosmosToMerAddress(cosmosAddr string) (string, error) {
 // 	_, bz, err := bech32.DecodeAndConvert(cosmosAddr)
 // 	if err != nil {
 // 		return "", err
@@ -256,7 +256,7 @@ contain valid denominations. Accounts may optionally be supplied with vesting pa
 
 // 			for _, acc := range snapshot.Accounts {
 // 				if !acc.MerBalance.Equal(sdk.ZeroInt()) {
-// 					merAddr, err := CmersToMerAddress(acc.AtomAddress)
+// 					merAddr, err := CosmosToMerAddress(acc.AtomAddress)
 // 					if err != nil {
 // 						return err
 // 					}
@@ -266,7 +266,7 @@ contain valid denominations. Accounts may optionally be supplied with vesting pa
 // 			}
 
 // 			for addr := range ionAmts {
-// 				ionAddr, err := CmersToMerAddress(addr)
+// 				ionAddr, err := CosmosToMerAddress(addr)
 // 				if err != nil {
 // 					return err
 // 				}
@@ -356,7 +356,7 @@ contain valid denominations. Accounts may optionally be supplied with vesting pa
 // 			}
 
 // 			for addr, amt := range ionAmts {
-// 				address, err := CmersToMerAddress(addr)
+// 				address, err := CosmosToMerAddress(addr)
 // 				if err != nil {
 // 					return err
 // 				}
@@ -381,7 +381,7 @@ contain valid denominations. Accounts may optionally be supplied with vesting pa
 // 			// for each account in the snapshot
 // 			for _, acc := range snapshot.Accounts {
 // 				// convert cosmos address to mer address
-// 				address, err := CmersToMerAddress(acc.AtomAddress)
+// 				address, err := CosmosToMerAddress(acc.AtomAddress)
 // 				if err != nil {
 // 					return err
 // 				}

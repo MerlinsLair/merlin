@@ -35,7 +35,7 @@ type CustomMessenger struct {
 var _ wasmkeeper.Messenger = (*CustomMessenger)(nil)
 
 // DispatchMsg executes on the contractMsg.
-func (m *CustomMessenger) DispatchMsg(ctx sdk.Context, contractAddr sdk.AccAddress, contractIBCPortID string, msg wasmvmtypes.CmersMsg) ([]sdk.Event, [][]byte, error) {
+func (m *CustomMessenger) DispatchMsg(ctx sdk.Context, contractAddr sdk.AccAddress, contractIBCPortID string, msg wasmvmtypes.CosmosMsg) ([]sdk.Event, [][]byte, error) {
 	if msg.Custom != nil {
 		// only handle the happy path where this is really creating / minting / swapping ...
 		// leave everything else for the wrapped version

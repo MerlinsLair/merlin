@@ -246,7 +246,7 @@ type ReflectExec struct {
 }
 
 type ReflectMsgs struct {
-	Msgs []wasmvmtypes.CmersMsg `json:"msgs"`
+	Msgs []wasmvmtypes.CosmosMsg `json:"msgs"`
 }
 
 type ReflectSubMsgs struct {
@@ -258,7 +258,7 @@ func executeCustom(t *testing.T, ctx sdk.Context, merlin *app.MerlinApp, contrac
 	require.NoError(t, err)
 	reflectMsg := ReflectExec{
 		ReflectMsg: &ReflectMsgs{
-			Msgs: []wasmvmtypes.CmersMsg{{
+			Msgs: []wasmvmtypes.CosmosMsg{{
 				Custom: customBz,
 			}},
 		},

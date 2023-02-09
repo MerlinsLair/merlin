@@ -11,7 +11,7 @@ import (
 // GenerateKeys generates new keys (KV Store, Transient store, and memory store).
 func (appKeepers *AppKeepers) GenerateKeys() {
 	// Define what keys will be used in the cosmos-sdk key/value store.
-	// Cmers-SDK modules each have a "key" that allows the application to reference what they've stored on the chain.
+	// Cosmos-SDK modules each have a "key" that allows the application to reference what they've stored on the chain.
 	appKeepers.keys = sdk.NewKVStoreKeys(KVStoreKeys()...)
 
 	// Define transient store keys

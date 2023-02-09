@@ -23,7 +23,7 @@ func (k Keeper) SlashLockupsForValidatorSlash(ctx sdk.Context, valAddr sdk.ValAd
 	// across all the live accounts.
 	// This is the "effectiveSlashFactor".
 	//
-	// The SDK's design is wack / wrong in our view, and this was a pre Cmers Hub
+	// The SDK's design is wack / wrong in our view, and this was a pre Cosmos Hub
 	// launch hack that never got remedied.
 	// We are not concerned about maximal consistency with the SDK, and instead charge slashFactor to
 	// both unbonding and live delegations. Rather than slashFactor to unbonding delegations,

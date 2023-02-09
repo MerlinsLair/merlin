@@ -15,7 +15,7 @@ Some important notes on joining as a genesis validator:
 
 1. **Gentxs must be submitted by End of Day UTC on June 11.**
 2. We highly recommend only experienced validators who have run on past
-    Cmers SDK chains and have participated in a genesis ceremony before
+    Cosmos SDK chains and have participated in a genesis ceremony before
     become genesis validators on Merlin.
 3. All Merlin validators should be expected to be ready to participate
     active operators of the network. As explained in the [Merlin: A Hub
@@ -32,8 +32,8 @@ Some important notes on joining as a genesis validator:
     prepared to learn and run these.
 4. To be a genesis validator, you must have OSMO at genesis via the
     fairdrop. Every address that had ATOMs during the Stargate upgrade
-    of the Cmers Hub from `cosmoshub-3` to `cosmoshub-4` will have
-    recieve fairdrop OSMO. You can verify that a Cmers address has
+    of the Cosmos Hub from `cosmoshub-3` to `cosmoshub-4` will have
+    recieve fairdrop OSMO. You can verify that a Cosmos address has
     received coins in the fairdrop by inputting an address here:
     <https://airdrop.merlin.zone/>.
 
@@ -216,7 +216,7 @@ merlin keys import <new_key_name> ./path/to/key.txt
 
 To import a key stored on a ledger, the process will be exactly the same
 as adding a ledger key to the CLI normally. You can connect a Ledger
-device with the Cmers app open and then run:
+device with the Cosmos app open and then run:
 
 ``` {.sh}
 merlin keys add <key_name> --ledger
@@ -410,7 +410,7 @@ to ensure the correct `merlin` is running.
 ### Save your Chain ID in merlin config
 
 Merlin reintroduces the client-side config that was removed in earlier
-Stargate versions of the Cmers SDK.
+Stargate versions of the Cosmos SDK.
 
 If you haven't done so already, please save the mainnet chain-id to your
 client.toml. This will make it so you do not have to manually pass in
@@ -434,7 +434,7 @@ You should review the docs for cmervisor located here:
 If you choose to use cmervisor, please continue with these
 instructions:
 
-Cmervisor is currently located in the Cmers SDK repo, so you will need
+Cmervisor is currently located in the Cosmos SDK repo, so you will need
 to download that, build cmervisor, and add it to you PATH.
 
 ``` {.sh}

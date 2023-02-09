@@ -6,7 +6,7 @@
 
 # merlin-1 peer list
 
-## Cmerstation
+## Cosmostation
 
 8f67a2fcdd7ade970b1983bf1697111d35dfdd6f\@52.79.199.137:26656
 00c328a33578466c711874ec5ee7ada75951f99a\@35.82.201.64:26656

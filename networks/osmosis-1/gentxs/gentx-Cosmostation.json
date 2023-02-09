@@ -4,11 +4,11 @@
             {
                 "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
                 "description": {
-                    "moniker": "Cmerstation",
+                    "moniker": "Cosmostation",
                     "identity": "AE4C403A6E7AA1AC",
                     "website": "https://www.cosmostation.io",
                     "security_contact": "admin@stamper.network",
-                    "details": "Cmerstation validator node. Delegate your tokens and Start Earning Staking Rewards"
+                    "details": "Cosmostation validator node. Delegate your tokens and Start Earning Staking Rewards"
                 },
                 "commission": {
                     "rate": "0.120000000000000000",

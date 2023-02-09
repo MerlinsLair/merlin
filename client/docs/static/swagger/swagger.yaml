@@ -14346,7 +14346,7 @@ paths:
                     name:
                       type: string
                       description: 'Since: cosmos-sdk 0.43'
-                      title: 'name defines the name of the token (eg: Cmers Atom)'
+                      title: 'name defines the name of the token (eg: Cosmos Atom)'
                     symbol:
                       type: string
                       description: >-
@@ -14534,7 +14534,7 @@ paths:
                   name:
                     type: string
                     description: 'Since: cosmos-sdk 0.43'
-                    title: 'name defines the name of the token (eg: Cmers Atom)'
+                    title: 'name defines the name of the token (eg: Cosmos Atom)'
                   symbol:
                     type: string
                     description: >-
@@ -23024,7 +23024,7 @@ paths:
   /cosmos/mint/v1beta1/params:
     get:
       summary: Params returns the total set of minting parameters.
-      operationId: CmersMintParams
+      operationId: CosmosMintParams
       responses:
         '200':
           description: A successful response.
@@ -37555,7 +37555,7 @@ definitions:
       name:
         type: string
         description: 'Since: cosmos-sdk 0.43'
-        title: 'name defines the name of the token (eg: Cmers Atom)'
+        title: 'name defines the name of the token (eg: Cosmos Atom)'
       symbol:
         type: string
         description: >-
@@ -37711,7 +37711,7 @@ definitions:
           name:
             type: string
             description: 'Since: cosmos-sdk 0.43'
-            title: 'name defines the name of the token (eg: Cmers Atom)'
+            title: 'name defines the name of the token (eg: Cosmos Atom)'
           symbol:
             type: string
             description: >-
@@ -37787,7 +37787,7 @@ definitions:
             name:
               type: string
               description: 'Since: cosmos-sdk 0.43'
-              title: 'name defines the name of the token (eg: Cmers Atom)'
+              title: 'name defines the name of the token (eg: Cosmos Atom)'
             symbol:
               type: string
               description: >-
@@ -48572,7 +48572,7 @@ definitions:
       from SIGN_MODE_DIRECT
        - SIGN_MODE_LEGACY_AMINO_JSON: SIGN_MODE_LEGACY_AMINO_JSON is a backwards compatibility mode which uses
       Amino JSON and will be removed in the future
-       - SIGN_MODE_EIP_191: SIGN_MODE_EIP_191 specifies the sign mode for EIP 191 signing on the Cmers
+       - SIGN_MODE_EIP_191: SIGN_MODE_EIP_191 specifies the sign mode for EIP 191 signing on the Cosmos
       SDK. Ref: https://eips.ethereum.org/EIPS/eip-191
 
       Currently, SIGN_MODE_EIP_191 is registered as a SignMode enum variant,
@@ -49773,7 +49773,7 @@ definitions:
               from SIGN_MODE_DIRECT
                - SIGN_MODE_LEGACY_AMINO_JSON: SIGN_MODE_LEGACY_AMINO_JSON is a backwards compatibility mode which uses
               Amino JSON and will be removed in the future
-               - SIGN_MODE_EIP_191: SIGN_MODE_EIP_191 specifies the sign mode for EIP 191 signing on the Cmers
+               - SIGN_MODE_EIP_191: SIGN_MODE_EIP_191 specifies the sign mode for EIP 191 signing on the Cosmos
               SDK. Ref: https://eips.ethereum.org/EIPS/eip-191
 
 
@@ -49852,7 +49852,7 @@ definitions:
           from SIGN_MODE_DIRECT
            - SIGN_MODE_LEGACY_AMINO_JSON: SIGN_MODE_LEGACY_AMINO_JSON is a backwards compatibility mode which uses
           Amino JSON and will be removed in the future
-           - SIGN_MODE_EIP_191: SIGN_MODE_EIP_191 specifies the sign mode for EIP 191 signing on the Cmers
+           - SIGN_MODE_EIP_191: SIGN_MODE_EIP_191 specifies the sign mode for EIP 191 signing on the Cosmos
           SDK. Ref: https://eips.ethereum.org/EIPS/eip-191
 
 
