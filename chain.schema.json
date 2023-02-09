@@ -20,7 +20,7 @@
     ],
     "genesis": {
       "name": "v3",
-      "genesis_url": "https://github.com/merlin-labs/networks/raw/main/merlin-1/genesis.json"
+      "genesis_url": "https://github.com/osmosis-labs/networks/raw/main/merlin-1/genesis.json"
     },
     "versions": [
       {

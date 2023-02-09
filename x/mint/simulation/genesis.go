@@ -24,7 +24,7 @@ const (
 )
 
 var (
-	// Taken from: // https://github.com/merlin-labs/networks/raw/main/merlin-1/genesis.json
+	// Taken from: // https://github.com/osmosis-labs/networks/raw/main/merlin-1/genesis.json
 	distributionProportions = types.DistributionProportions{
 		Staking:          sdk.NewDecWithPrec(25, 2),
 		PoolIncentives:   sdk.NewDecWithPrec(45, 2),

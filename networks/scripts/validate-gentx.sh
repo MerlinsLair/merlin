@@ -60,7 +60,7 @@ else
 
     echo "..........Fetching genesis......."
     rm -rf $MERLIN_HOME/config/genesis.json
-    curl -s https://raw.githubusercontent.com/merlin-labs/networks/main/$CHAIN_ID/pregenesis.json >$MERLIN_HOME/config/genesis.json
+    curl -s https://raw.githubusercontent.com/osmosis-labs/networks/main/$CHAIN_ID/pregenesis.json >$MERLIN_HOME/config/genesis.json
 
     # this genesis time is different from original genesis time, just for validating gentx.
     sed -i '/genesis_time/c\   \"genesis_time\" : \"2021-03-29T00:00:00Z\",' $MERLIN_HOME/config/genesis.json

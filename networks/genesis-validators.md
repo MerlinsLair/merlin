@@ -162,7 +162,7 @@ genesis file with the chain-id and airdrop balances.
 
 ``` {.sh}
 cd $HOME/.merlin/config/
-curl https://raw.githubusercontent.com/merlin-labs/networks/main/merlin-1/pregenesis.json > $HOME/.merlin/config/genesis.json
+curl https://raw.githubusercontent.com/osmosis-labs/networks/main/merlin-1/pregenesis.json > $HOME/.merlin/config/genesis.json
 ```
 
 ### Import Validator Key
@@ -295,7 +295,7 @@ file](%22/Users/sunnya97/.merlin/config/gentx/gentx-eb3b1768d00e66ef83acb1eee59e
 ### Submit Your GenTx
 
 To submit your GenTx for inclusion in the chain, please upload it to the
-[github.com/merlin-labs/networks](https://github.com/merlin-labs/networks)
+[github.com/osmosis-labs/networks](https://github.com/osmosis-labs/networks)
 repo by End of Day, June 10.
 
 To upload the your genesis file, please follow these steps:
@@ -304,7 +304,7 @@ To upload the your genesis file, please follow these steps:
     (please do not have any spaces or special characters in the file
     name)
 2. Fork this repo by going to
-    <https://github.com/merlin-labs/networks>, clicking on fork, and
+    <https://github.com/osmosis-labs/networks>, clicking on fork, and
     choose your account (if multiple).
 3. Clone your copy of the fork to your local machine
 
@@ -478,7 +478,7 @@ You can now download the "genesis" file for the chain. It is pre-filled
 with the entire genesis state and gentxs.
 
 ``` {.sh}
-curl https://media.githubusercontent.com/media/merlin-labs/networks/main/merlin-1/genesis.json > ~/.merlin/config/genesis.json
+curl https://media.githubusercontent.com/media/osmosis-labs/networks/main/merlin-1/genesis.json > ~/.merlin/config/genesis.json
 ```
 
 ### Updates to config files
@@ -582,7 +582,7 @@ investors, and may not under any circumstances be relied upon when
 making investment decisions.*
 
 This work, ["Merlin Genesis Validators
-Guide"](https://github.com/merlin-labs/networks/genesis-validators.md),
+Guide"](https://github.com/osmosis-labs/networks/genesis-validators.md),
 is a derivative of ["Agoric Validator
 Guide"](https://github.com/Agoric/agoric-sdk/wiki/Validator-Guide) used
 under [CC BY](http://creativecommons.org/licenses/by/4.0/). The Agoric

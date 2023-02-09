@@ -14,7 +14,7 @@ modules=$(go list -tags e2e ./... | sed "s/g.*v${version_to_replace}\///")
 
 replace_paths() {
     file="${1}"
-    sed -i "s/github.com\/merlin-labs\/merlin\/v${version_to_replace}/github.com\/merlin-labs\/merlin\/v${NEXT_MAJOR_VERSION}/g" ${file}
+    sed -i "s/github.com\/osmosis-labs\/merlin\/v${version_to_replace}/github.com\/osmosis-labs\/merlin\/v${NEXT_MAJOR_VERSION}/g" ${file}
 }
 
 echo "Replacing import paths in all files"

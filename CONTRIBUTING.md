@@ -12,7 +12,7 @@ The first step is to find an issue you want to fix. To identify issues we think 
 
 We recommend setting up your IDE as per our [recommended IDE setup](https://docs.merlin.zone/developing/merlin-core/ide-guide.html) before proceeding.
 
-If you have a feature request, please use the [feature-request repo](https://github.com/merlin-labs/feature-requests). We also welcome you to [make an issue](https://github.com/merlinslair/merlin/issues/new/choose) for anything of substance, or posting an issue if you want to work on it.
+If you have a feature request, please use the [feature-request repo](https://github.com/osmosis-labs/feature-requests). We also welcome you to [make an issue](https://github.com/merlinslair/merlin/issues/new/choose) for anything of substance, or posting an issue if you want to work on it.
 
 Once you find an existing issue that you want to work on or if you have a new issue to create, continue below.
 

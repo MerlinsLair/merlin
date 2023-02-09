@@ -31,7 +31,7 @@ go mod edit -replace github.com/tendermint/tm-db=github.com/notional-labs/tm-db@
 go mod tidy
 go install -ldflags '-w -s -X github.com/cosmos/cosmos-sdk/types.DBBackend=pebbledb' -tags pebbledb ./...
 merlin init speedrun
-wget -O ~/.merlin/config/genesis.json https://github.com/merlin-labs/networks/raw/main/merlin-1/genesis.json
+wget -O ~/.merlin/config/genesis.json https://github.com/osmosis-labs/networks/raw/main/merlin-1/genesis.json
 merlin start --db_backend pebbledb
 git reset --hard
 

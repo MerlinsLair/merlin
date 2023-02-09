@@ -459,8 +459,8 @@ Every node should upgrade their software version to v8.0.0 before the upgrade bl
 
 ### SDK fork updates
 
-* [sdk-#136](https://github.com/merlin-labs/iavl/pull/136) add after validator slash hook
-* [sdk-#137](https://github.com/merlin-labs/iavl/pull/137) backport feat: Modify grpc gateway to be concurrent
+* [sdk-#136](https://github.com/osmosis-labs/iavl/pull/136) add after validator slash hook
+* [sdk-#137](https://github.com/osmosis-labs/iavl/pull/137) backport feat: Modify grpc gateway to be concurrent
 * [sdk-#146](https://github.com/osmosis-labs/cosmos-sdk/pull/146) extra logs during commit
 * [sdk-#151](https://github.com/osmosis-labs/cosmos-sdk/pull/151) fix logs related to store keys and commit hash
 * [sdk-#140](https://github.com/osmosis-labs/cosmos-sdk/pull/140) refactor: snapshot and pruning functionality
@@ -472,9 +472,9 @@ Every node should upgrade their software version to v8.0.0 before the upgrade bl
 
 ### IAVL fork updates
 
-* [iavl-35](https://github.com/merlin-labs/iavl/pull/35) avoid clearing fast node cache during pruning
-* [iavl-36](https://github.com/merlin-labs/iavl/pull/36) fix data race related to VersionExists
-* [iavl-37](https://github.com/merlin-labs/iavl/pull/36) hardcode fast node cache size to 100k
+* [iavl-35](https://github.com/osmosis-labs/iavl/pull/35) avoid clearing fast node cache during pruning
+* [iavl-36](https://github.com/osmosis-labs/iavl/pull/36) fix data race related to VersionExists
+* [iavl-37](https://github.com/osmosis-labs/iavl/pull/36) hardcode fast node cache size to 100k
 
 ## [v7.0.4](https://github.com/merlinslair/merlin/releases/tag/v7.0.4)
 
@@ -489,7 +489,7 @@ Every node should upgrade their software version to v8.0.0 before the upgrade bl
 
 ### IAVL fork updates
 
-* [iavl-34](https://github.com/merlin-labs/iavl/pull/34) fix concurrent map panic when querying and committing
+* [iavl-34](https://github.com/osmosis-labs/iavl/pull/34) fix concurrent map panic when querying and committing
 
 ## [v7.0.3](https://github.com/merlinslair/merlin/releases/tag/v7.0.3)
 
@@ -527,7 +527,7 @@ The v7 release introduces Superfluid Staking! This allows governance-approved LP
 
 * {Across many PRs} Add superfluid staking
 * [#893](https://github.com/merlinslair/merlin/pull/893/) Allow (non-superfluid'd) locks to be partially unlocked.
-* [#828](https://github.com/merlinslair/merlin/pull/828) Move docs to their own repository, <https://github.com/merlin-labs/docs>
+* [#828](https://github.com/merlinslair/merlin/pull/828) Move docs to their own repository, <https://github.com/osmosis-labs/docs>
 * [#804](https://github.com/merlinslair/merlin/pull/804/) Make the Merlin repo use proper golang module versioning in self-package imports. (Enables other go projects to easily import Merlin tags)
 * [#782](https://github.com/merlinslair/merlin/pull/782) Upgrade to cosmos SDK v0.45.0
 * [#777](https://github.com/merlinslair/merlin/pull/777) Add framework for mempool filters for charging different gas rates, add mempool filter for higher gas txs.
@@ -572,7 +572,7 @@ The v7 release introduces Superfluid Staking! This allows governance-approved LP
 
 ### IAVL fork updates
 
-* [iavl-19](https://github.com/merlin-labs/iavl/pull/19) force GC, no cache during migration, auto heap profile
+* [iavl-19](https://github.com/osmosis-labs/iavl/pull/19) force GC, no cache during migration, auto heap profile
 
 ## [v6.3.1](https://github.com/merlinslair/merlin/releases/tag/v6.3.1)
 
@@ -605,7 +605,7 @@ The v7 release introduces Superfluid Staking! This allows governance-approved LP
 
 ### IAVL fork updates
 
-* [iavl-5](https://github.com/merlin-labs/iavl/pull/5) Fast storage optimization for queries and iterations
+* [iavl-5](https://github.com/osmosis-labs/iavl/pull/5) Fast storage optimization for queries and iterations
 
 ## [v6.2.0](https://github.com/merlinslair/merlin/releases/tag/v6.2.0)
 
@@ -649,7 +649,7 @@ This upgrade fixes a bug in the v5.0.0 upgrade's app.go, which prevents new IBC 
 This binary is compatible with v5.0.0 until block height `2464000`, estimated to be at 4PM UTC Monday December 20th.
 
 * [Patch](https://github.com/merlinslair/merlin/commit/907001b08686ed980e0afa3d97a9c5e2f095b79f#diff-a172cedcae47474b615c54d510a5d84a8dea3032e958587430b413538be3f333) - Revert back to passing in the correct staking keeper into the IBC keeper constructor.
-* [Height gating change](https://github.com/merlin-labs/ibc-go/pull/1) - Height gate the change in IBC, to make the v6.0.0 binary compatible until upgrade height.
+* [Height gating change](https://github.com/osmosis-labs/ibc-go/pull/1) - Height gate the change in IBC, to make the v6.0.0 binary compatible until upgrade height.
 
 ## [v5.0.0](https://github.com/merlinslair/merlin/releases/tag/v5.0.0) - Boron upgrade
 
@@ -658,7 +658,7 @@ The Merlin Boron release is made!
 Notable features include:
 
 * Upgrading from SDK v0.42 to [SDK v0.44](https://github.com/cosmos/cosmos-sdk/blob/v0.43.0/RELEASE_NOTES.md), bringing efficiency improvements, integrations and Rosetta support.
-* Bringing in the new modules [Bech32IBC](https://github.com/merlin-labs/bech32-ibc/), [Authz](https://github.com/cosmos/cosmos-sdk/tree/master/x/authz/spec), [TxFees](https://github.com/merlinslair/merlin/tree/main/x/txfees)
+* Bringing in the new modules [Bech32IBC](https://github.com/osmosis-labs/bech32-ibc/), [Authz](https://github.com/cosmos/cosmos-sdk/tree/master/x/authz/spec), [TxFees](https://github.com/merlinslair/merlin/tree/main/x/txfees)
 * Upgrading to IBC v2, allowing for improved Ethereum Bridge and CosmWasm support
 * Implementing Merlin chain governance's [Proposal 32](https://www.mintscan.io/merlin/proposals/32)
 * Large suite of gas bugs fixed. (Including several that we have not seen on chain)
@@ -670,7 +670,7 @@ Upgrade instructions for node operators can be found [here](https://github.com/m
 
 ## Features
 
-* [\#637](https://github.com/merlinslair/merlin/pull/637) Add [Bech32IBC](https://github.com/merlin-labs/bech32-ibc/)
+* [\#637](https://github.com/merlinslair/merlin/pull/637) Add [Bech32IBC](https://github.com/osmosis-labs/bech32-ibc/)
 * [\#610](https://github.com/merlinslair/merlin/pull/610) Upgrade to Cosmos SDK v0.44.x
   * Numerous large updates, such as making module accounts be 32 bytes, Rosetta support, etc.
   * Adds & integrates the [Authz module](https://github.com/cosmos/cosmos-sdk/tree/master/x/authz/spec)
@@ -713,21 +713,21 @@ Upgrade instructions for node operators can be found [here](https://github.com/m
 * Added changelog and info about changelog format.
 * Fix accumulation store only counting bonded tokens, not unbonding tokens, that prevented the front-end from using more correct APY estimates. (Previously, the front-end could only underestimate rewards)
 
-## [v3.2.0](https://github.com/merlin/merlin-labs/releases/tag/v2.0.0) - 2021-06-28
+## [v3.2.0](https://github.com/merlin/osmosis-labs/releases/tag/v2.0.0) - 2021-06-28
 
 * Update the cosmos-sdk version we modify to v0.42.9
 * Fix a bug in the min commission rate code that allows validators to be created with commission rates less than the minimum.
 * Automatically upgrade any validator with less than the minimum comission rate to the minimum at upgrade time.
 * Unbrick on-chain governance, by fixing the deposit parameter to use `umer` instead of `mer`.
 
-## [v1.0.2](https://github.com/merlin/merlin-labs/releases/tag/v1.0.2) - 2021-06-18
+## [v1.0.2](https://github.com/merlin/osmosis-labs/releases/tag/v1.0.2) - 2021-06-18
 
 This release improves the CLI UX of creating and querying gauges.
 
-## [v1.0.1](https://github.com/merlin/merlin-labs/releases/tag/v1.0.1) - 2021-06-17
+## [v1.0.1](https://github.com/merlin/osmosis-labs/releases/tag/v1.0.1) - 2021-06-17
 
 This release fixes a bug in `merlin version` always displaying 0.0.1.
 
-## [v1.0.0](https://github.com/merlin/merlin-labs/releases/tag/v1.0.0) - 2021-06-16
+## [v1.0.0](https://github.com/merlin/osmosis-labs/releases/tag/v1.0.0) - 2021-06-16
 
 Initial Release!
