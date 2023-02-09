@@ -17,10 +17,10 @@ require (
 	github.com/iancoleman/orderedmap v0.2.0
 	github.com/mattn/go-sqlite3 v1.14.16
 	github.com/ory/dockertest/v3 v3.9.1
-	github.com/merlin-labs/go-mutesting v0.0.0-20221208041716-b43bcd97b3b3
-	github.com/merlinslair/merlin/osmomath v0.0.0-20230105183030-bccf5202f260
-	github.com/merlinslair/merlin/osmoutils v0.0.0-20230130075237-62557eac2673
-	github.com/merlinslair/merlin/x/ibc-hooks v0.0.0-20230201094300-e8bba2b45fd8
+	github.com/osmosis-labs/go-mutesting v0.0.0-20221208041716-b43bcd97b3b3
+	github.com/osmosis-labs/osmisis/osmomath v0.0.0-20230105183030-bccf5202f260
+	github.com/osmosis-labs/osmosis/osmoutils v0.0.0-20230130075237-62557eac2673
+	github.com/osmosis-labs/osmosis/x/ibc-hooks v0.0.0-20230201094300-e8bba2b45fd8
 	github.com/pkg/errors v0.9.1
 	github.com/rakyll/statik v0.1.7
 	github.com/spf13/cast v1.5.0
@@ -309,11 +309,11 @@ require (
 replace (
 	// merlin-patched wasmd
 	// ToDo: replace the commit hash with v0.30.0-mer-v14 once the version is tagged
-	github.com/CosmWasm/wasmd => github.com/merlin-labs/wasmd v0.29.2-0.20221222131554-7c8ea36a6e30
+	github.com/CosmWasm/wasmd => github.com/osmosis-labs/wasmd v0.29.2-0.20221222131554-7c8ea36a6e30
 	// dragonberry
 	github.com/confio/ics23/go => github.com/cosmos/cosmos-sdk/ics23/go v0.8.0
-	// Our cosmos-sdk branch is:  https://github.com/merlin-labs/cosmos-sdk, current branch: v15.x. Direct commit link: https://github.com/merlin-labs/cosmos-sdk/commit/4937288c68d1edd897da147fc1670224911c8612
-	github.com/cosmos/cosmos-sdk => github.com/merlin-labs/cosmos-sdk v0.45.1-0.20230208101050-4937288c68d1
+	// Our cosmos-sdk branch is:  https://github.com/osmosis-labs/cosmos-sdk, current branch: v15.x. Direct commit link: https://github.com/osmosis-labs/cosmos-sdk/commit/4937288c68d1edd897da147fc1670224911c8612
+	github.com/cosmos/cosmos-sdk => github.com/osmosis-labs/cosmos-sdk v0.45.1-0.20230208101050-4937288c68d1
 	// use cosmos-compatible protobufs
 	github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alpha.regen.1
 	// Informal Tendermint fork
