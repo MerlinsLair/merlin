@@ -155,7 +155,7 @@ func init() {
 // This should always be called before any other function to avoid inconsistent data
 func initReusablePackageInjections() {
 	// Inject ClawbackVestingAccount account type into osmoutils
-	osmoutils.OsmoCliExtraAccountTypes = map[reflect.Type]struct{}{
+	osmoutils.OsmoUtilsExtraAccountTypes = map[reflect.Type]struct{}{
 		reflect.TypeOf(&vestingtypes.ClawbackVestingAccount{}): {},
 	}
 }
