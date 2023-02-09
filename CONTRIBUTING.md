@@ -279,16 +279,16 @@ Vendor is a folder that go automatically makes if you run go mod vendor, which c
 Commit & push to the Cosmos-SDK fork in a new branch (see above steps for more details), and then you can grab the commit hash to do:
 
 ```sh
-go get github.com/merlin-labs/cosmos-sdk@{my commit hash}
+go get github.com/osmosis-labs/cosmos-sdk@{my commit hash}
 ```
 
 You get something like:
 
 ```sh
-go get: github.com/merlin-labs/cosmos-sdk@v0.33.2 updating to
-github.com/merlin-labs/cosmos-sdk@v0.42.10-0.20210829064313-2c87644925da: parsing go.mod:
+go get: github.com/osmosis-labs/cosmos-sdk@v0.33.2 updating to
+github.com/osmosis-labs/cosmos-sdk@v0.42.10-0.20210829064313-2c87644925da: parsing go.mod:
 module declares its path as: github.com/cosmos/cosmos-sdk
-but was required as: github.com/merlin-labs/cosmos-sdk
+but was required as: github.com/osmosis-labs/cosmos-sdk
 ```
 
 Then you can copy paste the `v0.42.10-0.20210829064313-2c87644925da` part and replace the corresponding section of go.mod
@@ -599,5 +599,5 @@ We communicate with various integrators if they'd like release-blocking QA testi
 [1]:https://github.com/cosmos/cosmos-sdk/blob/d11196aad04e57812dbc5ac6248d35375e6603af/baseapp/abci.go#L293-L303
 [2]:https://github.com/tendermint/tendermint/blob/9f76e8da150414ce73eed2c4f248947b657c7587/proto/tendermint/types/types.proto#L70-L77
 [3]:https://github.com/tendermint/tendermint/blob/main/types/results.go#L47-L54
-[4]:https://github.com/merlin-labs/cosmos-sdk/blob/5c9a51c277d067e0ec5cf48df30a85fae95bcd14/store/rootmulti/store.go#L430
-[5]:https://github.com/merlin-labs/cosmos-sdk/blob/5c9a51c277d067e0ec5cf48df30a85fae95bcd14/store/types/commit_info.go#L40
+[4]:https://github.com/osmosis-labs/cosmos-sdk/blob/5c9a51c277d067e0ec5cf48df30a85fae95bcd14/store/rootmulti/store.go#L430
+[5]:https://github.com/osmosis-labs/cosmos-sdk/blob/5c9a51c277d067e0ec5cf48df30a85fae95bcd14/store/types/commit_info.go#L40

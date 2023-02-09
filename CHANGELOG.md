@@ -278,7 +278,7 @@ x
 
 #### SDK Upgrades
 * [#2245](https://github.com/merlinslair/merlin/pull/2245) Upgrade SDK for to v0.45.0x-mer-v9.2. Major changes:
-   * Minimum deposit on proposer at submission time: https://github.com/merlin-labs/cosmos-sdk/pull/302
+   * Minimum deposit on proposer at submission time: https://github.com/osmosis-labs/cosmos-sdk/pull/302
 
 ## v10.1.1
 
@@ -300,11 +300,11 @@ x
 
 #### SDK Upgrades
 * [#2146](https://github.com/merlinslair/merlin/pull/2146) Upgrade SDK for to v0.45.0x-mer-v9.1. Major changes:
-   * Concurrency query client option: https://github.com/merlin-labs/cosmos-sdk/pull/281
-   * Remove redacted message fix: https://github.com/merlin-labs/cosmos-sdk/pull/284
-   * Reduce commit store logs (change to Debug): https://github.com/merlin-labs/cosmos-sdk/pull/282
-   * Bring back the cliff vesting command: https://github.com/merlin-labs/cosmos-sdk/pull/272
-   * Allow ScheduleUpgrade to come from same block: https://github.com/merlin-labs/cosmos-sdk/pull/261
+   * Concurrency query client option: https://github.com/osmosis-labs/cosmos-sdk/pull/281
+   * Remove redacted message fix: https://github.com/osmosis-labs/cosmos-sdk/pull/284
+   * Reduce commit store logs (change to Debug): https://github.com/osmosis-labs/cosmos-sdk/pull/282
+   * Bring back the cliff vesting command: https://github.com/osmosis-labs/cosmos-sdk/pull/272
+   * Allow ScheduleUpgrade to come from same block: https://github.com/osmosis-labs/cosmos-sdk/pull/261
 
 
 ## v10.0.1
@@ -347,7 +347,7 @@ Integrators will have to update their messages and queries to adapt, please see 
 #### Governance Changes
 
 * [#1191](https://github.com/merlinslair/merlin/pull/1191), [#1555](https://github.com/merlinslair/merlin/pull/1555) Superfluid stakers now have their votes override their validators votes
-* [sdk #239](https://github.com/merlin-labs/cosmos-sdk/pull/239) Governance can set a distinct voting period for every proposal type.
+* [sdk #239](https://github.com/osmosis-labs/cosmos-sdk/pull/239) Governance can set a distinct voting period for every proposal type.
 
 #### IBC
 
@@ -461,14 +461,14 @@ Every node should upgrade their software version to v8.0.0 before the upgrade bl
 
 * [sdk-#136](https://github.com/merlin-labs/iavl/pull/136) add after validator slash hook
 * [sdk-#137](https://github.com/merlin-labs/iavl/pull/137) backport feat: Modify grpc gateway to be concurrent
-* [sdk-#146](https://github.com/merlin-labs/cosmos-sdk/pull/146) extra logs during commit
-* [sdk-#151](https://github.com/merlin-labs/cosmos-sdk/pull/151) fix logs related to store keys and commit hash
-* [sdk-#140](https://github.com/merlin-labs/cosmos-sdk/pull/140) refactor: snapshot and pruning functionality
-* [sdk-#156](https://github.com/merlin-labs/cosmos-sdk/pull/156) feat: implement querying for commit hash and proofs
-* [sdk-#155](https://github.com/merlin-labs/cosmos-sdk/pull/155) fix: commit info data race
-* [sdk-#158](https://github.com/merlin-labs/cosmos-sdk/pull/158) Fixes the go race tests
-* [sdk-#160](https://github.com/merlin-labs/cosmos-sdk/pull/160) increase setupBaseAppWithSnapshots timeout to 90 seconds
-* [sdk-#161](https://github.com/merlin-labs/cosmos-sdk/pull/155) upgrade iavl to v0.17.3-mer-v7 with lowered fast node cache size
+* [sdk-#146](https://github.com/osmosis-labs/cosmos-sdk/pull/146) extra logs during commit
+* [sdk-#151](https://github.com/osmosis-labs/cosmos-sdk/pull/151) fix logs related to store keys and commit hash
+* [sdk-#140](https://github.com/osmosis-labs/cosmos-sdk/pull/140) refactor: snapshot and pruning functionality
+* [sdk-#156](https://github.com/osmosis-labs/cosmos-sdk/pull/156) feat: implement querying for commit hash and proofs
+* [sdk-#155](https://github.com/osmosis-labs/cosmos-sdk/pull/155) fix: commit info data race
+* [sdk-#158](https://github.com/osmosis-labs/cosmos-sdk/pull/158) Fixes the go race tests
+* [sdk-#160](https://github.com/osmosis-labs/cosmos-sdk/pull/160) increase setupBaseAppWithSnapshots timeout to 90 seconds
+* [sdk-#161](https://github.com/osmosis-labs/cosmos-sdk/pull/155) upgrade iavl to v0.17.3-mer-v7 with lowered fast node cache size
 
 ### IAVL fork updates
 
@@ -485,7 +485,7 @@ Every node should upgrade their software version to v8.0.0 before the upgrade bl
 
 ### SDK fork updates
 
-* [sdk-#135](https://github.com/merlin-labs/cosmos-sdk/pull/135) upgrade iavl to v0.17.3-mer-v5 with concurrent map write fix
+* [sdk-#135](https://github.com/osmosis-labs/cosmos-sdk/pull/135) upgrade iavl to v0.17.3-mer-v5 with concurrent map write fix
 
 ### IAVL fork updates
 
@@ -551,10 +551,10 @@ The v7 release introduces Superfluid Staking! This allows governance-approved LP
 
 ### SDK fork updates
 
-* [sdk-#119](https://github.com/merlin-labs/cosmos-sdk/pull/119) Add bank supply offsets to let applications have some minted tokens not count in total supply.
-* [sdk-#117](https://github.com/merlin-labs/cosmos-sdk/pull/117) Add an instant undelegate method to staking, for use in superfluid.
-* [sdk-#116](https://github.com/merlin-labs/cosmos-sdk/pull/116) Fix the slashing hooks to be correct.
-* [sdk-#108](https://github.com/merlin-labs/cosmos-sdk/pull/108) upgrade to IAVL fast storage on v0.45.0x-mer-v7-fast
+* [sdk-#119](https://github.com/osmosis-labs/cosmos-sdk/pull/119) Add bank supply offsets to let applications have some minted tokens not count in total supply.
+* [sdk-#117](https://github.com/osmosis-labs/cosmos-sdk/pull/117) Add an instant undelegate method to staking, for use in superfluid.
+* [sdk-#116](https://github.com/osmosis-labs/cosmos-sdk/pull/116) Fix the slashing hooks to be correct.
+* [sdk-#108](https://github.com/osmosis-labs/cosmos-sdk/pull/108) upgrade to IAVL fast storage on v0.45.0x-mer-v7-fast
 
 ### Wasmd fork updates
 
@@ -568,7 +568,7 @@ The v7 release introduces Superfluid Staking! This allows governance-approved LP
 
 ### SDK fork updates
 
-* [sdk-#114](https://github.com/merlin-labs/cosmos-sdk/pull/114) upgrading iavl with ram optimizations during migration, and extra logs and fixes for "version X was already saved to a different hash" and "insufficient funds" bugs
+* [sdk-#114](https://github.com/osmosis-labs/cosmos-sdk/pull/114) upgrading iavl with ram optimizations during migration, and extra logs and fixes for "version X was already saved to a different hash" and "insufficient funds" bugs
 
 ### IAVL fork updates
 
@@ -601,7 +601,7 @@ The v7 release introduces Superfluid Staking! This allows governance-approved LP
 
 ### SDK fork updates
 
-* [sdk-#100](https://github.com/merlin-labs/cosmos-sdk/pull/100) Upgrade iavl with fast storage
+* [sdk-#100](https://github.com/osmosis-labs/cosmos-sdk/pull/100) Upgrade iavl with fast storage
 
 ### IAVL fork updates
 
@@ -611,7 +611,7 @@ The v7 release introduces Superfluid Staking! This allows governance-approved LP
 
 ### SDK fork updates
 
-* [sdk-#58](https://github.com/merlin-labs/cosmos-sdk/pull/58) Fix a bug where recheck would not remove txs with invalid sequence numbers
+* [sdk-#58](https://github.com/osmosis-labs/cosmos-sdk/pull/58) Fix a bug where recheck would not remove txs with invalid sequence numbers
 
 ## Minor improvements & Bug Fixes
 
@@ -636,12 +636,12 @@ The v7 release introduces Superfluid Staking! This allows governance-approved LP
 
 ### SDK fork updates
 
-* [sdk-#52](https://github.com/merlin-labs/cosmos-sdk/pull/52) Fix inconsistencies in default pruning config, and change defaults. Fix pruning=everything defaults.
+* [sdk-#52](https://github.com/osmosis-labs/cosmos-sdk/pull/52) Fix inconsistencies in default pruning config, and change defaults. Fix pruning=everything defaults.
   * previously default was actually keeping 3 weeks of state, and every 100th state. (Not that far off from archive nodes)
   * pruning=default now changed to 1 week of state (100k blocks), and keep-every=0. (So a constant number of states stored)
   * pruning=everything now stores the last 10 states, to avoid db corruption errors plaguing everyone who used it. This isn't a significant change, because the pruning interval was anyways 10 blocks, so your node had to store 10 blocks of state anyway.
-* [sdk-#51](https://github.com/merlin-labs/cosmos-sdk/pull/51) Add hooks for superfluid staking
-* [sdk-#50](https://github.com/merlin-labs/cosmos-sdk/pull/50) Make it possible to better permission the bank keeper's minting ability
+* [sdk-#51](https://github.com/osmosis-labs/cosmos-sdk/pull/51) Add hooks for superfluid staking
+* [sdk-#50](https://github.com/osmosis-labs/cosmos-sdk/pull/50) Make it possible to better permission the bank keeper's minting ability
 
 ## [v6.0.0](https://github.com/merlinslair/merlin/releases/tag/v6.0.0)
 
