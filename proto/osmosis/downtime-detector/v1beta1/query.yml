@@ -1,0 +1,8 @@
+keeper: 
+  path: "github.com/merlinslair/merlin/x/downtime-detector"
+  struct: "Keeper"
+client_path: "github.com/merlinslair/merlin/x/downtime-detector/client"
+queries:
+  RecoveredSinceDowntimeOfLength:
+    proto_wrapper:
+      query_func: "k.RecoveredSinceDowntimeOfLength"

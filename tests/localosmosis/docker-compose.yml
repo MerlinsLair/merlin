@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+
+  merlind:
+    image: local:merlin
+    build:
+      context: ../../
+      dockerfile: Dockerfile
+      args:
+        RUNNER_IMAGE: alpine:3.16
+        GO_VERSION: 1.19
+    volumes:
+      - ./scripts/nativeDenomPoolA.json:/merlin/nativeDenomPoolA.json
+      - ./scripts/nativeDenomPoolB.json:/merlin/nativeDenomPoolB.json
+      - ./scripts/nativeDenomThreeAssetPool.json:/merlin/nativeDenomThreeAssetPool.json
+      - ./scripts/stableswapPool.json:/merlin/stableswapPool.json
+      - ./scripts/setup.sh:/merlin/setup.sh
+      - $HOME/.merlind-local/:/merlin/.merlind/
+    entrypoint:
+      - /merlin/setup.sh
+    command:
+      - $STATE
+    ports:
+      - 26657:26657
+      - 1317:1317
+      - 9090:9090
+      - 9091:9091

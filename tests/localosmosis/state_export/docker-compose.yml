@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+
+  merlind:
+    image: local:merlin
+    build:
+      context: ../../../
+      dockerfile: Dockerfile
+      args:
+        RUNNER_IMAGE: alpine:3.16
+        GO_VERSION: 1.19
+    volumes:
+      - ./scripts/start.sh:/merlin/start.sh
+      - ./scripts/testnetify.py:/merlin/testnetify.py
+      - ./state_export.json:/merlin/state_export.json
+      - $HOME/.merlind-local/:/merlin/.merlind/
+    entrypoint:
+      - /merlin/start.sh
+    environment:
+      - MONIKER=val
+      - CHAIN_ID=localmerlin
+    ports:
+      - 26657:26657
+      - 1317:1317
+      - 9090:9090
+      - 9091:9091
