@@ -280,15 +280,15 @@ func MainnetGenesisParams() GenesisParams {
 	genParams.StrategicReserveAccounts = []banktypes.Balance{
 		{
 			Address: "mer1el3aytvehpvxw2ymmya4kdyj9yndyy47fw5zh4",
-			Coins:   sdk.NewCoins(sdk.NewCoin(genParams.NativeCoinMetadatas[0].Base, sdk.NewInt(47_874_500_000_000))), // 47.8745 million OSMO
+			Coins:   sdk.NewCoins(sdk.NewCoin(genParams.NativeCoinMetadatas[0].Base, sdk.NewInt(47_874_500_000_000))), // 47.8745 million MER
 		},
 		{
 			Address: "mer1g7rp8h6wzekjjy8n6my8za3vg3338eqz3v295v",
-			Coins:   sdk.NewCoins(sdk.NewCoin(genParams.NativeCoinMetadatas[0].Base, sdk.NewInt(500_000_000_000))), // 500 thousand OSMO
+			Coins:   sdk.NewCoins(sdk.NewCoin(genParams.NativeCoinMetadatas[0].Base, sdk.NewInt(500_000_000_000))), // 500 thousand MER
 		},
 		{
 			Address: "mer1z7ql0vcjlznrruw3hwgm043w8yhzqmtpu5rlp9",
-			Coins:   sdk.NewCoins(sdk.NewCoin(genParams.NativeCoinMetadatas[0].Base, sdk.NewInt(1_000_000_000_000))), // 1 million OSMO
+			Coins:   sdk.NewCoins(sdk.NewCoin(genParams.NativeCoinMetadatas[0].Base, sdk.NewInt(1_000_000_000_000))), // 1 million MER
 		},
 		{
 			Address: "mer1grgelyng2v6v3t8z87wu3sxgt9m5s03xytvfcl",
@@ -538,7 +538,7 @@ func TestnetGenesisParams() GenesisParams {
 
 	genParams.GovParams.DepositParams.MinDeposit = sdk.NewCoins(sdk.NewCoin(
 		genParams.NativeCoinMetadatas[0].Base,
-		sdk.NewInt(1000000), // 1 OSMO
+		sdk.NewInt(1000000), // 1 MER
 	))
 	genParams.GovParams.TallyParams.Quorum = sdk.MustNewDecFromStr("0.0000000001") // 0.00000001%
 	genParams.GovParams.VotingParams.VotingPeriod = time.Second * 300              // 300 seconds

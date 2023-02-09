@@ -5,9 +5,9 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/osmosis-labs/osmosis/osmoutils/osmocli"
 	clmodel "github.com/merlinslair/merlin/x/concentrated-liquidity/model"
 	"github.com/merlinslair/merlin/x/concentrated-liquidity/types"
+	"github.com/osmosis-labs/osmosis/osmoutils/osmocli"
 )
 
 func NewTxCmd() *cobra.Command {

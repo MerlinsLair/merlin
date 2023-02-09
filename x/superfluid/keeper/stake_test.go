@@ -527,7 +527,7 @@ func (suite *KeeperTestSuite) TestSuperfluidUndelegateAndUnbondLock() {
 				intermediaryAcc := suite.App.SuperfluidKeeper.GetIntermediaryAccount(suite.Ctx, accAddr)
 				valAddr := intermediaryAcc.ValAddr
 
-				// get OSMO total supply and amount to be burned
+				// get MER total supply and amount to be burned
 				bondDenom := suite.App.StakingKeeper.BondDenom(suite.Ctx)
 				supplyBefore := suite.App.BankKeeper.GetSupply(suite.Ctx, bondDenom)
 				merAmount := suite.App.SuperfluidKeeper.GetSuperfluidOSMOTokens(suite.Ctx, intermediaryAcc.Denom, tc.unlockAmount)
@@ -542,7 +542,7 @@ func (suite *KeeperTestSuite) TestSuperfluidUndelegateAndUnbondLock() {
 
 				suite.Require().NoError(err)
 
-				// check OSMO total supply and burnt amount
+				// check MER total supply and burnt amount
 				suite.Require().True(merAmount.IsPositive())
 				supplyAfter := suite.App.BankKeeper.GetSupply(suite.Ctx, bondDenom)
 				suite.Require().Equal(supplyAfter, supplyBefore.Sub(sdk.NewCoin(bondDenom, merAmount)))

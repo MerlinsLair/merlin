@@ -12,7 +12,7 @@ There are two kinds of `gauges`, perpetual and non-perpetual ones.
 
 - Non perpetual ones get removed from active queue after the the distribution period finish but perpetual ones persist.
 - For non perpetual ones, they distribute the tokens equally per epoch during the `gauge` is in the active period.
-- For perpetual ones, it distribute all the tokens at a single time and somewhere else put the tokens regularly to distribute the tokens, it's mainly used to distribute minted OSMO tokens to LP token stakers.
+- For perpetual ones, it distribute all the tokens at a single time and somewhere else put the tokens regularly to distribute the tokens, it's mainly used to distribute minted MER tokens to LP token stakers.
 
 ## Contents
 
@@ -40,7 +40,7 @@ There are two kinds of gauges: **`perpetual`** and **`non-perpetual`**:
 
 - **`Non-perpetual`** gauges distribute their tokens equally per epoch while the gauge is in the active period. These gauges get removed from the active queue after the distribution period finishes
 
-- **`Perpetual gauges`** distribute all their tokens at a single time and only distribute their tokens again once the gauge is refilled (this is mainly used to distribute minted OSMO tokens to LP token stakers). Perpetual gauges persist and will re-disburse tokens when refilled (there is no "active" period)
+- **`Perpetual gauges`** distribute all their tokens at a single time and only distribute their tokens again once the gauge is refilled (this is mainly used to distribute minted MER tokens to LP token stakers). Perpetual gauges persist and will re-disburse tokens when refilled (there is no "active" period)
 
 ## State
 

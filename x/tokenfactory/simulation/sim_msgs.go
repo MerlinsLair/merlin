@@ -5,10 +5,10 @@ import (
 
 	legacysimulationtype "github.com/cosmos/cosmos-sdk/types/simulation"
 
-	"github.com/osmosis-labs/osmosis/osmoutils"
 	"github.com/merlinslair/merlin/simulation/simtypes"
 	"github.com/merlinslair/merlin/x/tokenfactory/keeper"
 	"github.com/merlinslair/merlin/x/tokenfactory/types"
+	"github.com/osmosis-labs/osmosis/osmoutils"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )

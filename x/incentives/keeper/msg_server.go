@@ -3,8 +3,8 @@ package keeper
 import (
 	"context"
 
-	"github.com/osmosis-labs/osmosis/osmoutils"
 	"github.com/merlinslair/merlin/x/incentives/types"
+	"github.com/osmosis-labs/osmosis/osmoutils"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"

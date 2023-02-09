@@ -15,9 +15,9 @@ import (
 	flag "github.com/spf13/pflag"
 	"gopkg.in/yaml.v2"
 
-	"github.com/osmosis-labs/osmosis/osmoutils/osmocli"
 	"github.com/merlinslair/merlin/x/gamm/pool-models/balancer"
 	"github.com/merlinslair/merlin/x/gamm/types"
+	"github.com/osmosis-labs/osmosis/osmoutils/osmocli"
 )
 
 // GetQueryCmd returns the cli query commands for this module.

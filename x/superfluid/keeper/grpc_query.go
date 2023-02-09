@@ -419,8 +419,8 @@ func (q Querier) TotalDelegationByValidatorForDenom(goCtx context.Context, req *
 		equivalentAmountOSMO := q.Keeper.GetSuperfluidOSMOTokens(ctx, req.Denom, amount)
 
 		result := types.Delegations{
-			ValAddr:        valAddr.String(),
-			AmountSfsd:     amount,
+			ValAddr:       valAddr.String(),
+			AmountSfsd:    amount,
 			MerEquivalent: equivalentAmountOSMO,
 		}
 

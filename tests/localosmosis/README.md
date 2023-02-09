@@ -206,7 +206,7 @@ If you are only running the validator for a short time (< 24 hours) you will not
 
 ## LocalMerlin Accounts
 
-LocalMerlin is pre-configured with one validator and 9 accounts with ION and OSMO balances.
+LocalMerlin is pre-configured with one validator and 9 accounts with ION and MER balances.
 
 | Account   | Address                                                                                                | Mnemonic                                                                                                                                                                   |
 | --------- | ------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

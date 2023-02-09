@@ -6,8 +6,8 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/osmosis-labs/osmosis/osmoutils/accum"
 	"github.com/merlinslair/merlin/x/concentrated-liquidity/types"
+	"github.com/osmosis-labs/osmosis/osmoutils/accum"
 )
 
 const (

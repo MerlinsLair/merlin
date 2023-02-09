@@ -9,9 +9,9 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/gogo/protobuf/proto"
 
-	"github.com/osmosis-labs/osmosis/osmoutils"
 	"github.com/merlinslair/merlin/x/concentrated-liquidity/model"
 	"github.com/merlinslair/merlin/x/concentrated-liquidity/types"
+	"github.com/osmosis-labs/osmosis/osmoutils"
 )
 
 // getAllPositionsWithVaryingFreezeTimes returns multiple positions indexed by poolId, addr, lowerTick, upperTick with varying freeze times.

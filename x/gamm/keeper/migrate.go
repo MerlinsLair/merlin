@@ -5,11 +5,11 @@ import (
 	"sort"
 	"time"
 
-	"github.com/osmosis-labs/osmosis/osmoutils"
 	cl "github.com/merlinslair/merlin/x/concentrated-liquidity"
 	cltypes "github.com/merlinslair/merlin/x/concentrated-liquidity/types"
 	"github.com/merlinslair/merlin/x/gamm/types"
 	poolmanagertypes "github.com/merlinslair/merlin/x/poolmanager/types"
+	"github.com/osmosis-labs/osmosis/osmoutils"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )

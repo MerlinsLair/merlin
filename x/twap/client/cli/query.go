@@ -10,10 +10,10 @@ import (
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	"github.com/spf13/cobra"
 
-	"github.com/osmosis-labs/osmosis/osmoutils/osmocli"
 	gammtypes "github.com/merlinslair/merlin/x/gamm/types"
 	"github.com/merlinslair/merlin/x/twap/client/queryproto"
 	"github.com/merlinslair/merlin/x/twap/types"
+	"github.com/osmosis-labs/osmosis/osmoutils/osmocli"
 )
 
 // GetQueryCmd returns the cli query commands for this module.

@@ -11,9 +11,9 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/query"
 
-	"github.com/osmosis-labs/osmosis/osmoutils"
 	"github.com/merlinslair/merlin/x/concentrated-liquidity/model"
 	"github.com/merlinslair/merlin/x/concentrated-liquidity/types"
+	"github.com/osmosis-labs/osmosis/osmoutils"
 )
 
 const (

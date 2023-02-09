@@ -46,24 +46,24 @@ type NodeConfig struct {
 
 const (
 	// common
-	MerDenom           = "umer"
+	MerDenom            = "umer"
 	IonDenom            = "uion"
 	StakeDenom          = "stake"
 	AtomDenom           = "uatom"
-	MerIBCDenom        = "ibc/ED07A3391A112B175915CD8FAF43A2DA8E4790EDE12566649D0C2F97716B8518"
+	MerIBCDenom         = "ibc/ED07A3391A112B175915CD8FAF43A2DA8E4790EDE12566649D0C2F97716B8518"
 	StakeIBCDenom       = "ibc/C053D637CCA2A2BA030E2C5EE1B28A16F71CCB0E45E8BE52766DC1B241B7787"
 	MinGasPrice         = "0.000"
 	IbcSendAmount       = 3300000000
 	ValidatorWalletName = "val"
 	// chainA
 	ChainAID      = "mer-test-a"
-	MerBalanceA  = 200000000000
+	MerBalanceA   = 200000000000
 	IonBalanceA   = 100000000000
 	StakeBalanceA = 110000000000
 	StakeAmountA  = 100000000000
 	// chainB
 	ChainBID      = "mer-test-b"
-	MerBalanceB  = 500000000000
+	MerBalanceB   = 500000000000
 	IonBalanceB   = 100000000000
 	StakeBalanceB = 440000000000
 	StakeAmountB  = 400000000000
@@ -80,10 +80,10 @@ var (
 
 	InitBalanceStrA = fmt.Sprintf("%d%s,%d%s,%d%s", MerBalanceA, MerDenom, StakeBalanceA, StakeDenom, IonBalanceA, IonDenom)
 	InitBalanceStrB = fmt.Sprintf("%d%s,%d%s,%d%s", MerBalanceB, MerDenom, StakeBalanceB, StakeDenom, IonBalanceB, IonDenom)
-	MerToken       = sdk.NewInt64Coin(MerDenom, IbcSendAmount)  // 3,300umer
+	MerToken        = sdk.NewInt64Coin(MerDenom, IbcSendAmount)   // 3,300umer
 	StakeToken      = sdk.NewInt64Coin(StakeDenom, IbcSendAmount) // 3,300ustake
-	tenMer         = sdk.Coins{sdk.NewInt64Coin(MerDenom, 10_000_000)}
-	fiftyMer       = sdk.Coins{sdk.NewInt64Coin(MerDenom, 50_000_000)}
+	tenMer          = sdk.Coins{sdk.NewInt64Coin(MerDenom, 10_000_000)}
+	fiftyMer        = sdk.Coins{sdk.NewInt64Coin(MerDenom, 50_000_000)}
 )
 
 func addAccount(path, moniker, amountStr string, accAddr sdk.AccAddress, forkHeight int) error {

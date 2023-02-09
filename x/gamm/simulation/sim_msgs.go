@@ -9,12 +9,12 @@ import (
 
 	legacysimulationtype "github.com/cosmos/cosmos-sdk/types/simulation"
 
-	"github.com/osmosis-labs/osmosis/osmoutils"
 	"github.com/merlinslair/merlin/simulation/simtypes"
 	"github.com/merlinslair/merlin/x/gamm/keeper"
 	balancertypes "github.com/merlinslair/merlin/x/gamm/pool-models/balancer"
 	"github.com/merlinslair/merlin/x/gamm/types"
 	poolmanagertypes "github.com/merlinslair/merlin/x/poolmanager/types"
+	"github.com/osmosis-labs/osmosis/osmoutils"
 )
 
 var PoolCreationFee = sdk.NewInt64Coin("stake", 10_000_000)

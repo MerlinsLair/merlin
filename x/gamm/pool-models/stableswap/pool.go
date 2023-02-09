@@ -8,10 +8,10 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 
-	"github.com/osmosis-labs/osmosis/osmomath"
 	"github.com/merlinslair/merlin/x/gamm/pool-models/internal/cfmm_common"
 	"github.com/merlinslair/merlin/x/gamm/types"
 	poolmanagertypes "github.com/merlinslair/merlin/x/poolmanager/types"
+	"github.com/osmosis-labs/osmosis/osmomath"
 )
 
 var (

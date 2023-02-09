@@ -677,7 +677,7 @@ Upgrade instructions for node operators can be found [here](https://github.com/m
     See: [SDK v0.43.0 Release Notes](https://github.com/cosmos/cosmos-sdk/releases/tag/v0.43.0) For more details
 * [\#610](https://github.com/merlinslair/merlin/pull/610) Upgrade to IBC-v2
 * [\#560](https://github.com/merlinslair/merlin/pull/560) Implements Merlin [prop32](https://www.mintscan.io/merlin/proposals/32) -- clawing back the final 20% of unclaimed mer and ion airdrop.
-* [\#394](https://github.com/merlinslair/merlin/pull/394) Allow whitelisted tx fee tokens based on conversion rate to OSMO
+* [\#394](https://github.com/merlinslair/merlin/pull/394) Allow whitelisted tx fee tokens based on conversion rate to MER
 * [Commit db450f0](https://github.com/merlinslair/merlin/commit/db450f0dce8c595211d920f9bca7ed0f3a136e43) Add blocking of OFAC banned Ethereum addresses
 
 ## Minor improvements & Bug Fixes

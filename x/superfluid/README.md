@@ -6,9 +6,9 @@ Superfluid Staking provides the consensus layer more security with a
 sort of "Proof of Useful Stake". Each person gets an amount of Mer
 representative of the value of their share of liquidity pool tokens
 staked and delegated to validators, resulting in the security guarantee
-of the consensus layer to also be based on GAMM LP shares. The OSMO
+of the consensus layer to also be based on GAMM LP shares. The MER
 token is minted and burned in the context of Superfluid Staking.
-Throughout all of this, OSMO's supply is preserved in queries to the
+Throughout all of this, MER's supply is preserved in queries to the
 bank module.
 
 ### The process
@@ -19,15 +19,15 @@ modules](https://github.com/merlinslair/merlin/tree/main/x/superfluid).
 - The `SuperfluidDelegate` method stores your share of bonded
   liquidity pool tokens, with `validateLock` as a verifier for lockup
   time.
-- `GetSuperfluidMer` mints OSMO tokens each day for delegation as a
+- `GetSuperfluidMer` mints MER tokens each day for delegation as a
   representative of the value of your pool share. This amount is
   minted because the staking module at the moment requires staked
-  tokens to be in OSMO. This amount is burned each day and re-minted
+  tokens to be in MER. This amount is burned each day and re-minted
   to keep the representative amount of the value of your pool share
   accurate. The lockup duration is guaranteed from the underlying
   lockup module.
 - `GetExpectedDelegationAmount` iterates over each (denom, delegate)
-  pair and checks for how much OSMO we have delegated. The difference
+  pair and checks for how much MER we have delegated. The difference
   from the current balance to what is expected is burned / minted to
   match with the expected.
 - A `messageServer` method executes the Superfluid delegate message.
@@ -39,7 +39,7 @@ modules](https://github.com/merlinslair/merlin/tree/main/x/superfluid).
   distribution or slashing events, and are responsible for
   establishing the connection between each superfluid staked lock and
   their delegation to the validator. These work by transferring the
-  superfluid OSMO to their respective delegators. Rewards are linearly
+  superfluid MER to their respective delegators. Rewards are linearly
   scaled based on how much you have locked for a given (validator,
   denom) pair. Rewards are first moved to the incentive gauges, then
   distributed from the gauges. In this way, we're using the existing
@@ -54,8 +54,8 @@ modules](https://github.com/merlinslair/merlin/tree/main/x/superfluid).
 
 ### Example
 
-If Alice has 500 GAMM tokens bonded to the ATOM \<\> OSMO, she will have
-the equivalent value of OSMO minted, delegated to her chosen staker, and
+If Alice has 500 GAMM tokens bonded to the ATOM \<\> MER, she will have
+the equivalent value of MER minted, delegated to her chosen staker, and
 burned for her each day with Superfluid staking. On the user side, all
 she has to know is who she wants to delegate her tokens to. In order to
 switch delegation, she has to unbond her tokens from the pool first and
@@ -65,16 +65,16 @@ the above process to kickstart.
 
 ### Why mint Mer? How is this method safe and accurate?
 
-Superfluid staking requires the minting of OSMO because in order to
-stake on the Merlin chain, OSMO tokens are required as the chosen
+Superfluid staking requires the minting of MER because in order to
+stake on the Merlin chain, MER tokens are required as the chosen
 collateral. Synthetic Mer is minted here as a representative of the
 value of each superfluid staker's liquidity pool tokens.
 
 The pool tokens are acquired by the user from normally staking in a
-liquidity pool. They get minted an amount of OSMO equivalent to the
+liquidity pool. They get minted an amount of MER equivalent to the
 value of their GAMM pool tokens. This method is accurate because
-querying the value OSMO every day allows for burning and minting
-according to the difference in value of OSMO relative to the expected
+querying the value MER every day allows for burning and minting
+according to the difference in value of MER relative to the expected
 delegation amount (as seen with
 [GetExpectedDelegationAmount](https://github.com/merlinslair/merlin/blob/main/x/superfluid/keeper/stake.go)).
 It's like having a price oracle for fairly calculating the amount the
@@ -86,10 +86,10 @@ representative price of the GAMM token shares. The superfluid module has
 "hooks" messages to refresh delegation amounts
 (`RefreshIntermediaryDelegationAmounts`) and to increase delegation on
 lockup (`IncreaseSuperfluidDelegation`). Then, we see whether or not the
-superfluid OSMO currently delegated is worth more or less than this
-expected delegation amount amount. If the OSMO is worth more, we do
-instant undelegations and immediately burn the OSMO. If less, we mint
-OSMO and update the amount delegated. A simplified diagram of this whole
+superfluid MER currently delegated is worth more or less than this
+expected delegation amount amount. If the MER is worth more, we do
+instant undelegations and immediately burn the MER. If less, we mint
+MER and update the amount delegated. A simplified diagram of this whole
 process is found below:
 
 <br/>
@@ -103,7 +103,7 @@ process is found below:
 </br>
 
 This minting is safe because we strict constrain the permissions of Bank
-(the module that burns and mints OSMO) to do what it's designed to do.
+(the module that burns and mints MER) to do what it's designed to do.
 The authority is mediated through `mintMerTokensAndDelegate` and
 `forceUndelegateAndBurnMerTokens` keeper methods called by the
 `SuperfluidDelegate` and `SuperfluidUndelegate` message handlers for the
@@ -113,7 +113,7 @@ amounts also call this keeper method.
 The delegation is then verified to not already be associated with an
 intermediary account (to prevent double-staking), and is always
 delegated or withdrawn taking into account various multipliers for
-synthetic OSMO value (its worth with respect to the liquidity pool, and
+synthetic MER value (its worth with respect to the liquidity pool, and
 a risk modifier) to prevent mint inaccuracies. Before minting, we also
 check that the message sender is the owner of the locked funds; that the
 lock is not unlocking; is locked for at least the unbonding period, and
@@ -138,7 +138,7 @@ pool tokens in exchange. These GAMM pool tokens represent a share of the
 total liquidity pool, and allows you to get transaction fees or
 participate in external incentive gauge token distributions. When
 bonding, on top of the regular bonding transaction there will also be a
-selection of validators. As stated above, OSMO is also minted and burned
+selection of validators. As stated above, MER is also minted and burned
 each day and superfluidly staked to whoever you have chosen to be your
 validator. You gain additional APR as a reward for bolstering the
 Merlin chain's consensus integrity by delegating.
@@ -148,9 +148,9 @@ Merlin chain's consensus integrity by delegating.
 When unbonding, superfluid tokens get un-delegated. After making sure
 that the unbond message sender is the owner of their corresponding
 locked funds, the existing synthetic lockup is deleted and replaced with
-a new synthetic lockup for unbonding purposes. The undelegated OSMO is
+a new synthetic lockup for unbonding purposes. The undelegated MER is
 then instantly withdrawn from the intermediate account and validator
-using the InstantUndelegate function. The OSMO that was originally used
+using the InstantUndelegate function. The MER that was originally used
 for representing your LP shares are burnt. Moves the tracker for
 unbonding, allows the underlying lock to start unlocking if desired
 
@@ -170,7 +170,7 @@ Intermediary Accounts establishes the connections between the superfluid
 staked locks and delegations to the validator. Intermediary accounts
 exists for every denom + validator combination, so that it would group
 locks with the same denom + validator selection. Superfluid staking a
-lock would mint equivalent amount of OSMO of the lock and send it to the
+lock would mint equivalent amount of MER of the lock and send it to the
 intermediary account and the intermediarry accounts would be delegating
 to the specified validator.
 
@@ -183,7 +183,7 @@ that an Intermediary Account is dedicated to.
 
 ### Superfluid Asset
 
-A superfluid asset is a alternative asset (non-OSMO) that is allowed by
+A superfluid asset is a alternative asset (non-MER) that is allowed by
 governance to be used for staking.
 
 It can only be updated by governance proposals. We validate at proposal
@@ -207,14 +207,14 @@ At the moment, one lock can only be fully bonded to one validator.
 ### Mer Equivalent Multipliers
 
 The Mer Equivalent Multiplier for an asset is the multiplier it has for
-its value relative to OSMO.
+its value relative to MER.
 
 Different types of assets can have different functions for calculating
 their multiplier. We currently support two asset types.
 
 1. Native Token
 
-The multiplier for OSMO is alway 1.
+The multiplier for MER is alway 1.
 
 2. Gamm LP Shares
 
@@ -421,7 +421,7 @@ receives from other modules.
 On AfterEpochEnd, we iterate through all existing intermediary accounts
 and withdraw delegation rewards they have received. Then we send the
 collective rewards to the perpetual gauge corresponding to the
-intermediary account. Then we update OSMO backing per share for the
+intermediary account. Then we update MER backing per share for the
 specific pool. After the update, iteration through all intermediate
 accounts happen, undelegating and bonding existing delegations for all
 superfluid staking and use the updated spot price at epoch time to mint
@@ -613,9 +613,9 @@ currently contains:
 
 - `MinimumRiskFactor` which is an sdk.Dec that represents the discount
   to apply to all superfluid staked modules when calcultating their
-  staking power. For example, if a specific denom has an OSMO
-  equivalent value of 100 OSMO, but the the `MinimumRiskFactor` param
-  is 0.05, then the denom will only get 95 OSMO worth of staking power
+  staking power. For example, if a specific denom has an MER
+  equivalent value of 100 MER, but the the `MinimumRiskFactor` param
+  is 0.05, then the denom will only get 95 MER worth of staking power
   when staked.
 
 ### AssetType

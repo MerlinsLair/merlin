@@ -5,10 +5,10 @@ import (
 	storetypes "github.com/cosmos/cosmos-sdk/store/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/osmosis-labs/osmosis/osmoutils"
 	"github.com/merlinslair/merlin/x/concentrated-liquidity/internal/math"
 	"github.com/merlinslair/merlin/x/concentrated-liquidity/model"
 	types "github.com/merlinslair/merlin/x/concentrated-liquidity/types"
+	"github.com/osmosis-labs/osmosis/osmoutils"
 )
 
 // initOrUpdateTick retrieves the tickInfo from the specified tickIndex and updates both the liquidityNet and LiquidityGross.

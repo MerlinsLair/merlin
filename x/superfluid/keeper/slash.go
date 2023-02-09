@@ -3,8 +3,8 @@ package keeper
 import (
 	"time"
 
-	"github.com/osmosis-labs/osmosis/osmoutils"
 	lockuptypes "github.com/merlinslair/merlin/x/lockup/types"
+	"github.com/osmosis-labs/osmosis/osmoutils"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )

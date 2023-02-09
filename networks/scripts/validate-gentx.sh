@@ -3,7 +3,7 @@ MERLIN_HOME="/tmp/merlin$(date +%s)"
 RANDOM_KEY="randommerlinvalidatorkey"
 CHAIN_ID=merlin-1
 DENOM=umer
-MAXBOND=50000000000000 # 500 Million OSMO
+MAXBOND=50000000000000 # 500 Million MER
 
 GENTX_FILE=$(find ./$CHAIN_ID/gentxs -iname "*.json")
 LEN_GENTX=$(echo ${#GENTX_FILE})

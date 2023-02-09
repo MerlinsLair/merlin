@@ -3,16 +3,16 @@ package keeper
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/osmosis-labs/osmosis/osmoutils"
 	epochstypes "github.com/merlinslair/merlin/x/epochs/types"
 	txfeestypes "github.com/merlinslair/merlin/x/txfees/types"
+	"github.com/osmosis-labs/osmosis/osmoutils"
 )
 
 func (k Keeper) BeforeEpochStart(ctx sdk.Context, epochIdentifier string, epochNumber int64) error {
 	return nil
 }
 
-// at the end of each epoch, swap all non-OSMO fees into OSMO and transfer to fee module account
+// at the end of each epoch, swap all non-MER fees into MER and transfer to fee module account
 func (k Keeper) AfterEpochEnd(ctx sdk.Context, epochIdentifier string, epochNumber int64) error {
 	nonNativeFeeAddr := k.accountKeeper.GetModuleAddress(txfeestypes.NonNativeFeeCollectorName)
 	baseDenom, _ := k.GetBaseDenom(ctx)

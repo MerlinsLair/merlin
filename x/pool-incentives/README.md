@@ -226,7 +226,7 @@ An example output:
 
 ### external-incentivized-gauges 
 
-Query externally incentivized gauges (gauges distributing rewards on top of the normal OSMO rewards)
+Query externally incentivized gauges (gauges distributing rewards on top of the normal MER rewards)
 
 ```sh
 merlin query pool-incentives external-incentivized-gauges
@@ -306,7 +306,7 @@ gauge_ids_with_duration:
   gauge_id: "3"
 ```
 
-In this example, we see that gauge IDs 1,2, and 3 are for the one day, one week, and two week lockup periods respectively for the OSMO/ATOM pool.
+In this example, we see that gauge IDs 1,2, and 3 are for the one day, one week, and two week lockup periods respectively for the MER/ATOM pool.
 :::
 
 ### incentivized-pools           

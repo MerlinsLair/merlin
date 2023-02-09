@@ -30,7 +30,7 @@ message SuperfluidAsset {
 }
 
 // SuperfluidIntermediaryAccount takes the role of intermediary between LP token
-// and OSMO tokens for superfluid staking. The intermediary account is the
+// and MER tokens for superfluid staking. The intermediary account is the
 // actual account responsible for delegation, not the validator account itself.
 message SuperfluidIntermediaryAccount {
   // Denom indicates the denom of the superfluid asset.

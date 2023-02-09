@@ -10,11 +10,11 @@ import (
 	"github.com/spf13/cobra"
 	flag "github.com/spf13/pflag"
 
-	"github.com/osmosis-labs/osmosis/osmoutils/osmocli"
 	"github.com/merlinslair/merlin/x/gamm/pool-models/balancer"
 	"github.com/merlinslair/merlin/x/gamm/pool-models/stableswap"
 	"github.com/merlinslair/merlin/x/gamm/types"
 	poolmanagertypes "github.com/merlinslair/merlin/x/poolmanager/types"
+	"github.com/osmosis-labs/osmosis/osmoutils/osmocli"
 
 	"github.com/cosmos/cosmos-sdk/client"
 	sdk "github.com/cosmos/cosmos-sdk/types"

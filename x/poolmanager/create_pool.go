@@ -7,9 +7,9 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 
-	"github.com/osmosis-labs/osmosis/osmoutils"
 	gammtypes "github.com/merlinslair/merlin/x/gamm/types"
 	"github.com/merlinslair/merlin/x/poolmanager/types"
+	"github.com/osmosis-labs/osmosis/osmoutils"
 )
 
 func (k Keeper) validateCreatedPool(

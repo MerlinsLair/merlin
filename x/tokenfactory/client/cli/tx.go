@@ -4,8 +4,8 @@ import (
 	"github.com/spf13/cobra"
 
 	// "github.com/cosmos/cosmos-sdk/client/flags"
-	"github.com/osmosis-labs/osmosis/osmoutils/osmocli"
 	"github.com/merlinslair/merlin/x/tokenfactory/types"
+	"github.com/osmosis-labs/osmosis/osmoutils/osmocli"
 )
 
 // GetTxCmd returns the transaction commands for this module

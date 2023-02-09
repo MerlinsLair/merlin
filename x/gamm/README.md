@@ -182,7 +182,7 @@ Pools have the following parameters:
     This allows pool governance to smoothly change the weights of the assets it holds in the pool. So it can slowly move from a 2:1 ratio, to a 1:1 ratio.
     Currently, smooth weight changes are implemented as a linear change in weight ratios over a given duration of time. So weights changed from 4:1 to 2:2 over 2 days, then at day 1 of the change, the weights would be 3:1.5, and at day 2 its 2:2, and will remain at these weight ratios.
 
-The GAMM module also has a **PoolCreationFee** parameter, which currently is set to `100000000 umer` or `100 OSMO`.
+The GAMM module also has a **PoolCreationFee** parameter, which currently is set to `100000000 umer` or `100 MER`.
 
 [comment]: <> (TODO Add better description of how the weights affect things)
 
@@ -262,7 +262,7 @@ The JSON [config-file] must specify the following parameters:
 }
 ```
 
-Create a new 50/50 AKT-OSMO liquidity pool with a swap and exit fee of 1%.
+Create a new 50/50 AKT-MER liquidity pool with a swap and exit fee of 1%.
 
 ```sh
 merlin tx gamm create-pool --pool-file [config-file] --from WALLET_NAME --chain-id merlin-1
@@ -283,7 +283,7 @@ The configuration json file contains the following parameters:
 :::
 
 ::: warning
-There is now a 100 OSMO fee for creating pools.
+There is now a 100 MER fee for creating pools.
 :::
 
 ### Join pool
@@ -296,7 +296,7 @@ merlin tx gamm join-pool --pool-id --max-amounts-in --share-amount-out --from --
 
 ::: details Example
 
-Join `pool 3` with a **maximum** of `.037753 AKT` and the corresponding amount of `OSMO` to get an **exact** share amount of `1.227549469722224220 gamm/pool/3` using `WALLET_NAME` on the merlin mainnet:
+Join `pool 3` with a **maximum** of `.037753 AKT` and the corresponding amount of `MER` to get an **exact** share amount of `1.227549469722224220 gamm/pool/3` using `WALLET_NAME` on the merlin mainnet:
 
 ```sh
 merlin tx gamm join-pool --pool-id 3 --max-amounts-in 37753ibc/1480B8FD20AD5FCAE81EA87584D269547DD4D436843C1D20F15E00EB64743EF4 --share-amount-out 1227549469722224220 --from WALLET_NAME --chain-id merlin-1
@@ -314,7 +314,7 @@ merlin tx gamm exit-pool --pool-id --min-amounts-out --share-amount-in --from --
 
 ::: details Example
 
-Exit `pool 3` with for **exactly** `1.136326462628731195 gamm/pool/3` in order to receive a **minimum** of `.033358 AKT` and the corresponding amount of `OSMO` using `WALLET_NAME` on the merlin mainnet:
+Exit `pool 3` with for **exactly** `1.136326462628731195 gamm/pool/3` in order to receive a **minimum** of `.033358 AKT` and the corresponding amount of `MER` using `WALLET_NAME` on the merlin mainnet:
 
 ```sh
 merlin tx gamm exit-pool --pool-id 3 --min-amounts-out 33358ibc/1480B8FD20AD5FCAE81EA87584D269547DD4D436843C1D20F15E00EB64743EF4 --share-amount-in 1136326462628731195 --from WALLET_NAME --chain-id merlin-1
@@ -324,7 +324,7 @@ merlin tx gamm exit-pool --pool-id 3 --min-amounts-out 33358ibc/1480B8FD20AD5FCA
 
 ### Join-swap-extern-amount-in
 
-Add liquidity to a specified pool with only one of the required assets (i.e. Join pool 1 (50/50 ATOM-OSMO) with just ATOM).
+Add liquidity to a specified pool with only one of the required assets (i.e. Join pool 1 (50/50 ATOM-MER) with just ATOM).
 
 This command essentially swaps an **exact** amount of an asset for the required pairing and then converts the pair to a **minimum** of the requested LP shares in a single step (i.e. combines the `swap-exact-amount-in` and `join-pool` commands)
 
@@ -334,7 +334,7 @@ merlin tx gamm join-swap-extern-amount-in [token-in] [share-out-min-amount] --fr
 
 ::: details Example
 
-Join `pool 3` with **exactly** `.200000 AKT` (and `0 OSMO`) to get a **minimum** of `3.234812471272883046 gamm/pool/3` using `WALLET_NAME` on the merlin mainnet:
+Join `pool 3` with **exactly** `.200000 AKT` (and `0 MER`) to get a **minimum** of `3.234812471272883046 gamm/pool/3` using `WALLET_NAME` on the merlin mainnet:
 
 ```sh
 merlin tx gamm join-swap-extern-amount-in 200000ibc/1480B8FD20AD5FCAE81EA87584D269547DD4D436843C1D20F15E00EB64743EF4 3234812471272883046 --pool-id 3 --from WALLET_NAME --chain-id merlin-1
@@ -344,7 +344,7 @@ merlin tx gamm join-swap-extern-amount-in 200000ibc/1480B8FD20AD5FCAE81EA87584D2
 
 ### Exit-swap-extern-amount-out
 
-Remove liquidity from a specified pool with a **maximum** amount of LP shares and swap to an **exact** amount of one of the token pairs (i.e. Leave pool 1 (50/50 ATOM-OSMO) and receive 100% ATOM instead of 50% OSMO and 50% ATOM).
+Remove liquidity from a specified pool with a **maximum** amount of LP shares and swap to an **exact** amount of one of the token pairs (i.e. Leave pool 1 (50/50 ATOM-MER) and receive 100% ATOM instead of 50% MER and 50% ATOM).
 
 This command essentially converts an LP share into the corresponding share of tokens and then swaps to the specified `token-out` in a single step (i.e. combines the `swap-exact-amount-out` and `exit-pool` commands)
 
@@ -354,7 +354,7 @@ merlin tx gamm exit-swap-extern-amount-out [token-out] [share-in-max-amount] --p
 
 ::: details Example
 
-Exit `pool 3` by removing a **maximum** of `3.408979387886193586 gamm/pool/3` and swap the `OSMO` portion of the LP share to receive 100% AKT in the **exact** amount of `0.199430 AKT`:
+Exit `pool 3` by removing a **maximum** of `3.408979387886193586 gamm/pool/3` and swap the `MER` portion of the LP share to receive 100% AKT in the **exact** amount of `0.199430 AKT`:
 
 ```sh
 merlin tx gamm exit-swap-extern-amount-out 199430ibc/1480B8FD20AD5FCAE81EA87584D269547DD4D436843C1D20F15E00EB64743EF4 3408979387886193586 --pool-id 3 --from WALLET_NAME --chain-id merlin-1
@@ -372,7 +372,7 @@ merlin tx gamm join-swap-share-amount-out [token-in-denom] [share-out-amount] [t
 
 ::: details Example
 
-Swap a **maximum** of `0.312466 OSMO` for the corresponding amount of `AKT`, then join `pool 3` and receive **exactly** `1.4481270389710236872 gamm/pool/3`:
+Swap a **maximum** of `0.312466 MER` for the corresponding amount of `AKT`, then join `pool 3` and receive **exactly** `1.4481270389710236872 gamm/pool/3`:
 
 ```sh
 merlin tx gamm join-swap-share-amount-out umer 14481270389710236872 312466 --pool-id 3 --from WALLET_NAME --chain-id merlin-1
@@ -390,7 +390,7 @@ merlin tx gamm exit-swap-share-amount-in [token-out-denom] [share-in-amount] [to
 
 ::: details Example
 
-Exit `pool 3` by removing **exactly** `14.563185400026723131 gamm/pool/3` and swap the `AKT` portion of the LP share to receive 100% OSMO in the **minimum** amount of `.298548 OSMO`:
+Exit `pool 3` by removing **exactly** `14.563185400026723131 gamm/pool/3` and swap the `AKT` portion of the LP share to receive 100% MER in the **minimum** amount of `.298548 MER`:
 
 ```sh
 merlin tx gamm exit-swap-share-amount-in umer 14563185400026723131 298548 --pool-id 3 --from WALLET_NAME --chain-id merlin-1
@@ -408,7 +408,7 @@ merlin tx gamm swap-exact-amount-in [token-in] [token-out-min-amount] --pool-id 
 
 ::: details Example
 
-Swap **exactly** `.407239 AKT` through `pool 3` into a **minimum** of `.140530 OSMO` using `WALLET_NAME` on the merlin mainnet:
+Swap **exactly** `.407239 AKT` through `pool 3` into a **minimum** of `.140530 MER` using `WALLET_NAME` on the merlin mainnet:
 
 ```sh
 merlin tx gamm swap-exact-amount-in 407239ibc/1480B8FD20AD5FCAE81EA87584D269547DD4D436843C1D20F15E00EB64743EF4 140530 --swap-route-pool-ids 3 --swap-route-denoms umer --from WALLET_NAME --chain-id merlin-1
@@ -426,7 +426,7 @@ merlin tx gamm swap-exact-amount-out [token-out] [token-out-max-amount] --swap-r
 
 ::: details Example
 
-Swap a **maximum** of `.407239 AKT` through `pool 3` into **exactly** `.140530 OSMO` using `WALLET_NAME` on the merlin mainnet:
+Swap a **maximum** of `.407239 AKT` through `pool 3` into **exactly** `.140530 MER` using `WALLET_NAME` on the merlin mainnet:
 
 ```sh
 merlin tx gamm swap-exact-amount-out 140530umer 407239 --swap-route-pool-ids 3 --swap-route-denoms ibc/1480B8FD20AD5FCAE81EA87584D269547DD4D436843C1D20F15E00EB64743EF4 --from WALLET_NAME --chain-id merlin-1
@@ -464,7 +464,7 @@ merlin query gamm estimate-swap-exact-amount-in <poolID> <sender> <tokenIn> [fla
 
 #### Example
 
-Query the amount of ATOM the sender would receive for swapping 1 OSMO in pool 1.
+Query the amount of ATOM the sender would receive for swapping 1 MER in pool 1.
 
 ```sh
 merlin query gamm estimate-swap-exact-amount-in 1 mer123nfq6m8f88m4g3sky570unsnk4zng4uqv7cm8 1000000umer --swap-route-pool-ids 1 --swap-route-denoms ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2 
@@ -482,7 +482,7 @@ merlin query gamm estimate-swap-exact-amount-out <poolID> <sender> <tokenOut> [f
 
 #### Example
 
-Query the amount of OSMO the sender would require to swap 1 ATOM out of pool 1.
+Query the amount of MER the sender would require to swap 1 ATOM out of pool 1.
 
 ```sh
 merlin query gamm estimate-swap-exact-amount-out 1 mer123nfq6m8f88m4g3sky570unsnk4zng4uqv7cm8 1000000ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2 --swap-route-pool-ids 1 --swap-route-denoms umer
@@ -558,7 +558,7 @@ Query parameters and assets of all active pools.
 
 #### Usage
 
-Query the price of OSMO based on the price of ATOM in pool 1.
+Query the price of MER based on the price of ATOM in pool 1.
 
 ```sh
 merlin query gamm spot-price 1 umer ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2

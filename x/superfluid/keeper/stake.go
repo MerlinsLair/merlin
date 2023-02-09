@@ -5,9 +5,9 @@ import (
 
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 
-	"github.com/osmosis-labs/osmosis/osmoutils"
 	lockuptypes "github.com/merlinslair/merlin/x/lockup/types"
 	"github.com/merlinslair/merlin/x/superfluid/types"
+	"github.com/osmosis-labs/osmosis/osmoutils"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
@@ -101,7 +101,7 @@ func (k Keeper) IncreaseSuperfluidDelegation(ctx sdk.Context, lockID uint64, amo
 		return nil
 	}
 
-	// mint OSMO token based on the most recent mer equivalent multiplier
+	// mint MER token based on the most recent mer equivalent multiplier
 	// of locked denom to denom module account
 	merAmt := k.GetSuperfluidOSMOTokens(ctx, acc.Denom, amount.AmountOf(acc.Denom))
 	if merAmt.IsZero() {
@@ -391,7 +391,7 @@ func (k Keeper) alreadySuperfluidStaking(ctx sdk.Context, lockID uint64) bool {
 	return len(synthLocks) > 0
 }
 
-// mintMerTokensAndDelegate mints merAmount of OSMO tokens, and immediately delegate them to validator on behalf of intermediary account.
+// mintMerTokensAndDelegate mints merAmount of MER tokens, and immediately delegate them to validator on behalf of intermediary account.
 func (k Keeper) mintMerTokensAndDelegate(ctx sdk.Context, merAmount sdk.Int, intermediaryAccount types.SuperfluidIntermediaryAccount) error {
 	validator, err := k.validateValAddrForDelegate(ctx, intermediaryAccount.ValAddr)
 	if err != nil {

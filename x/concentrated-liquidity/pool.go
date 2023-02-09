@@ -6,10 +6,10 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/osmosis-labs/osmosis/osmoutils"
 	"github.com/merlinslair/merlin/x/concentrated-liquidity/model"
 	types "github.com/merlinslair/merlin/x/concentrated-liquidity/types"
 	poolmanagertypes "github.com/merlinslair/merlin/x/poolmanager/types"
+	"github.com/osmosis-labs/osmosis/osmoutils"
 )
 
 // InitializePool initializes a concentrated liquidity pool and sets it in state.

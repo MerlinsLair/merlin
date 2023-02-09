@@ -54,7 +54,6 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/upgrade"
 	upgradetypes "github.com/cosmos/cosmos-sdk/x/upgrade/types"
 
-	"github.com/osmosis-labs/osmosis/osmoutils/partialord"
 	appparams "github.com/merlinslair/merlin/app/params"
 	_ "github.com/merlinslair/merlin/client/docs/statik"
 	"github.com/merlinslair/merlin/simulation/simtypes"
@@ -86,6 +85,7 @@ import (
 	txfeestypes "github.com/merlinslair/merlin/x/txfees/types"
 	valsetpreftypes "github.com/merlinslair/merlin/x/valset-pref/types"
 	valsetprefmodule "github.com/merlinslair/merlin/x/valset-pref/valpref-module"
+	"github.com/osmosis-labs/osmosis/osmoutils/partialord"
 )
 
 // moduleAccountPermissions defines module account permissions

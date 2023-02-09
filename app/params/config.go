@@ -10,7 +10,7 @@ import (
 const (
 	HumanCoinUnit = "mer"
 	BaseCoinUnit  = "umer"
-	MerExponent  = 6
+	MerExponent   = 6
 
 	DefaultBondDenom = BaseCoinUnit
 

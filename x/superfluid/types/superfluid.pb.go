@@ -95,7 +95,7 @@ func (m *SuperfluidAsset) XXX_DiscardUnknown() {
 var xxx_messageInfo_SuperfluidAsset proto.InternalMessageInfo
 
 // SuperfluidIntermediaryAccount takes the role of intermediary between LP token
-// and OSMO tokens for superfluid staking. The intermediary account is the
+// and MER tokens for superfluid staking. The intermediary account is the
 // actual account responsible for delegation, not the validator account itself.
 type SuperfluidIntermediaryAccount struct {
 	// Denom indicates the denom of the superfluid asset.

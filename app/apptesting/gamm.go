@@ -3,12 +3,12 @@ package apptesting
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/osmosis-labs/osmosis/osmomath"
 	gammkeeper "github.com/merlinslair/merlin/x/gamm/keeper"
 	"github.com/merlinslair/merlin/x/gamm/pool-models/balancer"
 	"github.com/merlinslair/merlin/x/gamm/pool-models/stableswap"
 	gammtypes "github.com/merlinslair/merlin/x/gamm/types"
 	poolmanagertypes "github.com/merlinslair/merlin/x/poolmanager/types"
+	"github.com/osmosis-labs/osmosis/osmomath"
 )
 
 var DefaultAcctFunds sdk.Coins = sdk.NewCoins(

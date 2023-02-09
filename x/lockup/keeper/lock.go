@@ -10,8 +10,8 @@ import (
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/gogo/protobuf/proto"
 
-	"github.com/osmosis-labs/osmosis/osmoutils/sumtree"
 	"github.com/merlinslair/merlin/x/lockup/types"
+	"github.com/osmosis-labs/osmosis/osmoutils/sumtree"
 )
 
 // WithdrawAllMaturedLocks withdraws every lock thats in the process of unlocking, and has finished unlocking by

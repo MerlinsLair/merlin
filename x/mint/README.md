@@ -112,7 +112,7 @@ Below are all the network parameters for the `mint` module:
 - **`reduction_period_in_epochs`** - How many epochs must occur before implementing the reduction factor
 - **`reduction_factor`** - What the total token issuance factor will reduce by after the reduction period passes (if set to 66.66%, token issuance will reduce by 1/3)
 - **`distribution_proportions`** - Categories in which the specified proportion of newly released tokens are distributed to
-  - **`staking`** - Proportion of minted funds to incentivize staking OSMO
+  - **`staking`** - Proportion of minted funds to incentivize staking MER
   - **`pool_incentives`** - Proportion of minted funds to incentivize pools on Merlin
   - **`developer_rewards`** - Proportion of minted funds to pay developers for their past and future work
   - **`community_pool`** - Proportion of minted funds to be set aside for the community pool
@@ -265,7 +265,7 @@ List the current epoch provisions:
 merlin query mint epoch-provisions
 ```
 
-As of this writing, this number will be equal to the `genesis-epoch-provisions`. Once the `reduction_period_in_epochs` is reached, the `reduction_factor` will be initiated and reduce the amount of OSMO minted per epoch.
+As of this writing, this number will be equal to the `genesis-epoch-provisions`. Once the `reduction_period_in_epochs` is reached, the `reduction_factor` will be initiated and reduce the amount of MER minted per epoch.
 :::
 
 ## Appendix
@@ -298,7 +298,7 @@ The following tables show overall effects on different configurations of the `mi
 <td>String must be <code>day</code>, <code>week</code>, <code>month</code>, or <code>year</code></td></tr> 
 <tr><td>Current configuration</td> 
 <td><code>umer</code></td> 
-<td><code>821917808219.178</code> (821,9178 OSMO)</td> 
+<td><code>821917808219.178</code> (821,9178 MER)</td> 
 <td><code>day</code></td></tr>
 </tbody></table>
 

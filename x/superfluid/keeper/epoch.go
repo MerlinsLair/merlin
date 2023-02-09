@@ -7,11 +7,11 @@ import (
 
 	distributiontypes "github.com/cosmos/cosmos-sdk/x/distribution/types"
 
-	"github.com/osmosis-labs/osmosis/osmoutils"
 	gammtypes "github.com/merlinslair/merlin/x/gamm/types"
 	incentivestypes "github.com/merlinslair/merlin/x/incentives/types"
 	lockuptypes "github.com/merlinslair/merlin/x/lockup/types"
 	"github.com/merlinslair/merlin/x/superfluid/types"
+	"github.com/osmosis-labs/osmosis/osmoutils"
 )
 
 func (k Keeper) AfterEpochEnd(ctx sdk.Context, epochIdentifier string, _ int64) error {
@@ -114,7 +114,7 @@ func (k Keeper) UpdateMerEquivalentMultipliers(ctx sdk.Context, asset types.Supe
 			return err
 		}
 
-		// get OSMO amount
+		// get MER amount
 		bondDenom := k.sk.BondDenom(ctx)
 		merPoolAsset := pool.GetTotalPoolLiquidity(ctx).AmountOf(bondDenom)
 		if merPoolAsset.IsZero() {

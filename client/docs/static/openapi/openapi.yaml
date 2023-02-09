@@ -9225,7 +9225,7 @@ paths:
                       minimum_risk_factor:
                         type: string
                         description: >-
-                          minimum_risk_factor is to be cut on OSMO equivalent value of lp tokens for
+                          minimum_risk_factor is to be cut on MER equivalent value of lp tokens for
 
                           superfluid staking, default: 5%. The minimum risk factor works
 
@@ -33046,7 +33046,7 @@ components:
         minimum_risk_factor:
           type: string
           description: >-
-            minimum_risk_factor is to be cut on OSMO equivalent value of lp tokens for
+            minimum_risk_factor is to be cut on MER equivalent value of lp tokens for
 
             superfluid staking, default: 5%. The minimum risk factor works
 
@@ -33064,7 +33064,7 @@ components:
             minimum_risk_factor:
               type: string
               description: >-
-                minimum_risk_factor is to be cut on OSMO equivalent value of lp tokens for
+                minimum_risk_factor is to be cut on MER equivalent value of lp tokens for
 
                 superfluid staking, default: 5%. The minimum risk factor works
 

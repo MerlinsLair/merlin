@@ -44,7 +44,7 @@ func (k Keeper) ExportGenesis(ctx sdk.Context) *types.GenesisState {
 	return &types.GenesisState{
 		Params:                        k.GetParams(ctx),
 		SuperfluidAssets:              k.GetAllSuperfluidAssets(ctx),
-		MerEquivalentMultipliers:     k.GetAllMerEquivalentMultipliers(ctx),
+		MerEquivalentMultipliers:      k.GetAllMerEquivalentMultipliers(ctx),
 		IntermediaryAccounts:          k.GetAllIntermediaryAccounts(ctx),
 		IntemediaryAccountConnections: k.GetAllLockIdIntermediaryAccountConnections(ctx),
 	}

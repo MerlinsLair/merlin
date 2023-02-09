@@ -13,7 +13,7 @@ const (
 	// FeeCollectorName the module account name for the fee collector account address.
 	FeeCollectorName = "fee_collector"
 
-	// NonNativeFeeCollectorName the module account name for the alt fee collector account address (used for auto-swapping non-OSMO tx fees).
+	// NonNativeFeeCollectorName the module account name for the alt fee collector account address (used for auto-swapping non-MER tx fees).
 	NonNativeFeeCollectorName = "non_native_fee_collector"
 
 	// QuerierRoute defines the module's query routing key

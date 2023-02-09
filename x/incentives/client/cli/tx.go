@@ -7,9 +7,9 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/osmosis-labs/osmosis/osmoutils/osmocli"
 	"github.com/merlinslair/merlin/x/incentives/types"
 	lockuptypes "github.com/merlinslair/merlin/x/lockup/types"
+	"github.com/osmosis-labs/osmosis/osmoutils/osmocli"
 
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"

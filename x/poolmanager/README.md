@@ -286,9 +286,9 @@ multiple pools in the process.
 The most cost-efficient route is determined offline and the list of the pools is provided externally, by user, during the broadcasting of the swapping transaction. 
 In the moment of the execution the provided route may not be the most cost efficient one anymore.
 
-When a trade consists of just two OSMO-included routes during a single transaction,
+When a trade consists of just two MER-included routes during a single transaction,
 the swap fees on each hop would be automatically halved. 
-Example: for converting `ATOM -> OSMO -> LUNA` using two pools with swap fees `0.3% + 0.2%`,
+Example: for converting `ATOM -> MER -> LUNA` using two pools with swap fees `0.3% + 0.2%`,
 instead `0.15% + 0.1%` fees will be aplied. 
 
 [Multi-Hop](https://github.com/merlinslair/merlin/blob/f26ceb958adaaf31510e17ed88f5eab47e2bac03/x/poolmanager/router.go#L16)
